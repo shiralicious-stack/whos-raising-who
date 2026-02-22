@@ -3,7 +3,7 @@
 import { useState, useTransition } from 'react'
 import { useRouter } from 'next/navigation'
 import MuxPlayer from '@mux/mux-player-react'
-import { CheckCircle2, Circle, ChevronRight, ChevronDown } from 'lucide-react'
+import { CheckCircle2, Circle, ChevronRight, ChevronDown, Menu, X } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Progress } from '@/components/ui/progress'
 import { cn } from '@/lib/utils'
@@ -21,6 +21,7 @@ export function CoursePlayer({ course, activeLessonId, progress, userId }: Cours
   const router = useRouter()
   const supabase = createClient()
   const [isPending, startTransition] = useTransition()
+  const [sidebarOpen, setSidebarOpen] = useState(false)
   const [openModules, setOpenModules] = useState<Set<string>>(
     new Set(course.modules.map(m => m.id))
   )
@@ -66,9 +67,31 @@ export function CoursePlayer({ course, activeLessonId, progress, userId }: Cours
   }
 
   return (
-    <div className="flex h-[calc(100vh-4rem)] gap-0 -m-6 lg:-m-8">
+    <div className="flex h-[calc(100vh-4rem)] gap-0 -m-6 lg:-m-8 relative">
+      {/* Mobile sidebar toggle */}
+      <button
+        onClick={() => setSidebarOpen(prev => !prev)}
+        className="lg:hidden absolute top-3 left-3 z-30 p-2 rounded-lg bg-card border shadow-sm"
+        aria-label="Toggle course outline"
+      >
+        {sidebarOpen ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}
+      </button>
+
+      {/* Mobile overlay */}
+      {sidebarOpen && (
+        <div
+          className="lg:hidden fixed inset-0 z-20 bg-black/40"
+          onClick={() => setSidebarOpen(false)}
+        />
+      )}
+
       {/* Sidebar */}
-      <aside className="w-80 border-r bg-card flex flex-col overflow-hidden">
+      <aside className={cn(
+        'border-r bg-card flex flex-col overflow-hidden transition-all duration-200',
+        'lg:w-80 lg:static lg:translate-x-0',
+        'fixed top-0 bottom-0 left-0 z-30 w-72',
+        sidebarOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'
+      )}>
         <div className="p-4 border-b">
           <h2 className="font-semibold text-sm truncate">{course.title}</h2>
           <div className="flex items-center gap-2 mt-2">
@@ -107,7 +130,7 @@ export function CoursePlayer({ course, activeLessonId, progress, userId }: Cours
                         )}
                       >
                         {isCompleted
-                          ? <CheckCircle2 className="h-4 w-4 flex-shrink-0 text-green-500" />
+                          ? <CheckCircle2 className="h-4 w-4 flex-shrink-0 text-sage-500" />
                           : <Circle className="h-4 w-4 flex-shrink-0 opacity-50" />}
                         <span className="truncate flex-1">{lesson.title}</span>
                       </button>

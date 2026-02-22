@@ -84,7 +84,7 @@ export function BookingForm({ userId }: BookingFormProps) {
       {/* Date picker */}
       <div className="space-y-3">
         <Label>Select a Date</Label>
-        <div className="grid grid-cols-4 gap-2">
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
           {weekdays.map((date, i) => {
             const isSelected = selectedDate?.toDateString() === date.toDateString()
             return (
@@ -110,7 +110,7 @@ export function BookingForm({ userId }: BookingFormProps) {
       {selectedDate && (
         <div className="space-y-3">
           <Label>Select a Time (Eastern Time)</Label>
-          <div className="grid grid-cols-3 gap-2">
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
             {TIME_SLOTS.map(time => (
               <button
                 key={time}

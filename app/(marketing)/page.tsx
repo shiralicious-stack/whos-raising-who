@@ -2,6 +2,7 @@ import Link from 'next/link'
 import { ArrowRight, Heart, Users, BookOpen, Video, Star, CheckCircle2 } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
+import { MarketingNav } from '@/components/marketing-nav'
 
 const testimonials = [
   {
@@ -47,30 +48,7 @@ const features = [
 export default function HomePage() {
   return (
     <div className="flex flex-col min-h-screen">
-      {/* Nav */}
-      <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-        <div className="container flex h-16 items-center justify-between">
-          <Link href="/" className="flex items-center gap-2">
-            <span className="font-serif text-xl font-bold text-foreground">
-              Who&apos;s Raising Who
-            </span>
-          </Link>
-          <nav className="hidden md:flex items-center gap-6 text-sm">
-            <Link href="#features" className="text-muted-foreground hover:text-foreground transition-colors">
-              What&apos;s Inside
-            </Link>
-            <Link href="/pricing" className="text-muted-foreground hover:text-foreground transition-colors">
-              Membership
-            </Link>
-            <Link href="/login" className="text-muted-foreground hover:text-foreground transition-colors">
-              Sign In
-            </Link>
-          </nav>
-          <Button asChild size="sm">
-            <Link href="/pricing">Join Now</Link>
-          </Button>
-        </div>
-      </header>
+      <MarketingNav />
 
       <main className="flex-1">
         {/* Hero */}
@@ -134,10 +112,13 @@ export default function HomePage() {
         <section className="py-24 bg-secondary/30">
           <div className="container max-w-4xl">
             <div className="grid md:grid-cols-2 gap-12 items-center">
-              <div className="rounded-2xl overflow-hidden bg-muted aspect-[4/5]">
-                {/* Placeholder for Shira's photo */}
-                <div className="w-full h-full flex items-center justify-center text-muted-foreground text-sm">
-                  [Photo of Shira]
+              <div className="rounded-2xl overflow-hidden aspect-[4/5] bg-gradient-to-br from-warm-100 via-warm-50 to-sage-100 flex items-center justify-center">
+                <div className="text-center">
+                  <div className="w-28 h-28 rounded-full bg-primary/15 border-4 border-primary/20 flex items-center justify-center mx-auto mb-4">
+                    <span className="font-serif text-5xl font-bold text-primary">S</span>
+                  </div>
+                  <p className="text-sm text-muted-foreground font-medium">Shira Finkelstein</p>
+                  <p className="text-xs text-muted-foreground">Family Coach</p>
                 </div>
               </div>
               <div>

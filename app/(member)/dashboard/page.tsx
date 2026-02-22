@@ -52,7 +52,7 @@ export default async function DashboardPage() {
       {/* Header */}
       <div>
         <h1 className="font-serif text-3xl font-bold">
-          Welcome back, {firstName} 👋
+          Welcome back, {firstName}
         </h1>
         <p className="text-muted-foreground mt-1">
           {sub
@@ -75,7 +75,7 @@ export default async function DashboardPage() {
       )}
 
       {/* Quick stats */}
-      <div className="grid grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
         <div className="rounded-xl border bg-card p-5">
           <div className="flex items-center gap-2 mb-2">
             <BookOpen className="h-4 w-4 text-primary" />

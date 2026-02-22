@@ -93,7 +93,7 @@ export function PricingCards({ tiers }: PricingCardsProps) {
               className={cn(
                 'relative rounded-2xl border p-8 flex flex-col',
                 isPopular
-                  ? 'border-primary shadow-xl scale-105 bg-card'
+                  ? 'border-2 border-primary shadow-xl bg-card'
                   : 'border-border bg-card'
               )}
             >
