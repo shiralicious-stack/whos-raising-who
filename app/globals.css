@@ -1,0 +1,91 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Warm cream background, dark terracotta foreground */
+    --background: 38 40% 97%;
+    --foreground: 20 30% 12%;
+
+    --card: 38 40% 97%;
+    --card-foreground: 20 30% 12%;
+
+    --popover: 38 40% 97%;
+    --popover-foreground: 20 30% 12%;
+
+    /* Primary: terracotta */
+    --primary: 18 58% 49%;
+    --primary-foreground: 38 40% 97%;
+
+    /* Secondary: warm sand */
+    --secondary: 36 35% 88%;
+    --secondary-foreground: 20 30% 18%;
+
+    /* Muted */
+    --muted: 36 20% 90%;
+    --muted-foreground: 20 15% 45%;
+
+    /* Accent: sage green */
+    --accent: 120 22% 40%;
+    --accent-foreground: 38 40% 97%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 36 20% 82%;
+    --input: 36 20% 82%;
+    --ring: 18 58% 49%;
+
+    --radius: 0.625rem;
+  }
+
+  .dark {
+    --background: 20 20% 8%;
+    --foreground: 38 30% 92%;
+
+    --card: 20 18% 11%;
+    --card-foreground: 38 30% 92%;
+
+    --popover: 20 18% 11%;
+    --popover-foreground: 38 30% 92%;
+
+    --primary: 18 55% 58%;
+    --primary-foreground: 20 20% 8%;
+
+    --secondary: 20 18% 18%;
+    --secondary-foreground: 38 30% 92%;
+
+    --muted: 20 18% 18%;
+    --muted-foreground: 38 20% 60%;
+
+    --accent: 120 22% 45%;
+    --accent-foreground: 38 40% 97%;
+
+    --destructive: 0 62% 50%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 20 18% 22%;
+    --input: 20 18% 22%;
+    --ring: 18 55% 58%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Mux player custom styles */
+mux-player {
+  --media-object-fit: contain;
+  --media-object-position: center;
+  aspect-ratio: 16/9;
+  width: 100%;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
