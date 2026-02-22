@@ -81,6 +81,19 @@ export default function HomePage() {
           </div>
         </section>
 
+        {/* Free intro call CTA */}
+        <section className="py-10 bg-secondary/40 border-y">
+          <div className="container flex flex-col sm:flex-row items-center justify-between gap-4 max-w-3xl">
+            <div>
+              <p className="font-semibold">Not sure if this is right for you?</p>
+              <p className="text-sm text-muted-foreground">Book a free 30-minute intro call with Shira — no pressure, no pitch.</p>
+            </div>
+            <Button asChild variant="outline" size="sm" className="flex-shrink-0">
+              <Link href="/book-call">Book a Free Call</Link>
+            </Button>
+          </div>
+        </section>
+
         {/* Features */}
         <section id="features" className="py-24 bg-background">
           <div className="container">
