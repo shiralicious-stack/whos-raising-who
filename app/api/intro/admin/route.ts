@@ -18,16 +18,31 @@ export async function GET() {
   return NextResponse.json({ slots: data })
 }
 
-// POST — add a new slot
+// POST — add one slot or many slots at once
+// Body: { scheduledAt, durationMinutes } OR { slots: [{ scheduledAt, durationMinutes }, ...] }
 export async function POST(request: NextRequest) {
   const supabase = await createClient()
   const { data: { user } } = await supabase.auth.getUser()
   if (!user) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
 
-  const { scheduledAt, durationMinutes = 30 } = await request.json()
+  const body = await request.json()
+  const admin = createAdminClient()
+
+  // Batch insert
+  if (Array.isArray(body.slots)) {
+    const rows = body.slots.map((s: { scheduledAt: string; durationMinutes?: number }) => ({
+      scheduled_at: s.scheduledAt,
+      duration_minutes: s.durationMinutes ?? 30,
+    }))
+    const { data, error } = await admin.from('intro_slots').insert(rows).select()
+    if (error) return NextResponse.json({ error: error.message }, { status: 500 })
+    return NextResponse.json({ slots: data, count: data.length })
+  }
+
+  // Single insert
+  const { scheduledAt, durationMinutes = 30 } = body
   if (!scheduledAt) return NextResponse.json({ error: 'scheduledAt is required' }, { status: 400 })
 
-  const admin = createAdminClient()
   const { data, error } = await admin
     .from('intro_slots')
     .insert({ scheduled_at: scheduledAt, duration_minutes: durationMinutes })
