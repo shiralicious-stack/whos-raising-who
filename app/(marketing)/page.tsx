@@ -26,7 +26,7 @@ const services = [
   {
     icon: Users,
     title: 'Community',
-    badge: 'Free to join',
+    badge: null,
     badgeVariant: 'secondary' as const,
     description:
       'A warm, judgment-free space for moms to share honestly, support one another, and grow together. Weekly virtual meetups, journaling prompts, and a community of women who truly get it.',
@@ -44,10 +44,10 @@ const services = [
   {
     icon: Heart,
     title: 'Individual Coaching',
-    badge: 'Most popular',
+    badge: 'Most Popular',
     badgeVariant: 'default' as const,
     description:
-      'Whether in a supportive group setting or private one-on-one sessions with Shira — this is where real transformation happens. Understand your triggers, break generational patterns, and respond from a place of intention.',
+      'Group sessions or private one-on-one work with Shira — this is where real transformation happens. Understand your triggers, break generational patterns, and respond from intention.',
     features: [
       'Live group coaching sessions with Shira',
       'Private 1:1 sessions (VIP tier)',
@@ -62,7 +62,7 @@ const services = [
   {
     icon: BookOpen,
     title: 'Courses',
-    badge: 'Self-paced & live',
+    badge: 'Self-Paced & Live',
     badgeVariant: 'outline' as const,
     description:
       'Learn on your own schedule with prerecorded self-paced courses, or join Shira live in group courses where you learn alongside other moms in real time.',
@@ -86,119 +86,80 @@ export default function HomePage() {
 
       <main className="flex-1">
 
-        {/* Hero */}
-        <section className="relative overflow-hidden bg-gradient-to-br from-warm-50 via-background to-sage-50 py-28 md:py-40">
+        {/* 1. Hero */}
+        <section className="relative overflow-hidden bg-gradient-to-br from-warm-50 via-background to-sage-50 py-32 md:py-44">
           <div className="container max-w-3xl text-center">
-            <Badge variant="secondary" className="mb-6 px-4 py-1.5 text-sm font-medium">
+            <Badge variant="secondary" className="mb-8 px-4 py-1.5 text-sm font-medium">
               Conscious Parenting · Coaching · Community
             </Badge>
             <h1 className="font-serif text-5xl font-bold leading-tight tracking-tight md:text-7xl text-foreground mb-6">
               Who&apos;s Raising{' '}
               <span className="text-primary">Who?</span>
             </h1>
-            <p className="text-xl text-muted-foreground leading-relaxed max-w-2xl mx-auto mb-4">
+            <p className="text-xl font-medium text-foreground/80 mb-4">
               Because parenting begins with you.
             </p>
-            <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto mb-10">
+            <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto mb-12">
               To raise emotionally healthy children, we must first understand ourselves.
-              Our kids reflect our most unhealed parts back to us — and that&apos;s the invitation.
+              Our children reflect our unhealed parts back to us — and that&apos;s the invitation.
             </p>
             <Button asChild size="lg" className="text-base px-10">
-              <Link href="/pricing">
-                Join the Community
-              </Link>
+              <Link href="/pricing">Join the Community</Link>
             </Button>
-            <p className="mt-6 text-base text-muted-foreground">
-              Motherhood was never meant to be done alone.
+            <p className="mt-5">
+              <Link
+                href="/book-call"
+                className="text-sm text-muted-foreground underline underline-offset-4 hover:text-foreground transition-colors"
+              >
+                Book a Free Call
+              </Link>
             </p>
           </div>
         </section>
 
-        {/* Free intro call strip */}
-        <section className="py-10 bg-secondary/40 border-y">
-          <div className="container flex flex-col sm:flex-row items-center justify-between gap-4 max-w-3xl">
-            <div>
-              <p className="font-semibold">Not sure if this is right for you?</p>
-              <p className="text-sm text-muted-foreground">Book a free 15-minute consult call with Shira.</p>
-            </div>
-            <Button asChild variant="outline" size="sm" className="flex-shrink-0">
-              <Link href="/book-call">Book a Free Call</Link>
-            </Button>
+        {/* 2. Emotional Anchor */}
+        <section className="py-20 bg-background border-y border-border/50">
+          <div className="container max-w-2xl text-center">
+            <p className="font-serif text-2xl md:text-3xl font-semibold text-foreground leading-relaxed mb-4">
+              Motherhood was never meant to be done alone.
+            </p>
+            <p className="text-lg text-muted-foreground">
+              Healing doesn&apos;t happen in isolation.
+            </p>
           </div>
         </section>
 
-        {/* About Shira */}
-        <section className="py-24 bg-background">
-          <div className="container max-w-4xl">
-            <div className="grid md:grid-cols-2 gap-14 items-center">
-              <div className="rounded-2xl overflow-hidden aspect-[4/5] bg-gradient-to-br from-warm-100 via-warm-50 to-sage-100 flex items-center justify-center">
-                <div className="text-center">
-                  <div className="w-28 h-28 rounded-full bg-primary/15 border-4 border-primary/20 flex items-center justify-center mx-auto mb-4">
-                    <span className="font-serif text-5xl font-bold text-primary">S</span>
-                  </div>
-                  <p className="text-sm text-muted-foreground font-medium">Shira Finkelstein</p>
-                  <p className="text-xs text-muted-foreground">Certified Conscious Parenting Coach</p>
-                </div>
-              </div>
-              <div>
-                <p className="text-sm font-medium text-primary uppercase tracking-wider mb-3">About Shira</p>
-                <h2 className="font-serif text-4xl font-bold mb-5 leading-snug">
-                  Parenting begins<br />with you.
-                </h2>
-                <p className="text-muted-foreground leading-relaxed mb-4">
-                  I&apos;m Shira Finkelstein — a Certified Conscious Parenting &amp; Life Coach,
-                  trained by Dr. Shefali Tsabary, and a single mom who walks this path every single day.
-                </p>
-                <p className="text-muted-foreground leading-relaxed mb-4">
-                  I created Who&apos;s Raising Who because I believe the most powerful parenting work
-                  happens when we turn the lens on ourselves. Our kids mirror us — our fears,
-                  our patterns, our unhealed wounds. When we do the inner work, they feel it.
-                </p>
-                <p className="text-muted-foreground leading-relaxed mb-8">
-                  Breaking cycles with our children begins with us doing our own inner work.
-                </p>
-                <div className="flex gap-3">
-                  <Button asChild variant="outline">
-                    <Link href="/about">Read My Story</Link>
-                  </Button>
-                  <Button asChild variant="ghost" className="text-primary">
-                    <Link href="/book-call">Free Consult Call <ArrowRight className="ml-1.5 h-4 w-4" /></Link>
-                  </Button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Are you ready? + 3 service boxes */}
-        <section className="py-24 bg-secondary/20">
+        {/* 3. How We Work Together */}
+        <section className="py-32 bg-secondary/20">
           <div className="container">
-            <div className="text-center mb-14">
-              <p className="text-sm font-medium text-primary uppercase tracking-wider mb-4">How we work together</p>
-              <h2 className="font-serif text-4xl md:text-5xl font-bold mb-5 leading-snug">
-                Are you ready to connect with<br className="hidden md:block" /> other mamas like you?
+            <div className="text-center mb-16">
+              <p className="text-sm font-medium text-primary uppercase tracking-wider mb-4">How We Work Together</p>
+              <h2 className="font-serif text-4xl md:text-5xl font-bold mb-5">
+                How We Work Together
               </h2>
               <p className="text-muted-foreground text-lg max-w-xl mx-auto">
-                Whether you&apos;re looking for community, personalized coaching, or a course to grow at your own pace — there&apos;s a place for you here.
+                Whether you&apos;re seeking community, private support, or self-paced learning — there&apos;s a path for you here.
               </p>
             </div>
 
-            <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+            <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
               {services.map((s) => {
                 const Icon = s.icon
                 return (
                   <div key={s.title} className={`flex flex-col rounded-2xl border p-8 bg-card ${s.accent}`}>
-                    <div className={`w-11 h-11 rounded-xl flex items-center justify-center mb-5 ${s.iconBg}`}>
+                    <div className={`w-11 h-11 rounded-xl flex items-center justify-center mb-6 ${s.iconBg}`}>
                       <Icon className={`h-5 w-5 ${s.iconColor}`} />
                     </div>
                     <div className="flex items-center gap-2 mb-3">
                       <h3 className="font-serif text-2xl font-bold">{s.title}</h3>
-                      <Badge variant={s.badgeVariant} className="text-xs">{s.badge}</Badge>
+                      {s.badge && (
+                        <Badge variant={s.badgeVariant} className="text-xs">{s.badge}</Badge>
+                      )}
                     </div>
-                    <p className="text-muted-foreground text-sm leading-relaxed mb-5 flex-1">
+                    <p className="text-muted-foreground text-sm leading-relaxed mb-6 flex-1">
                       {s.description}
                     </p>
-                    <ul className="space-y-2 mb-7">
+                    <ul className="space-y-2.5 mb-8">
                       {s.features.map(f => (
                         <li key={f} className="flex items-start gap-2.5 text-sm">
                           <CheckCircle2 className={`h-4 w-4 flex-shrink-0 mt-0.5 ${s.iconColor}`} />
@@ -218,19 +179,73 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* Testimonials */}
-        <section className="py-24 bg-background">
+        {/* 4. About Shira */}
+        <section className="py-32 bg-background">
+          <div className="container max-w-4xl">
+            <div className="grid md:grid-cols-2 gap-16 items-center">
+              <div className="rounded-2xl overflow-hidden aspect-[4/5] bg-gradient-to-br from-warm-100 via-warm-50 to-sage-100 flex items-center justify-center">
+                <div className="text-center">
+                  <div className="w-28 h-28 rounded-full bg-primary/15 border-4 border-primary/20 flex items-center justify-center mx-auto mb-4">
+                    <span className="font-serif text-5xl font-bold text-primary">S</span>
+                  </div>
+                  <p className="text-sm text-muted-foreground font-medium">Shira Finkelstein</p>
+                  <p className="text-xs text-muted-foreground">Certified Conscious Parenting Coach</p>
+                </div>
+              </div>
+              <div>
+                <p className="text-sm font-medium text-primary uppercase tracking-wider mb-4">About Shira</p>
+                <h2 className="font-serif text-4xl font-bold mb-6 leading-snug">
+                  Parenting begins with you.
+                </h2>
+                <div className="space-y-4 text-muted-foreground leading-relaxed mb-8">
+                  <p>
+                    I&apos;m Shira Finkelstein — a Certified Conscious Parenting &amp; Life Coach
+                    trained by Dr. Shefali Tsabary, and a single mom who walks this path every day.
+                  </p>
+                  <p>
+                    I created Who&apos;s Raising Who because the most powerful parenting work happens
+                    when we turn inward. Our children mirror our patterns, fears, and unhealed wounds.
+                    When we do the inner work, everything shifts.
+                  </p>
+                </div>
+                <Button asChild variant="outline">
+                  <Link href="/about">Read My Story</Link>
+                </Button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* 5. Free Call */}
+        <section className="py-24 bg-secondary/20 border-y border-border/50">
+          <div className="container max-w-xl text-center">
+            <h2 className="font-serif text-3xl font-bold mb-4">
+              Not sure where to begin?
+            </h2>
+            <p className="text-muted-foreground text-lg mb-8">
+              Book a free 15-minute consult call with Shira.
+            </p>
+            <Button asChild size="lg" className="px-10">
+              <Link href="/book-call">Schedule Your Free Call</Link>
+            </Button>
+          </div>
+        </section>
+
+        {/* 6. Testimonials */}
+        <section className="py-32 bg-background">
           <div className="container">
             <div className="text-center mb-16">
               <h2 className="font-serif text-4xl font-bold mb-4">
-                What moms are saying
+                What Moms Are Saying
               </h2>
-              <p className="text-muted-foreground">Nobody has it all figured out — and we&apos;re not meant to do this alone.</p>
+              <p className="text-muted-foreground">
+                Nobody has it all figured out — and we&apos;re not meant to do this alone.
+              </p>
             </div>
             <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
               {testimonials.map((t) => (
-                <div key={t.name} className="flex flex-col p-6 rounded-2xl border bg-card">
-                  <div className="flex gap-1 mb-4">
+                <div key={t.name} className="flex flex-col p-7 rounded-2xl border bg-card">
+                  <div className="flex gap-1 mb-5">
                     {Array.from({ length: 5 }).map((_, i) => (
                       <Star key={i} className="h-4 w-4 fill-primary text-primary" />
                     ))}
@@ -246,8 +261,8 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* CTA */}
-        <section className="py-24 bg-primary text-primary-foreground">
+        {/* 7. Final CTA */}
+        <section className="py-28 bg-primary text-primary-foreground">
           <div className="container text-center max-w-2xl">
             <h2 className="font-serif text-4xl font-bold mb-6">
               Ready to do the real work?
@@ -256,25 +271,20 @@ export default function HomePage() {
               Connect, heal, and grow alongside other moms who get it.
               Start your membership today — cancel anytime.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button asChild size="lg" variant="secondary" className="text-base px-10">
-                <Link href="/pricing">
-                  See Membership Options <ArrowRight className="ml-2 h-4 w-4" />
-                </Link>
-              </Button>
-              <Button asChild size="lg" variant="outline" className="text-base px-10 border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10">
-                <Link href="/book-call">Book a Free Call First</Link>
-              </Button>
-            </div>
+            <Button asChild size="lg" variant="secondary" className="text-base px-10">
+              <Link href="/pricing">
+                See Membership Options <ArrowRight className="ml-2 h-4 w-4" />
+              </Link>
+            </Button>
           </div>
         </section>
+
       </main>
 
       {/* Footer */}
-      <footer className="border-t py-12 bg-background">
+      <footer className="border-t py-14 bg-background">
         <div className="container">
           <div className="flex flex-col md:flex-row justify-between items-start gap-8">
-            {/* Brand */}
             <div>
               <p className="font-serif text-lg font-bold mb-2">Who&apos;s Raising Who</p>
               <p className="text-sm text-muted-foreground max-w-xs">
@@ -302,7 +312,6 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* Links */}
             <div className="flex gap-12 text-sm">
               <div className="space-y-2">
                 <p className="font-semibold text-xs uppercase tracking-wider text-muted-foreground mb-3">Explore</p>
