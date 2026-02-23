@@ -23,7 +23,7 @@ export default function CommunityPage() {
       <main className="flex-1">
 
         {/* Hero */}
-        <section className="bg-gradient-to-br from-sage-50 via-background to-warm-50 py-14 md:py-20">
+        <section className="bg-gradient-to-br from-sage-50 via-background to-warm-50 py-10 md:py-14">
           <div className="container max-w-3xl text-center">
             <h1 className="font-serif text-4xl md:text-5xl font-semibold leading-snug mb-5 text-foreground">
               You don&apos;t have to do this alone.
@@ -39,7 +39,7 @@ export default function CommunityPage() {
         </section>
 
         {/* What's included */}
-        <section className="py-16 bg-secondary/20 border-y border-border/50">
+        <section className="py-10 bg-secondary/20 border-y border-border/50">
           <div className="container max-w-4xl">
             <div className="text-center mb-10">
               <h2 className="font-serif text-4xl font-bold mb-3">What&apos;s included</h2>
