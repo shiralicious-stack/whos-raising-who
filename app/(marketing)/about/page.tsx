@@ -1,4 +1,3 @@
-import { MarketingNav } from '@/components/marketing-nav'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { CheckCircle2, ArrowRight, Instagram, Facebook } from 'lucide-react'
@@ -31,8 +30,6 @@ const values = [
 export default function AboutPage() {
   return (
     <div className="flex flex-col min-h-screen">
-      <MarketingNav />
-
       <main className="flex-1">
         {/* Hero */}
         <section className="bg-gradient-to-br from-warm-50 via-background to-sage-50 py-20">

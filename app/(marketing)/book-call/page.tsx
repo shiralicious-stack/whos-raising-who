@@ -1,5 +1,4 @@
 import { IntroBookingForm } from '@/components/intro-booking-form'
-import { MarketingNav } from '@/components/marketing-nav'
 import { Badge } from '@/components/ui/badge'
 import { Clock, Video, Phone } from 'lucide-react'
 import Link from 'next/link'
@@ -12,8 +11,6 @@ export const metadata = {
 export default function BookCallPage() {
   return (
     <div className="flex flex-col min-h-screen bg-gradient-to-br from-warm-50 via-background to-sage-50">
-      <MarketingNav />
-
       <main className="flex-1 flex items-start justify-center py-12 px-4">
         <div className="w-full max-w-3xl">
 

@@ -1,5 +1,4 @@
 import { createClient } from '@/lib/supabase/server'
-import { MarketingNav } from '@/components/marketing-nav'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { BookOpen, Lock, ArrowRight, Calendar } from 'lucide-react'
@@ -54,8 +53,6 @@ export default async function CoursesPage() {
 
   return (
     <div className="flex flex-col min-h-screen">
-      <MarketingNav />
-
       <main className="flex-1">
 
         {/* Hero */}
