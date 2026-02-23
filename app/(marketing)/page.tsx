@@ -221,7 +221,7 @@ export default function HomePage() {
         </section>
 
         {/* 5. Free Call */}
-        <section className="py-24 bg-secondary/20 border-y border-border/50">
+        <section className="py-14 bg-secondary/20 border-y border-border/50">
           <div className="container max-w-xl text-center">
             <h2 className="font-serif text-3xl font-bold mb-4">
               Not sure where to begin?
@@ -236,9 +236,9 @@ export default function HomePage() {
         </section>
 
         {/* 6. Testimonials */}
-        <section className="py-32 bg-background">
+        <section className="py-16 bg-background">
           <div className="container">
-            <div className="text-center mb-16">
+            <div className="text-center mb-10">
               <h2 className="font-serif text-4xl font-bold mb-4">
                 What Moms Are Saying
               </h2>
@@ -266,7 +266,7 @@ export default function HomePage() {
         </section>
 
         {/* 7. Final CTA */}
-        <section className="py-28 bg-primary text-primary-foreground">
+        <section className="py-16 bg-primary text-primary-foreground">
           <div className="container text-center max-w-2xl">
             <h2 className="font-serif text-4xl font-bold mb-6">
               Ready to do the real work?
@@ -286,7 +286,7 @@ export default function HomePage() {
       </main>
 
       {/* Footer */}
-      <footer className="border-t py-14 bg-background">
+      <footer className="border-t py-10 bg-background">
         <div className="container">
           <div className="flex flex-col md:flex-row justify-between items-start gap-8">
             <div>
