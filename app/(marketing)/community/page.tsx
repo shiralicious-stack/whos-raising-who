@@ -39,7 +39,7 @@ export default function CommunityPage() {
         </section>
 
         {/* What's included */}
-        <section className="py-16 bg-background">
+        <section className="py-16 bg-secondary/20 border-y border-border/50">
           <div className="container max-w-4xl">
             <div className="text-center mb-10">
               <h2 className="font-serif text-4xl font-bold mb-3">What&apos;s included</h2>
@@ -83,9 +83,9 @@ export default function CommunityPage() {
             <div className="space-y-6">
               {[
                 { step: '01', title: 'Choose your membership', body: 'Select the tier that\'s right for you. Community access is included in all paid tiers.' },
-                { step: '02', title: 'Join the weekly meetup', body: 'Every week, Shira hosts a live virtual gathering for community members — a safe space to share and reflect.' },
-                { step: '03', title: 'Do the inner work', body: 'Use the journaling prompts, grounding practices, and course content to support your growth between meetings.' },
-                { step: '04', title: 'Grow alongside other moms', body: 'The relationships you build here are part of the healing. You\'ll find your people.' },
+                { step: '02', title: 'Join the weekly gathering', body: 'Every week, Shira hosts a live virtual gathering for community members — a safe space to share and reflect.' },
+                { step: '03', title: 'Integrate the Work', body: 'Use journaling prompts, mantras, and course materials to deepen your awareness between meetings.' },
+                { step: '04', title: 'Grow alongside other moms', body: 'The relationships formed here become part of the healing. You won\'t just participate — you\'ll belong.' },
               ].map(item => (
                 <div key={item.step} className="flex gap-6 items-start">
                   <span className="font-serif text-4xl font-bold text-primary/20 flex-shrink-0 w-12">{item.step}</span>
