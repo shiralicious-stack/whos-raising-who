@@ -31,9 +31,12 @@ export async function proxy(request: NextRequest) {
 
   const { pathname } = request.nextUrl
 
-  // Protect /dashboard, /courses, /events, /bookings, /settings
-  const memberRoutes = ['/dashboard', '/courses', '/events', '/bookings', '/settings']
-  const isProtectedMemberRoute = memberRoutes.some(r => pathname.startsWith(r))
+  // Protect member routes. /courses and /events list pages are public;
+  // only /courses/[slug] (the player) and /bookings/settings remain protected.
+  const memberRoutes = ['/dashboard', '/bookings', '/settings']
+  const isProtectedMemberRoute =
+    memberRoutes.some(r => pathname.startsWith(r)) ||
+    pathname.startsWith('/courses/') // course player requires auth
 
   // Protect /admin routes
   const isAdminRoute = pathname.startsWith('/admin')
