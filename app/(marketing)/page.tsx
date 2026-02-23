@@ -87,11 +87,11 @@ export default function HomePage() {
       <main className="flex-1">
 
         {/* 1. Hero */}
-        <section className="relative overflow-hidden pt-32 pb-16 md:pt-44 md:pb-20">
+        <section className="relative overflow-hidden pt-24 pb-14 md:pt-32 md:pb-20">
           {/* Background image */}
           <div
-            className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-            style={{ backgroundImage: "url('/hero.jpg')" }}
+            className="absolute inset-0 bg-cover bg-no-repeat"
+            style={{ backgroundImage: "url('/hero.jpg')", backgroundPosition: '65% center' }}
           />
           {/* Dark overlay so text stays readable */}
           <div className="absolute inset-0 bg-black/50" />
