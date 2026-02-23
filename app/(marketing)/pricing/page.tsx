@@ -1,6 +1,7 @@
 import { createClient } from '@/lib/supabase/server'
 import { PricingCards } from '@/components/pricing-cards'
 import { Badge } from '@/components/ui/badge'
+import { MarketingNav } from '@/components/marketing-nav'
 import type { MembershipTier } from '@/types'
 
 export const metadata = {
@@ -18,6 +19,8 @@ export default async function PricingPage() {
 
   return (
     <div className="min-h-screen bg-background">
+      <MarketingNav />
+
       {/* Header */}
       <div className="bg-gradient-to-br from-warm-50 via-background to-sage-50 py-20 text-center">
         <Badge variant="secondary" className="mb-4">Simple, Honest Pricing</Badge>
