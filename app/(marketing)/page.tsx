@@ -135,10 +135,9 @@ export default function HomePage() {
         </section>
 
         {/* 3. How We Work Together */}
-        <section className="py-32 bg-secondary/20">
+        <section className="pt-12 pb-32 bg-secondary/20">
           <div className="container">
             <div className="text-center mb-16">
-              <p className="text-sm font-medium text-primary uppercase tracking-wider mb-4">How We Work Together</p>
               <h2 className="font-serif text-4xl md:text-5xl font-bold mb-5">
                 How We Work Together
               </h2>
