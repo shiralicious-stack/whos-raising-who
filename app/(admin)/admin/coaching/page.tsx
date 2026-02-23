@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import { Trash2, Loader2, Clock, User, Plus, Zap } from 'lucide-react'
+import { Trash2, Loader2, Clock, User, Plus, RefreshCw, CheckSquare, Square } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
@@ -31,6 +31,9 @@ const TIME_OPTIONS = [
   '13:00', '14:00', '15:00', '16:00', '17:00', '18:00',
 ]
 
+type Pattern = 'weekly' | 'biweekly' | 'monthly'
+type Tab = 'recurring' | 'single'
+
 function fmt(time: string) {
   const [h, m] = time.split(':').map(Number)
   const period = h >= 12 ? 'PM' : 'AM'
@@ -38,27 +41,99 @@ function fmt(time: string) {
   return `${hour}:${m.toString().padStart(2, '0')} ${period}`
 }
 
+function buildRecurringSlots(
+  fromDate: string,
+  toDate: string,
+  pattern: Pattern,
+  selectedDays: Set<number>,
+  selectedTimes: Set<string>,
+  duration: number
+) {
+  if (!fromDate || !toDate || selectedDays.size === 0 || selectedTimes.size === 0) return []
+  const result: { scheduledAt: string; durationMinutes: number }[] = []
+  const times = Array.from(selectedTimes).sort()
+
+  function addTimes(date: Date) {
+    for (const time of times) {
+      const [h, m] = time.split(':').map(Number)
+      const dt = new Date(date)
+      dt.setHours(h, m, 0, 0)
+      result.push({ scheduledAt: dt.toISOString(), durationMinutes: duration })
+    }
+  }
+
+  const start = new Date(fromDate + 'T00:00:00')
+  const end = new Date(toDate + 'T23:59:59')
+
+  if (pattern === 'weekly') {
+    const cur = new Date(start)
+    while (cur <= end) {
+      if (selectedDays.has(cur.getDay())) addTimes(cur)
+      cur.setDate(cur.getDate() + 1)
+    }
+
+  } else if (pattern === 'biweekly') {
+    const cur = new Date(start)
+    const startMs = start.getTime()
+    while (cur <= end) {
+      const weekOffset = Math.floor((cur.getTime() - startMs) / (7 * 24 * 60 * 60 * 1000))
+      if (weekOffset % 2 === 0 && selectedDays.has(cur.getDay())) addTimes(cur)
+      cur.setDate(cur.getDate() + 1)
+    }
+
+  } else if (pattern === 'monthly') {
+    // First occurrence of each selected day per calendar month
+    let year = start.getFullYear()
+    let month = start.getMonth()
+    const endYear = end.getFullYear()
+    const endMonth = end.getMonth()
+
+    while (year < endYear || (year === endYear && month <= endMonth)) {
+      const daysInMonth = new Date(year, month + 1, 0).getDate()
+      const seen = new Set<number>() // track which day-of-week already used this month
+      for (let d = 1; d <= daysInMonth; d++) {
+        const date = new Date(year, month, d)
+        const dow = date.getDay()
+        if (date >= start && date <= end && selectedDays.has(dow) && !seen.has(dow)) {
+          seen.add(dow)
+          addTimes(date)
+        }
+      }
+      month++
+      if (month > 11) { month = 0; year++ }
+    }
+  }
+
+  return result
+}
+
 export default function CoachingAvailabilityPage() {
   const [slots, setSlots] = useState<SlotWithBooking[]>([])
   const [loading, setLoading] = useState(true)
-  const [deletingId, setDeletingId] = useState<string | null>(null)
-  const [tab, setTab] = useState<'batch' | 'single'>('batch')
+  const [tab, setTab] = useState<Tab>('recurring')
 
+  // Recurring state
+  const [pattern, setPattern] = useState<Pattern>('weekly')
   const [fromDate, setFromDate] = useState('')
   const [toDate, setToDate] = useState('')
   const [selectedDays, setSelectedDays] = useState<Set<number>>(new Set([1, 2, 3, 4, 5]))
   const [selectedTimes, setSelectedTimes] = useState<Set<string>>(new Set(['10:00', '14:00']))
-  const [batchDuration, setBatchDuration] = useState('50')
-  const [batchAdding, setBatchAdding] = useState(false)
-  const [batchMsg, setBatchMsg] = useState<string | null>(null)
-  const [batchError, setBatchError] = useState<string | null>(null)
+  const [duration, setDuration] = useState('50')
+  const [adding, setAdding] = useState(false)
+  const [addMsg, setAddMsg] = useState<string | null>(null)
+  const [addError, setAddError] = useState<string | null>(null)
 
+  // Single day state
   const [singleDate, setSingleDate] = useState('')
   const [singleTimes, setSingleTimes] = useState<Set<string>>(new Set())
   const [singleDuration, setSingleDuration] = useState('50')
   const [singleAdding, setSingleAdding] = useState(false)
   const [singleMsg, setSingleMsg] = useState<string | null>(null)
   const [singleError, setSingleError] = useState<string | null>(null)
+
+  // Bulk delete state
+  const [selected, setSelected] = useState<Set<string>>(new Set())
+  const [bulkDeleting, setBulkDeleting] = useState(false)
 
   async function loadSlots() {
     const res = await fetch('/api/coaching/admin')
@@ -69,39 +144,21 @@ export default function CoachingAvailabilityPage() {
 
   useEffect(() => { loadSlots() }, [])
 
-  function buildBatchSlots() {
-    if (!fromDate || !toDate || selectedDays.size === 0 || selectedTimes.size === 0) return []
-    const result: { scheduledAt: string; durationMinutes: number }[] = []
-    const cur = new Date(fromDate + 'T00:00:00')
-    const end = new Date(toDate + 'T23:59:59')
-    while (cur <= end) {
-      if (selectedDays.has(cur.getDay())) {
-        for (const time of Array.from(selectedTimes).sort()) {
-          const [h, m] = time.split(':').map(Number)
-          const dt = new Date(cur)
-          dt.setHours(h, m, 0, 0)
-          result.push({ scheduledAt: dt.toISOString(), durationMinutes: Number(batchDuration) })
-        }
-      }
-      cur.setDate(cur.getDate() + 1)
-    }
-    return result
-  }
+  const preview = buildRecurringSlots(fromDate, toDate, pattern, selectedDays, selectedTimes, Number(duration))
 
-  async function addBatch() {
-    const newSlots = buildBatchSlots()
-    if (newSlots.length === 0) { setBatchError('Select a date range, days, and times first.'); return }
-    setBatchAdding(true); setBatchError(null); setBatchMsg(null)
+  async function addRecurring() {
+    if (preview.length === 0) { setAddError('Configure your date range, days, and times first.'); return }
+    setAdding(true); setAddError(null); setAddMsg(null)
     const res = await fetch('/api/coaching/admin', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ slots: newSlots }),
+      body: JSON.stringify({ slots: preview }),
     })
     const data = await res.json()
-    if (!res.ok) { setBatchError(data.error); setBatchAdding(false); return }
-    setBatchMsg(`✓ Added ${data.count} slots`)
+    if (!res.ok) { setAddError(data.error); setAdding(false); return }
+    setAddMsg(`✓ Added ${data.count} slots`)
     await loadSlots()
-    setBatchAdding(false)
+    setAdding(false)
   }
 
   async function addSingle() {
@@ -126,15 +183,25 @@ export default function CoachingAvailabilityPage() {
     setSingleAdding(false)
   }
 
-  async function deleteSlot(id: string) {
-    setDeletingId(id)
-    await fetch('/api/coaching/admin', {
-      method: 'DELETE',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ id }),
-    })
+  async function deleteSelected() {
+    if (selected.size === 0) return
+    setBulkDeleting(true)
+    await Promise.all(
+      Array.from(selected).map(id =>
+        fetch('/api/coaching/admin', {
+          method: 'DELETE',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ id }),
+        })
+      )
+    )
+    setSelected(new Set())
     await loadSlots()
-    setDeletingId(null)
+    setBulkDeleting(false)
+  }
+
+  function toggleSelect(id: string) {
+    setSelected(prev => { const n = new Set(prev); n.has(id) ? n.delete(id) : n.add(id); return n })
   }
 
   function toggleDay(d: number) {
@@ -149,25 +216,41 @@ export default function CoachingAvailabilityPage() {
 
   const upcoming = slots.filter(s => new Date(s.scheduled_at) > new Date())
   const past = slots.filter(s => new Date(s.scheduled_at) <= new Date())
-  const batchPreview = buildBatchSlots().length
+  const selectableUpcoming = upcoming.filter(s => !s.is_booked)
+  const allUpcomingSelected = selectableUpcoming.length > 0 && selectableUpcoming.every(s => selected.has(s.id))
   const today = new Date().toISOString().split('T')[0]
+
+  function selectAllUpcoming() {
+    if (allUpcomingSelected) {
+      setSelected(new Set())
+    } else {
+      setSelected(new Set(selectableUpcoming.map(s => s.id)))
+    }
+  }
+
+  const patternLabel: Record<Pattern, string> = {
+    weekly: 'every week on selected days',
+    biweekly: 'every other week on selected days',
+    monthly: 'first occurrence of selected days each month',
+  }
 
   return (
     <div className="space-y-8 max-w-3xl">
       <div>
         <h1 className="font-serif text-3xl font-bold">Coaching Session Availability</h1>
         <p className="text-muted-foreground mt-1">
-          Add open slots for 50-minute coaching sessions — visible to anyone on the Coaching page.
+          Add open 50-minute slots — visible to anyone on the Coaching page.
         </p>
       </div>
 
+      {/* Tab switcher */}
       <div className="flex gap-2 p-1 bg-muted rounded-xl w-fit">
         <button
-          onClick={() => setTab('batch')}
+          onClick={() => setTab('recurring')}
           className={cn('flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-colors',
-            tab === 'batch' ? 'bg-background shadow-sm' : 'text-muted-foreground hover:text-foreground')}
+            tab === 'recurring' ? 'bg-background shadow-sm' : 'text-muted-foreground hover:text-foreground')}
         >
-          <Zap className="h-4 w-4" /> Batch Schedule
+          <RefreshCw className="h-4 w-4" /> Recurring
         </button>
         <button
           onClick={() => setTab('single')}
@@ -178,12 +261,35 @@ export default function CoachingAvailabilityPage() {
         </button>
       </div>
 
-      {tab === 'batch' && (
+      {/* RECURRING TAB */}
+      {tab === 'recurring' && (
         <div className="rounded-xl border bg-card p-6 space-y-6">
           <div>
-            <h2 className="font-semibold mb-1">Batch schedule</h2>
-            <p className="text-sm text-muted-foreground">Pick a date range, days, and times — all slots generated at once.</p>
+            <h2 className="font-semibold mb-1">Set recurring availability</h2>
+            <p className="text-sm text-muted-foreground">Choose a pattern, date range, days, and times.</p>
           </div>
+
+          {/* Pattern */}
+          <div className="space-y-2">
+            <Label>Repeat pattern</Label>
+            <div className="flex gap-2">
+              {(['weekly', 'biweekly', 'monthly'] as Pattern[]).map(p => (
+                <button
+                  key={p}
+                  onClick={() => setPattern(p)}
+                  className={cn(
+                    'px-4 py-2 rounded-lg text-sm font-medium border transition-colors capitalize',
+                    pattern === p ? 'bg-primary text-primary-foreground border-primary' : 'border-border hover:bg-muted text-muted-foreground'
+                  )}
+                >
+                  {p}
+                </button>
+              ))}
+            </div>
+            <p className="text-xs text-muted-foreground">Generates slots {patternLabel[pattern]}.</p>
+          </div>
+
+          {/* Date range + duration */}
           <div className="flex flex-wrap gap-4">
             <div className="space-y-2">
               <Label>From</Label>
@@ -195,9 +301,11 @@ export default function CoachingAvailabilityPage() {
             </div>
             <div className="space-y-2">
               <Label>Duration (min)</Label>
-              <Input type="number" value={batchDuration} onChange={e => setBatchDuration(e.target.value)} min="15" step="5" className="w-24" />
+              <Input type="number" value={duration} onChange={e => setDuration(e.target.value)} min="15" step="5" className="w-24" />
             </div>
           </div>
+
+          {/* Days */}
           <div className="space-y-2">
             <Label>Days of the week</Label>
             <div className="flex gap-2 flex-wrap">
@@ -210,6 +318,8 @@ export default function CoachingAvailabilityPage() {
               ))}
             </div>
           </div>
+
+          {/* Times */}
           <div className="space-y-2">
             <Label>Times</Label>
             <div className="flex flex-wrap gap-2">
@@ -222,19 +332,29 @@ export default function CoachingAvailabilityPage() {
               ))}
             </div>
           </div>
+
+          {/* Preview + action */}
           <div className="flex items-center gap-4 pt-2 border-t">
             <div className="flex-1">
-              {batchPreview > 0 && <p className="text-sm text-muted-foreground">Will create <span className="font-semibold text-foreground">{batchPreview} slots</span></p>}
-              {batchMsg && <p className="text-sm text-primary font-medium">{batchMsg}</p>}
-              {batchError && <p className="text-sm text-destructive">{batchError}</p>}
+              {preview.length > 0 && (
+                <p className="text-sm text-muted-foreground">
+                  Will create <span className="font-semibold text-foreground">{preview.length} slots</span>
+                  {' '}({pattern})
+                </p>
+              )}
+              {addMsg && <p className="text-sm text-primary font-medium">{addMsg}</p>}
+              {addError && <p className="text-sm text-destructive">{addError}</p>}
             </div>
-            <Button onClick={addBatch} disabled={batchAdding || batchPreview === 0}>
-              {batchAdding ? <><Loader2 className="h-4 w-4 animate-spin mr-2" />Adding...</> : <><Zap className="h-4 w-4 mr-2" />Add {batchPreview > 0 ? batchPreview : ''} Slots</>}
+            <Button onClick={addRecurring} disabled={adding || preview.length === 0}>
+              {adding
+                ? <><Loader2 className="h-4 w-4 animate-spin mr-2" />Adding...</>
+                : <><RefreshCw className="h-4 w-4 mr-2" />Add {preview.length > 0 ? preview.length : ''} Slots</>}
             </Button>
           </div>
         </div>
       )}
 
+      {/* SINGLE DAY TAB */}
       {tab === 'single' && (
         <div className="rounded-xl border bg-card p-6 space-y-6">
           <div>
@@ -270,30 +390,65 @@ export default function CoachingAvailabilityPage() {
                 {singleError && <p className="text-sm text-destructive">{singleError}</p>}
               </div>
               <Button onClick={addSingle} disabled={singleAdding || singleTimes.size === 0}>
-                {singleAdding ? <><Loader2 className="h-4 w-4 animate-spin mr-2" />Adding...</> : <><Plus className="h-4 w-4 mr-2" />Add {singleTimes.size > 0 ? singleTimes.size : ''} Slot{singleTimes.size !== 1 ? 's' : ''}</>}
+                {singleAdding
+                  ? <><Loader2 className="h-4 w-4 animate-spin mr-2" />Adding...</>
+                  : <><Plus className="h-4 w-4 mr-2" />Add {singleTimes.size > 0 ? singleTimes.size : ''} Slot{singleTimes.size !== 1 ? 's' : ''}</>}
               </Button>
             </div>
           </div>
         </div>
       )}
 
+      {/* UPCOMING SLOTS */}
       <div>
-        <h2 className="font-semibold mb-3">Upcoming Slots ({upcoming.length})</h2>
+        <div className="flex items-center justify-between mb-3">
+          <h2 className="font-semibold">Upcoming Slots ({upcoming.length})</h2>
+          <div className="flex items-center gap-2">
+            {selected.size > 0 && (
+              <Button
+                variant="destructive"
+                size="sm"
+                onClick={deleteSelected}
+                disabled={bulkDeleting}
+              >
+                {bulkDeleting
+                  ? <><Loader2 className="h-4 w-4 animate-spin mr-2" />Deleting...</>
+                  : <><Trash2 className="h-4 w-4 mr-2" />Delete {selected.size} selected</>}
+              </Button>
+            )}
+            {selectableUpcoming.length > 0 && (
+              <Button variant="ghost" size="sm" onClick={selectAllUpcoming} className="text-muted-foreground">
+                {allUpcomingSelected
+                  ? <><Square className="h-4 w-4 mr-1.5" />Deselect all</>
+                  : <><CheckSquare className="h-4 w-4 mr-1.5" />Select all</>}
+              </Button>
+            )}
+          </div>
+        </div>
+
         {loading ? (
           <div className="flex items-center gap-2 text-muted-foreground py-4">
             <Loader2 className="h-4 w-4 animate-spin" /> Loading...
           </div>
         ) : upcoming.length === 0 ? (
-          <p className="text-sm text-muted-foreground py-4 border rounded-xl text-center p-8">No upcoming slots — add some above.</p>
+          <p className="text-sm text-muted-foreground py-8 border rounded-xl text-center">
+            No upcoming slots — use the scheduler above to add some.
+          </p>
         ) : (
           <div className="space-y-2">
             {upcoming.map(slot => (
-              <SlotRow key={slot.id} slot={slot} onDelete={() => deleteSlot(slot.id)} deleting={deletingId === slot.id} />
+              <SlotRow
+                key={slot.id}
+                slot={slot}
+                selected={selected.has(slot.id)}
+                onToggleSelect={() => toggleSelect(slot.id)}
+              />
             ))}
           </div>
         )}
       </div>
 
+      {/* PAST SLOTS */}
       {past.length > 0 && (
         <div>
           <h2 className="font-semibold mb-3 text-muted-foreground">Past & Booked</h2>
@@ -306,42 +461,61 @@ export default function CoachingAvailabilityPage() {
   )
 }
 
-function SlotRow({ slot, onDelete, deleting, past }: {
-  slot: SlotWithBooking; onDelete?: () => void; deleting?: boolean; past?: boolean
+function SlotRow({ slot, selected, onToggleSelect, past }: {
+  slot: SlotWithBooking
+  selected?: boolean
+  onToggleSelect?: () => void
+  past?: boolean
 }) {
   const booking = slot.coaching_bookings?.[0]
   const dt = new Date(slot.scheduled_at)
+  const canSelect = !past && !slot.is_booked
+
   return (
-    <div className={cn('flex items-start justify-between gap-4 rounded-xl border bg-card p-4', slot.is_booked && 'border-primary/30 bg-primary/5')}>
-      <div className="flex items-start gap-3">
-        <div className="w-9 h-9 rounded-lg bg-muted flex items-center justify-center flex-shrink-0">
-          <Clock className="h-4 w-4 text-muted-foreground" />
-        </div>
-        <div>
-          <p className="font-medium text-sm">
-            {dt.toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' })}
-            {' · '}
-            {dt.toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit', hour12: true })}
-            <span className="text-muted-foreground font-normal text-xs ml-2">{slot.duration_minutes} min</span>
-          </p>
-          {booking && (
-            <div className="flex items-center gap-1.5 text-xs mt-1">
-              <User className="h-3 w-3 text-primary" />
-              <span className="font-medium">{booking.name}</span>
-              <span className="text-muted-foreground">· {booking.email}</span>
-            </div>
-          )}
-          {booking?.notes && <p className="text-xs text-muted-foreground mt-0.5 italic">&ldquo;{booking.notes}&rdquo;</p>}
-        </div>
-      </div>
-      <div className="flex items-center gap-2 flex-shrink-0">
-        <Badge variant={slot.is_booked ? 'default' : 'secondary'} className="text-xs">{slot.is_booked ? 'Booked' : 'Open'}</Badge>
-        {!past && !slot.is_booked && onDelete && (
-          <Button variant="ghost" size="icon" className="h-8 w-8 text-muted-foreground hover:text-destructive" onClick={onDelete} disabled={deleting}>
-            {deleting ? <Loader2 className="h-4 w-4 animate-spin" /> : <Trash2 className="h-4 w-4" />}
-          </Button>
+    <div className={cn(
+      'flex items-start gap-3 rounded-xl border bg-card p-4 transition-colors',
+      slot.is_booked && 'border-primary/30 bg-primary/5',
+      selected && 'border-destructive/40 bg-destructive/5'
+    )}>
+      {/* Checkbox */}
+      <div className="flex items-center pt-0.5">
+        {canSelect ? (
+          <button onClick={onToggleSelect} className="text-muted-foreground hover:text-foreground transition-colors">
+            {selected
+              ? <CheckSquare className="h-4 w-4 text-destructive" />
+              : <Square className="h-4 w-4" />}
+          </button>
+        ) : (
+          <div className="w-4 h-4" />
         )}
       </div>
+
+      {/* Icon */}
+      <div className="w-9 h-9 rounded-lg bg-muted flex items-center justify-center flex-shrink-0">
+        <Clock className="h-4 w-4 text-muted-foreground" />
+      </div>
+
+      {/* Info */}
+      <div className="flex-1 min-w-0">
+        <p className="font-medium text-sm">
+          {dt.toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' })}
+          {' · '}
+          {dt.toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit', hour12: true })}
+          <span className="text-muted-foreground font-normal text-xs ml-2">{slot.duration_minutes} min</span>
+        </p>
+        {booking && (
+          <div className="flex items-center gap-1.5 text-xs mt-1">
+            <User className="h-3 w-3 text-primary" />
+            <span className="font-medium">{booking.name}</span>
+            <span className="text-muted-foreground">· {booking.email}</span>
+          </div>
+        )}
+        {booking?.notes && <p className="text-xs text-muted-foreground mt-0.5 italic">&ldquo;{booking.notes}&rdquo;</p>}
+      </div>
+
+      <Badge variant={slot.is_booked ? 'default' : 'secondary'} className="text-xs flex-shrink-0">
+        {slot.is_booked ? 'Booked' : 'Open'}
+      </Badge>
     </div>
   )
 }
