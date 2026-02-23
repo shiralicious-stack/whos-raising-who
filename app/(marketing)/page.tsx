@@ -92,18 +92,25 @@ export default function HomePage() {
             <Badge variant="secondary" className="mb-6 px-4 py-1.5 text-sm font-medium">
               Conscious Parenting · Coaching · Community
             </Badge>
-            <h1 className="font-serif text-5xl font-bold leading-tight tracking-tight md:text-7xl text-foreground mb-8">
+            <h1 className="font-serif text-5xl font-bold leading-tight tracking-tight md:text-7xl text-foreground mb-6">
               Who&apos;s Raising{' '}
               <span className="text-primary">Who?</span>
             </h1>
-            <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed max-w-xl mx-auto mb-10">
-              Motherhood was never meant to be done alone.
+            <p className="text-xl text-muted-foreground leading-relaxed max-w-2xl mx-auto mb-4">
+              Because parenting begins with you.
+            </p>
+            <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto mb-10">
+              To raise emotionally healthy children, we must first understand ourselves.
+              Our kids reflect our most unhealed parts back to us — and that&apos;s the invitation.
             </p>
             <Button asChild size="lg" className="text-base px-10">
               <Link href="/pricing">
                 Join the Community
               </Link>
             </Button>
+            <p className="mt-6 text-base text-muted-foreground">
+              Motherhood was never meant to be done alone.
+            </p>
           </div>
         </section>
 
