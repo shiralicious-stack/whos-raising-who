@@ -104,12 +104,19 @@ export default function HomePage() {
                 Join the Community
               </Link>
             </Button>
-            <p className="mt-6 text-sm text-muted-foreground">
-              Not ready yet?{' '}
-              <Link href="/book-call" className="text-primary underline underline-offset-4 hover:opacity-80 transition-opacity">
-                Start with a free 15-min call with Shira.
-              </Link>
-            </p>
+          </div>
+        </section>
+
+        {/* Free intro call strip */}
+        <section className="py-10 bg-secondary/40 border-y">
+          <div className="container flex flex-col sm:flex-row items-center justify-between gap-4 max-w-3xl">
+            <div>
+              <p className="font-semibold">Not sure if this is right for you?</p>
+              <p className="text-sm text-muted-foreground">Book a free 15-minute consult call with Shira.</p>
+            </div>
+            <Button asChild variant="outline" size="sm" className="flex-shrink-0">
+              <Link href="/book-call">Book a Free Call</Link>
+            </Button>
           </div>
         </section>
 
