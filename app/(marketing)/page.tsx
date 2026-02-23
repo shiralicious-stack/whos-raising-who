@@ -288,7 +288,7 @@ export default function HomePage() {
             <div>
               <p className="font-serif text-lg font-bold mb-2">Who&apos;s Raising Who</p>
               <p className="text-sm text-muted-foreground max-w-xs">
-                Conscious parenting coaching for moms who are ready to break cycles and do the real work.
+                Conscious parenting community & coaching for moms who are ready to break cycles and do the real work.
               </p>
               <div className="flex gap-3 mt-4">
                 <a href="https://instagram.com/whos_raising_who" target="_blank" rel="noopener noreferrer"
