@@ -29,12 +29,12 @@ const services = [
     badge: null,
     badgeVariant: 'secondary' as const,
     description:
-      'A warm, judgment-free space for moms to share honestly, support one another, and grow together. Weekly virtual meetups, journaling prompts, and a community of women who truly get it.',
+      'A warm, judgment-free space for mothers to share honestly, support one another, and grow together. Through weekly virtual gatherings and guided reflection, you\'ll be surrounded by women who truly understand this season of life.',
     features: [
-      'Weekly virtual meetups for moms',
-      'Inspirational content & journaling prompts from Shira',
-      'Safe space to share openly without judgment',
-      'Connect with like-minded moms on the same journey',
+      'Weekly virtual meetups',
+      'Guided journaling prompts and reflection tools',
+      'A safe space to speak openly without judgment',
+      'Meaningful connection with like-minded mothers',
     ],
     cta: { label: 'Join the Community', href: '/pricing' },
     accent: 'border-sage-200 bg-sage-50/50',
