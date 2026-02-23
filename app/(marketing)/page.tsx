@@ -50,12 +50,13 @@ const services = [
     badge: 'Most Popular',
     badgeVariant: 'default' as const,
     description:
-      'Group sessions or private one-on-one work with Shira - this is where real transformation happens. Understand your triggers, break generational patterns, and respond from intention.',
+      'A private, supportive space for mothers ready to grow with intention. Through personalized sessions and guided reflection, we explore your patterns and triggers — so you can reparent yourself with compassion and break generational cycles.',
     features: [
-      'Live group coaching sessions with Shira',
-      'Private 1:1 sessions (VIP tier)',
-      'Deep dive into your triggers & inner patterns',
-      'Practical tools to break cycles - for good',
+      'Personalized one-on-one support',
+      'Deeper understanding of your patterns and triggers',
+      'Reparenting with awareness and compassion',
+      'Support in breaking generational cycles',
+      'Practical tools for real-life integration',
     ],
     cta: { label: 'Explore Coaching', href: '/pricing' },
     accent: 'border-primary/20 bg-primary/5',
