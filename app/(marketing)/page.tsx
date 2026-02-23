@@ -135,7 +135,7 @@ export default function HomePage() {
         </section>
 
         {/* 3. How We Work Together */}
-        <section className="pt-12 pb-32 bg-secondary/20">
+        <section className="pt-12 pb-16 bg-secondary/20">
           <div className="container">
             <div className="text-center mb-16">
               <h2 className="font-serif text-4xl md:text-5xl font-bold mb-5">
@@ -184,7 +184,7 @@ export default function HomePage() {
         </section>
 
         {/* 4. About Shira */}
-        <section className="py-32 bg-background">
+        <section className="py-16 bg-background">
           <div className="container max-w-4xl">
             <div className="grid md:grid-cols-2 gap-16 items-center">
               <div className="rounded-2xl overflow-hidden aspect-[4/5] bg-gradient-to-br from-warm-100 via-warm-50 to-sage-100 flex items-center justify-center">
