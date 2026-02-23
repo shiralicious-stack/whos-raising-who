@@ -65,7 +65,7 @@ export default function CommunityPage() {
         </section>
 
         {/* Quote / anchor */}
-        <section className="py-16 bg-secondary/20 border-y border-border/50">
+        <section className="py-16 bg-background">
           <div className="container max-w-2xl text-center">
             <blockquote className="font-serif text-2xl md:text-3xl font-semibold leading-relaxed mb-4">
               &ldquo;Healing doesn&apos;t happen in isolation. It happens in community.&rdquo;
@@ -75,7 +75,7 @@ export default function CommunityPage() {
         </section>
 
         {/* How it works */}
-        <section className="py-16 bg-background">
+        <section className="py-16 bg-secondary/20 border-y border-border/50">
           <div className="container max-w-3xl">
             <div className="text-center mb-10">
               <h2 className="font-serif text-4xl font-bold mb-4">How it works</h2>
