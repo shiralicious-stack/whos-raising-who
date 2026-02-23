@@ -1,9 +1,8 @@
 import Link from 'next/link'
-import { ArrowRight, Heart, Users, BookOpen, Video, Star, CheckCircle2, Instagram, Facebook } from 'lucide-react'
+import { ArrowRight, Users, BookOpen, Heart, Star, CheckCircle2, Instagram, Facebook } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { MarketingNav } from '@/components/marketing-nav'
-import { ServicesSection } from '@/components/services-section'
 
 const testimonials = [
   {
@@ -23,6 +22,63 @@ const testimonials = [
   },
 ]
 
+const services = [
+  {
+    icon: Users,
+    title: 'Community',
+    badge: 'Free to join',
+    badgeVariant: 'secondary' as const,
+    description:
+      'A warm, judgment-free space for moms to share honestly, support one another, and grow together. Weekly virtual meetups, journaling prompts, and a community of women who truly get it.',
+    features: [
+      'Weekly virtual meetups for moms',
+      'Inspirational content & journaling prompts from Shira',
+      'Safe space to share openly without judgment',
+      'Connect with like-minded moms on the same journey',
+    ],
+    cta: { label: 'Join the Community', href: '/pricing' },
+    accent: 'border-sage-200 bg-sage-50/50',
+    iconColor: 'text-sage-600',
+    iconBg: 'bg-sage-100',
+  },
+  {
+    icon: Heart,
+    title: 'Individual Coaching',
+    badge: 'Most popular',
+    badgeVariant: 'default' as const,
+    description:
+      'Whether in a supportive group setting or private one-on-one sessions with Shira — this is where real transformation happens. Understand your triggers, break generational patterns, and respond from a place of intention.',
+    features: [
+      'Live group coaching sessions with Shira',
+      'Private 1:1 sessions (VIP tier)',
+      'Deep dive into your triggers & inner patterns',
+      'Practical tools to break cycles — for good',
+    ],
+    cta: { label: 'Explore Coaching', href: '/pricing' },
+    accent: 'border-primary/20 bg-primary/5',
+    iconColor: 'text-primary',
+    iconBg: 'bg-primary/10',
+  },
+  {
+    icon: BookOpen,
+    title: 'Courses',
+    badge: 'Self-paced & live',
+    badgeVariant: 'outline' as const,
+    description:
+      'Learn on your own schedule with prerecorded self-paced courses, or join Shira live in group courses where you learn alongside other moms in real time.',
+    features: [
+      'Self-paced prerecorded video courses',
+      'Live group courses taught by Shira',
+      'Topics: big feelings, triggers, transitions & more',
+      'Courses never expire — revisit anytime',
+    ],
+    cta: { label: 'Browse Courses', href: '/courses' },
+    accent: 'border-warm-200 bg-warm-50/50',
+    iconColor: 'text-warm-700',
+    iconBg: 'bg-warm-100',
+  },
+]
+
 export default function HomePage() {
   return (
     <div className="flex flex-col min-h-screen">
@@ -31,31 +87,24 @@ export default function HomePage() {
       <main className="flex-1">
 
         {/* Hero */}
-        <section className="relative overflow-hidden bg-gradient-to-br from-warm-50 via-background to-sage-50 py-24 md:py-36">
-          <div className="container max-w-4xl text-center">
+        <section className="relative overflow-hidden bg-gradient-to-br from-warm-50 via-background to-sage-50 py-28 md:py-40">
+          <div className="container max-w-3xl text-center">
             <Badge variant="secondary" className="mb-6 px-4 py-1.5 text-sm font-medium">
               Conscious Parenting · Coaching · Community
             </Badge>
-            <h1 className="font-serif text-5xl font-bold leading-tight tracking-tight md:text-7xl text-foreground mb-6">
+            <h1 className="font-serif text-5xl font-bold leading-tight tracking-tight md:text-7xl text-foreground mb-8">
               Who&apos;s Raising{' '}
               <span className="text-primary">Who?</span>
             </h1>
-            <p className="text-xl text-muted-foreground leading-relaxed max-w-2xl mx-auto mb-4">
-              Because parenting begins with you.
+            <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed max-w-xl mx-auto mb-10">
+              Motherhood was never meant to be done alone.
             </p>
-            <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto mb-10">
-              To raise emotionally healthy children, we must first understand ourselves.
-              Our kids reflect our most unhealed parts back to us — and that&apos;s the invitation.
-            </p>
-            <Button asChild size="lg" className="text-base px-8">
+            <Button asChild size="lg" className="text-base px-10">
               <Link href="/pricing">
                 Join the Community
               </Link>
             </Button>
             <p className="mt-6 text-sm text-muted-foreground">
-              Motherhood is not meant to be walked alone.
-            </p>
-            <p className="mt-3 text-sm text-muted-foreground">
               Not ready yet?{' '}
               <Link href="/book-call" className="text-primary underline underline-offset-4 hover:opacity-80 transition-opacity">
                 Start with a free 15-min call with Shira.
@@ -64,51 +113,10 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* Free intro call strip */}
-        <section className="py-10 bg-secondary/40 border-y">
-          <div className="container flex flex-col sm:flex-row items-center justify-between gap-4 max-w-3xl">
-            <div>
-              <p className="font-semibold">Not sure if this is right for you?</p>
-              <p className="text-sm text-muted-foreground">Book a free 30-minute consult call with Shira — no pressure, no pitch.</p>
-            </div>
-            <Button asChild variant="outline" size="sm" className="flex-shrink-0">
-              <Link href="/book-call">Book a Free Call</Link>
-            </Button>
-          </div>
-        </section>
-
-        {/* Philosophy */}
-        <section className="py-20 bg-background">
-          <div className="container max-w-3xl text-center">
-            <p className="text-sm font-medium text-primary uppercase tracking-wider mb-4">The foundation</p>
-            <blockquote className="font-serif text-3xl md:text-4xl font-bold leading-snug mb-6">
-              &ldquo;Breaking cycles with our children begins with us doing our own inner work.&rdquo;
-            </blockquote>
-            <p className="text-muted-foreground text-lg leading-relaxed">
-              True change in parenting begins with our own healing. When we understand our triggers,
-              our patterns, and our own unmet needs — we stop reacting and start responding.
-              That&apos;s the REparenting journey, and it changes everything.
-            </p>
-          </div>
-        </section>
-
-        {/* Services — tabbed */}
-        <section id="services" className="py-24 bg-secondary/20">
-          <div className="container">
-            <div className="text-center mb-12">
-              <h2 className="font-serif text-4xl font-bold mb-4">How we work together</h2>
-              <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-                Whether you&apos;re just starting out or ready to go deep — there&apos;s a place for you here.
-              </p>
-            </div>
-            <ServicesSection />
-          </div>
-        </section>
-
         {/* About Shira */}
-        <section id="about" className="py-24 bg-background">
+        <section className="py-24 bg-background">
           <div className="container max-w-4xl">
-            <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div className="grid md:grid-cols-2 gap-14 items-center">
               <div className="rounded-2xl overflow-hidden aspect-[4/5] bg-gradient-to-br from-warm-100 via-warm-50 to-sage-100 flex items-center justify-center">
                 <div className="text-center">
                   <div className="w-28 h-28 rounded-full bg-primary/15 border-4 border-primary/20 flex items-center justify-center mx-auto mb-4">
@@ -119,46 +127,85 @@ export default function HomePage() {
                 </div>
               </div>
               <div>
-                <Badge variant="outline" className="mb-4">Your Guide</Badge>
-                <h2 className="font-serif text-4xl font-bold mb-4">
-                  Hi, I&apos;m Shira
+                <p className="text-sm font-medium text-primary uppercase tracking-wider mb-3">About Shira</p>
+                <h2 className="font-serif text-4xl font-bold mb-5 leading-snug">
+                  Parenting begins<br />with you.
                 </h2>
                 <p className="text-muted-foreground leading-relaxed mb-4">
-                  I&apos;m a Certified Conscious Parenting &amp; Life Coach, trained by Dr. Shefali Tsabary —
-                  one of the world&apos;s foremost authorities on conscious parenting.
+                  I&apos;m Shira Finkelstein — a Certified Conscious Parenting &amp; Life Coach,
+                  trained by Dr. Shefali Tsabary, and a single mom who walks this path every single day.
                 </p>
                 <p className="text-muted-foreground leading-relaxed mb-4">
                   I created Who&apos;s Raising Who because I believe the most powerful parenting work
-                  happens when we turn the lens on ourselves. Our kids mirror us — our fears, our
-                  patterns, our unhealed wounds. When we do the inner work, they feel it.
+                  happens when we turn the lens on ourselves. Our kids mirror us — our fears,
+                  our patterns, our unhealed wounds. When we do the inner work, they feel it.
                 </p>
                 <p className="text-muted-foreground leading-relaxed mb-8">
-                  As a single mom, I know firsthand how hard this path can be — and how transformative
-                  it becomes when you stop trying to do it alone.
+                  Breaking cycles with our children begins with us doing our own inner work.
                 </p>
-                <ul className="space-y-3 mb-8">
-                  {[
-                    'Certified Conscious Parenting & Life Coach',
-                    'Trained by Dr. Shefali Tsabary',
-                    'Specializing in REparenting & breaking generational cycles',
-                    'Single mom who walks this path every day',
-                  ].map(item => (
-                    <li key={item} className="flex items-center gap-3 text-sm">
-                      <CheckCircle2 className="h-4 w-4 text-primary flex-shrink-0" />
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-                <Button asChild variant="outline">
-                  <Link href="/about">Read Full Story</Link>
-                </Button>
+                <div className="flex gap-3">
+                  <Button asChild variant="outline">
+                    <Link href="/about">Read My Story</Link>
+                  </Button>
+                  <Button asChild variant="ghost" className="text-primary">
+                    <Link href="/book-call">Free Consult Call <ArrowRight className="ml-1.5 h-4 w-4" /></Link>
+                  </Button>
+                </div>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Testimonials */}
+        {/* Are you ready? + 3 service boxes */}
         <section className="py-24 bg-secondary/20">
+          <div className="container">
+            <div className="text-center mb-14">
+              <p className="text-sm font-medium text-primary uppercase tracking-wider mb-4">How we work together</p>
+              <h2 className="font-serif text-4xl md:text-5xl font-bold mb-5 leading-snug">
+                Are you ready to connect with<br className="hidden md:block" /> other mamas like you?
+              </h2>
+              <p className="text-muted-foreground text-lg max-w-xl mx-auto">
+                Whether you&apos;re looking for community, personalized coaching, or a course to grow at your own pace — there&apos;s a place for you here.
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+              {services.map((s) => {
+                const Icon = s.icon
+                return (
+                  <div key={s.title} className={`flex flex-col rounded-2xl border p-8 bg-card ${s.accent}`}>
+                    <div className={`w-11 h-11 rounded-xl flex items-center justify-center mb-5 ${s.iconBg}`}>
+                      <Icon className={`h-5 w-5 ${s.iconColor}`} />
+                    </div>
+                    <div className="flex items-center gap-2 mb-3">
+                      <h3 className="font-serif text-2xl font-bold">{s.title}</h3>
+                      <Badge variant={s.badgeVariant} className="text-xs">{s.badge}</Badge>
+                    </div>
+                    <p className="text-muted-foreground text-sm leading-relaxed mb-5 flex-1">
+                      {s.description}
+                    </p>
+                    <ul className="space-y-2 mb-7">
+                      {s.features.map(f => (
+                        <li key={f} className="flex items-start gap-2.5 text-sm">
+                          <CheckCircle2 className={`h-4 w-4 flex-shrink-0 mt-0.5 ${s.iconColor}`} />
+                          <span>{f}</span>
+                        </li>
+                      ))}
+                    </ul>
+                    <Button asChild variant="outline" className="w-full mt-auto">
+                      <Link href={s.cta.href}>
+                        {s.cta.label} <ArrowRight className="ml-2 h-4 w-4" />
+                      </Link>
+                    </Button>
+                  </div>
+                )
+              })}
+            </div>
+          </div>
+        </section>
+
+        {/* Testimonials */}
+        <section className="py-24 bg-background">
           <div className="container">
             <div className="text-center mb-16">
               <h2 className="font-serif text-4xl font-bold mb-4">
@@ -166,7 +213,7 @@ export default function HomePage() {
               </h2>
               <p className="text-muted-foreground">Nobody has it all figured out — and we&apos;re not meant to do this alone.</p>
             </div>
-            <div className="grid md:grid-cols-3 gap-8">
+            <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
               {testimonials.map((t) => (
                 <div key={t.name} className="flex flex-col p-6 rounded-2xl border bg-card">
                   <div className="flex gap-1 mb-4">
@@ -246,8 +293,8 @@ export default function HomePage() {
               <div className="space-y-2">
                 <p className="font-semibold text-xs uppercase tracking-wider text-muted-foreground mb-3">Explore</p>
                 <Link href="/about" className="block text-muted-foreground hover:text-foreground transition-colors">About Shira</Link>
-                <Link href="/#services" className="block text-muted-foreground hover:text-foreground transition-colors">Services</Link>
                 <Link href="/pricing" className="block text-muted-foreground hover:text-foreground transition-colors">Membership</Link>
+                <Link href="/courses" className="block text-muted-foreground hover:text-foreground transition-colors">Courses</Link>
                 <Link href="/book-call" className="block text-muted-foreground hover:text-foreground transition-colors">Free Consult Call</Link>
               </div>
               <div className="space-y-2">
