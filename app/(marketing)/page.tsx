@@ -139,7 +139,7 @@ export default function HomePage() {
           <div className="container">
             <div className="text-center mb-16">
               <h2 className="font-serif text-4xl md:text-5xl font-bold mb-5">
-                How We Work Together
+                Your Path Forward
               </h2>
               <p className="text-muted-foreground text-lg max-w-xl mx-auto">
                 Whether you&apos;re seeking community, private support, or self-paced learning — there&apos;s a path for you here.
