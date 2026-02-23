@@ -90,8 +90,8 @@ export default function HomePage() {
         <section className="relative overflow-hidden pt-24 pb-14 md:pt-32 md:pb-20">
           {/* Background image */}
           <div
-            className="absolute inset-0 bg-cover bg-no-repeat"
-            style={{ backgroundImage: "url('/hero.jpg')", backgroundPosition: '65% center' }}
+            className="absolute inset-0 bg-no-repeat"
+            style={{ backgroundImage: "url('/hero.jpg')", backgroundSize: '120%', backgroundPosition: '65% 30%' }}
           />
           {/* Dark overlay so text stays readable */}
           <div className="absolute inset-0 bg-black/50" />
