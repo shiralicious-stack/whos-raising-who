@@ -50,7 +50,7 @@ export default function HomePage() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button asChild size="lg" className="text-base px-8">
                 <Link href="/pricing">
-                  Join the Community <ArrowRight className="ml-2 h-4 w-4" />
+                  Join the Community
                 </Link>
               </Button>
               <Button asChild variant="outline" size="lg" className="text-base px-8">
