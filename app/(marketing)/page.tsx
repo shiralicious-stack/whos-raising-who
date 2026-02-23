@@ -87,7 +87,7 @@ export default function HomePage() {
       <main className="flex-1">
 
         {/* 1. Hero */}
-        <section className="relative overflow-hidden bg-gradient-to-br from-warm-50 via-background to-sage-50 py-32 md:py-44">
+        <section className="relative overflow-hidden bg-gradient-to-br from-warm-50 via-background to-sage-50 pt-32 pb-16 md:pt-44 md:pb-20">
           <div className="container max-w-3xl text-center">
             <Badge variant="secondary" className="mb-8 px-4 py-1.5 text-sm font-medium">
               Conscious Parenting · Coaching · Community
@@ -118,12 +118,12 @@ export default function HomePage() {
         </section>
 
         {/* 2. Emotional Anchor */}
-        <section className="py-20 bg-background border-y border-border/50">
+        <section className="py-12 bg-background border-y border-border/50">
           <div className="container max-w-2xl text-center">
             <p className="font-serif text-2xl md:text-3xl font-semibold text-foreground leading-relaxed mb-4">
               Motherhood was never meant to be done alone.
             </p>
-            <p className="text-lg text-muted-foreground">
+            <p className="font-serif text-2xl md:text-3xl text-muted-foreground">
               Healing doesn&apos;t happen in isolation.
             </p>
           </div>
