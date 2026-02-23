@@ -96,9 +96,6 @@ export default function HomePage() {
           {/* Dark overlay so text stays readable */}
           <div className="absolute inset-0 bg-black/50" />
           <div className="relative container max-w-3xl text-center">
-            <Badge variant="secondary" className="mb-8 px-4 py-1.5 text-sm font-medium">
-              Conscious Parenting · Coaching · Community
-            </Badge>
             <h1 className="font-serif text-5xl font-bold leading-tight tracking-tight md:text-7xl text-white mb-6">
               Who&apos;s Raising{' '}
               <span className="text-primary">Who?</span>
