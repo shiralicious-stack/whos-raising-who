@@ -292,16 +292,16 @@ export default function CoachingAvailabilityPage() {
           {/* Date range + duration */}
           <div className="flex flex-wrap gap-4">
             <div className="space-y-2">
-              <Label>From</Label>
-              <Input type="date" value={fromDate} onChange={e => setFromDate(e.target.value)} min={today} className="w-40" />
+              <Label htmlFor="rec-from">From</Label>
+              <Input id="rec-from" type="date" value={fromDate} onChange={e => setFromDate(e.target.value)} min={today} className="w-40" />
             </div>
             <div className="space-y-2">
-              <Label>To</Label>
-              <Input type="date" value={toDate} onChange={e => setToDate(e.target.value)} min={fromDate || today} className="w-40" />
+              <Label htmlFor="rec-to">To</Label>
+              <Input id="rec-to" type="date" value={toDate} onChange={e => setToDate(e.target.value)} min={fromDate || today} className="w-40" />
             </div>
             <div className="space-y-2">
-              <Label>Duration (min)</Label>
-              <Input type="number" value={duration} onChange={e => setDuration(e.target.value)} min="15" step="5" className="w-24" />
+              <Label htmlFor="rec-duration">Duration (min)</Label>
+              <Input id="rec-duration" type="number" value={duration} onChange={e => setDuration(e.target.value)} min="15" step="5" className="w-24" />
             </div>
           </div>
 
@@ -362,8 +362,8 @@ export default function CoachingAvailabilityPage() {
             <p className="text-sm text-muted-foreground">Pick a date and select available times.</p>
           </div>
           <div className="space-y-2">
-            <Label>Date</Label>
-            <Input type="date" value={singleDate} onChange={e => setSingleDate(e.target.value)} min={today} className="w-44" />
+            <Label htmlFor="coaching-single-date">Date</Label>
+            <Input id="coaching-single-date" type="date" value={singleDate} onChange={e => setSingleDate(e.target.value)} min={today} className="w-44" />
           </div>
           {singleDate && (
             <div className="space-y-2">
@@ -381,8 +381,8 @@ export default function CoachingAvailabilityPage() {
           )}
           <div className="flex flex-wrap gap-4 items-end pt-2 border-t">
             <div className="space-y-2">
-              <Label>Duration (min)</Label>
-              <Input type="number" value={singleDuration} onChange={e => setSingleDuration(e.target.value)} min="15" step="5" className="w-24" />
+              <Label htmlFor="coaching-single-duration">Duration (min)</Label>
+              <Input id="coaching-single-duration" type="number" value={singleDuration} onChange={e => setSingleDuration(e.target.value)} min="15" step="5" className="w-24" />
             </div>
             <div className="flex-1 flex items-center justify-between">
               <div>
@@ -480,7 +480,11 @@ function SlotRow({ slot, selected, onToggleSelect, past }: {
       {/* Checkbox */}
       <div className="flex items-center pt-0.5">
         {canSelect ? (
-          <button onClick={onToggleSelect} className="text-muted-foreground hover:text-foreground transition-colors">
+          <button
+            onClick={onToggleSelect}
+            aria-label={selected ? 'Deselect slot' : 'Select slot'}
+            className="text-muted-foreground hover:text-foreground transition-colors"
+          >
             {selected
               ? <CheckSquare className="h-4 w-4 text-destructive" />
               : <Square className="h-4 w-4" />}

@@ -5,26 +5,26 @@ import { CheckCircle2, ArrowRight, Instagram, Facebook } from 'lucide-react'
 import Link from 'next/link'
 
 export const metadata = {
-  title: 'About Shira — Who\'s Raising Who',
+  title: 'About Shira - Who\'s Raising Who',
   description: 'Certified Conscious Parenting & Life Coach, trained by Dr. Shefali Tsabary. Learn about Shira\'s story, approach, and mission.',
 }
 
 const values = [
   {
     title: 'REparenting',
-    description: 'The work isn\'t just about your kids — it\'s about healing the parts of yourself that never got what they needed. As you heal, your parenting transforms.',
+    description: 'The work isn\'t just about your kids - it\'s about healing the parts of yourself that never got what they needed. As you heal, your parenting transforms.',
   },
   {
     title: 'Conscious Parenting',
-    description: 'Parenting from a place of awareness and intention, not reaction. Understanding why you do what you do — and choosing differently when it no longer serves you.',
+    description: 'Parenting from a place of awareness and intention, not reaction. Understanding why you do what you do - and choosing differently when it no longer serves you.',
   },
   {
     title: 'Breaking Cycles',
-    description: 'The patterns we carry — anxiety, control, disconnection — often come from our own upbringing. The cycle ends when we decide to do the inner work.',
+    description: 'The patterns we carry - anxiety, control, disconnection - often come from our own upbringing. The cycle ends when we decide to do the inner work.',
   },
   {
     title: 'Community Over Isolation',
-    description: 'Motherhood is not meant to be walked alone. Real growth happens in community — where we can be honest, vulnerable, and supported.',
+    description: 'Motherhood is not meant to be walked alone. Real growth happens in community - where we can be honest, vulnerable, and supported.',
   },
 ]
 
@@ -44,7 +44,7 @@ export default function AboutPage() {
                   Parenting begins with you.
                 </h1>
                 <p className="text-muted-foreground text-lg leading-relaxed mb-6">
-                  I&apos;m Shira Finkelstein — a Certified Conscious Parenting &amp; Life Coach,
+                  I&apos;m Shira Finkelstein - a Certified Conscious Parenting &amp; Life Coach,
                   single mom, and someone who&apos;s done (and continues to do) the hard inner work
                   this path requires.
                 </p>
@@ -76,7 +76,7 @@ export default function AboutPage() {
             <h2 className="font-serif text-3xl font-bold mb-6">My story</h2>
             <div className="space-y-5 text-muted-foreground leading-relaxed">
               <p>
-                I didn&apos;t set out to become a parenting coach. I set out to become a better parent —
+                I didn&apos;t set out to become a parenting coach. I set out to become a better parent -
                 and that path led me somewhere I never expected: inward.
               </p>
               <p>
@@ -86,7 +86,7 @@ export default function AboutPage() {
               </p>
               <p>
                 When I discovered the work of Dr. Shefali Tsabary and the framework of conscious parenting,
-                something clicked. It wasn&apos;t about managing my kids better — it was about understanding
+                something clicked. It wasn&apos;t about managing my kids better - it was about understanding
                 myself better. Our children don&apos;t need us to be perfect. They need us to be present,
                 honest, and willing to grow.
               </p>
@@ -96,7 +96,7 @@ export default function AboutPage() {
                 existed when I was just starting this journey.
               </p>
               <p className="font-medium text-foreground">
-                Motherhood is not meant to be walked alone. And the real work — the inner work — is
+                Motherhood is not meant to be walked alone. And the real work - the inner work - is
                 the most important work you&apos;ll ever do.
               </p>
             </div>
@@ -147,7 +147,7 @@ export default function AboutPage() {
             <h2 className="font-serif text-3xl font-bold mb-4">Let&apos;s connect</h2>
             <p className="text-muted-foreground mb-6">
               I love hearing from moms. Whether you have a question, want to share your story,
-              or just want to say hi — my inbox is always open.
+              or just want to say hi - my inbox is always open.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center mb-8">
               <Button asChild>

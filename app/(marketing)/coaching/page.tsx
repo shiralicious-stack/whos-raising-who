@@ -6,7 +6,7 @@ import { CheckCircle2, ArrowRight, Clock, Video, Users, Heart } from 'lucide-rea
 import Link from 'next/link'
 
 export const metadata = {
-  title: 'Coaching — Who\'s Raising Who',
+  title: 'Coaching - Who\'s Raising Who',
   description: 'Individual and group coaching with Shira Finkelstein. Book a free consult or schedule a 50-minute coaching session.',
 }
 
@@ -25,7 +25,7 @@ export default function CoachingPage() {
               The work that changes everything.
             </h1>
             <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto mb-10">
-              Whether you&apos;re navigating a specific challenge or ready to go deep on your patterns —
+              Whether you&apos;re navigating a specific challenge or ready to go deep on your patterns -
               coaching with Shira meets you exactly where you are.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
@@ -89,7 +89,7 @@ export default function CoachingPage() {
                   <Badge>Most Popular</Badge>
                 </div>
                 <p className="text-muted-foreground text-sm leading-relaxed mb-6 flex-1">
-                  Private, focused sessions with Shira — tailored entirely to your situation, your patterns,
+                  Private, focused sessions with Shira - tailored entirely to your situation, your patterns,
                   and what you want to shift. The deepest level of support available.
                 </p>
                 <ul className="space-y-2.5 mb-8">
@@ -97,7 +97,7 @@ export default function CoachingPage() {
                     '50-minute private sessions with Shira',
                     'Tailored entirely to your unique situation',
                     'Deep dive into your inner world',
-                    'Book directly — open to everyone',
+                    'Book directly - open to everyone',
                   ].map(f => (
                     <li key={f} className="flex items-start gap-2.5 text-sm">
                       <CheckCircle2 className="h-4 w-4 flex-shrink-0 mt-0.5 text-primary" />

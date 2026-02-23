@@ -104,7 +104,7 @@ export function PricingCards({ tiers }: PricingCardsProps) {
               )}
 
               <div className="mb-6">
-                <h3 className="font-serif text-2xl font-bold mb-2">{tier.name}</h3>
+                <h2 className="font-serif text-2xl font-bold mb-2">{tier.name}</h2>
                 <p className="text-muted-foreground text-sm">{tier.description}</p>
               </div>
 

@@ -3,15 +3,16 @@ import { notFound } from 'next/navigation'
 import { CourseBuilder } from '@/components/admin/course-builder'
 
 interface PageProps {
-  params: { id: string }
+  params: Promise<{ id: string }>
 }
 
 export const metadata = { title: 'Admin — Edit Course' }
 
 export default async function AdminCourseEditorPage({ params }: PageProps) {
+  const { id } = await params
   const supabase = await createClient()
 
-  if (params.id === 'new') {
+  if (id === 'new') {
     return <CourseBuilder course={null} />
   }
 
@@ -24,7 +25,7 @@ export default async function AdminCourseEditorPage({ params }: PageProps) {
         lessons(*)
       )
     `)
-    .eq('id', params.id)
+    .eq('id', id)
     .single()
 
   if (error || !course) notFound()

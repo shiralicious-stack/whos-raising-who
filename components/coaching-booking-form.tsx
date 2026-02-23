@@ -127,12 +127,13 @@ export function CoachingBookingForm() {
           <button
             onClick={prevMonth}
             disabled={viewYear === today.getFullYear() && viewMonth <= today.getMonth()}
+            aria-label="Previous month"
             className="p-1.5 rounded-lg hover:bg-muted transition-colors disabled:opacity-30 disabled:cursor-not-allowed"
           >
             <ChevronLeft className="h-5 w-5" />
           </button>
           <p className="font-semibold text-sm">{MONTHS[viewMonth]} {viewYear}</p>
-          <button onClick={nextMonth} className="p-1.5 rounded-lg hover:bg-muted transition-colors">
+          <button onClick={nextMonth} aria-label="Next month" className="p-1.5 rounded-lg hover:bg-muted transition-colors">
             <ChevronRight className="h-5 w-5" />
           </button>
         </div>
@@ -178,7 +179,7 @@ export function CoachingBookingForm() {
         )}
 
         {!loading && slots.length === 0 && (
-          <p className="text-center text-sm text-muted-foreground mt-6">No available times yet — check back soon.</p>
+          <p className="text-center text-sm text-muted-foreground mt-6">No available times yet - check back soon.</p>
         )}
 
         <p className="text-xs text-muted-foreground mt-5 text-center">All times in Eastern Time</p>

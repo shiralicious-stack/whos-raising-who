@@ -6,14 +6,14 @@ import { BookOpen, Lock, ArrowRight, Calendar } from 'lucide-react'
 import Link from 'next/link'
 
 export const metadata = {
-  title: 'Courses — Who\'s Raising Who',
+  title: 'Courses - Who\'s Raising Who',
   description: 'Self-paced and live group courses on conscious parenting, REparenting, triggers, and more.',
 }
 
 export default async function CoursesPage() {
   const supabase = await createClient()
 
-  // Get user — may be null for public visitors
+  // Get user - may be null for public visitors
   const { data: { user } } = await supabase.auth.getUser()
 
   const [{ data: courses }, subscriptionResult, purchasesResult] = await Promise.all([
@@ -66,13 +66,13 @@ export default async function CoursesPage() {
               Learn at your own pace.
             </h1>
             <p className="text-lg text-muted-foreground leading-relaxed max-w-xl mx-auto">
-              Self-paced prerecorded courses and live group courses taught by Shira —
+              Self-paced prerecorded courses and live group courses taught by Shira -
               on conscious parenting, triggers, REparenting, and more.
             </p>
           </div>
         </section>
 
-        {/* Group courses — coming soon */}
+        {/* Group courses - coming soon */}
         <section className="py-20 bg-secondary/20 border-y border-border/50">
           <div className="container max-w-4xl">
             <div className="flex items-center gap-3 mb-8">
@@ -105,7 +105,7 @@ export default async function CoursesPage() {
               <div className="text-center py-16 text-muted-foreground">
                 <BookOpen className="h-12 w-12 mx-auto mb-4 opacity-30" />
                 <p className="text-lg font-medium">Courses coming soon</p>
-                <p className="text-sm mt-1">Shira is working on courses — check back soon!</p>
+                <p className="text-sm mt-1">Shira is working on courses - check back soon!</p>
               </div>
             ) : (
               <div className="grid sm:grid-cols-2 gap-6">
@@ -161,7 +161,7 @@ export default async function CoursesPage() {
                         ) : reason === 'purchase' ? (
                           <form action="/api/stripe/checkout" method="POST">
                             <input type="hidden" name="courseId" value={course.id} />
-                            <Button type="submit" variant="outline" className="w-full">Buy — ${course.price}</Button>
+                            <Button type="submit" variant="outline" className="w-full">Buy - ${course.price}</Button>
                           </form>
                         ) : (
                           <Button asChild variant="outline" className="w-full">
@@ -179,7 +179,7 @@ export default async function CoursesPage() {
             <div className="mt-14 rounded-2xl bg-secondary/40 border p-8 text-center">
               <h3 className="font-serif text-2xl font-bold mb-3">Unlock the full library</h3>
               <p className="text-muted-foreground mb-6">
-                Community members get access to a growing library of courses and webinars — included with membership.
+                Community members get access to a growing library of courses and webinars - included with membership.
               </p>
               <Button asChild size="lg">
                 <Link href="/pricing">See Membership Options <ArrowRight className="ml-2 h-4 w-4" /></Link>

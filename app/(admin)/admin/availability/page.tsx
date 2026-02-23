@@ -199,16 +199,16 @@ export default function AvailabilityPage() {
           {/* Date range */}
           <div className="flex flex-wrap gap-4">
             <div className="space-y-2">
-              <Label>From</Label>
-              <Input type="date" value={fromDate} onChange={e => setFromDate(e.target.value)} min={today} className="w-40" />
+              <Label htmlFor="batch-from">From</Label>
+              <Input id="batch-from" type="date" value={fromDate} onChange={e => setFromDate(e.target.value)} min={today} className="w-40" />
             </div>
             <div className="space-y-2">
-              <Label>To</Label>
-              <Input type="date" value={toDate} onChange={e => setToDate(e.target.value)} min={fromDate || today} className="w-40" />
+              <Label htmlFor="batch-to">To</Label>
+              <Input id="batch-to" type="date" value={toDate} onChange={e => setToDate(e.target.value)} min={fromDate || today} className="w-40" />
             </div>
             <div className="space-y-2">
-              <Label>Duration (min)</Label>
-              <Input type="number" value={batchDuration} onChange={e => setBatchDuration(e.target.value)} min="15" step="15" className="w-24" />
+              <Label htmlFor="batch-duration">Duration (min)</Label>
+              <Input id="batch-duration" type="number" value={batchDuration} onChange={e => setBatchDuration(e.target.value)} min="15" step="15" className="w-24" />
             </div>
           </div>
 
@@ -283,8 +283,8 @@ export default function AvailabilityPage() {
           </div>
 
           <div className="space-y-2">
-            <Label>Date</Label>
-            <Input type="date" value={singleDate} onChange={e => setSingleDate(e.target.value)} min={today} className="w-44" />
+            <Label htmlFor="single-date">Date</Label>
+            <Input id="single-date" type="date" value={singleDate} onChange={e => setSingleDate(e.target.value)} min={today} className="w-44" />
           </div>
 
           {singleDate && (
@@ -311,8 +311,8 @@ export default function AvailabilityPage() {
 
           <div className="flex flex-wrap gap-4 items-end pt-2 border-t">
             <div className="space-y-2">
-              <Label>Duration (min)</Label>
-              <Input type="number" value={singleDuration} onChange={e => setSingleDuration(e.target.value)} min="15" step="15" className="w-24" />
+              <Label htmlFor="single-duration">Duration (min)</Label>
+              <Input id="single-duration" type="number" value={singleDuration} onChange={e => setSingleDuration(e.target.value)} min="15" step="15" className="w-24" />
             </div>
             <div className="flex-1 flex items-center justify-between">
               <div>
@@ -401,7 +401,7 @@ function SlotRow({ slot, onDelete, deleting, past }: {
           {slot.is_booked ? 'Booked' : 'Open'}
         </Badge>
         {!past && !slot.is_booked && onDelete && (
-          <Button variant="ghost" size="icon" className="h-8 w-8 text-muted-foreground hover:text-destructive" onClick={onDelete} disabled={deleting}>
+          <Button variant="ghost" size="icon" aria-label="Delete slot" className="h-8 w-8 text-muted-foreground hover:text-destructive" onClick={onDelete} disabled={deleting}>
             {deleting ? <Loader2 className="h-4 w-4 animate-spin" /> : <Trash2 className="h-4 w-4" />}
           </Button>
         )}

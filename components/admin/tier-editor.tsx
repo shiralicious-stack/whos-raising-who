@@ -51,7 +51,7 @@ export function TierEditor({ tiers: initialTiers }: TierEditorProps) {
         <div key={tier.id} className="rounded-xl border bg-card p-6 space-y-5">
           <div className="flex items-center justify-between">
             <div>
-              <h3 className="font-semibold text-lg">Tier {tier.tier_level} — {tier.name}</h3>
+              <h2 className="font-semibold text-lg">Tier {tier.tier_level} - {tier.name}</h2>
             </div>
             <Button
               size="sm"
@@ -67,22 +67,25 @@ export function TierEditor({ tiers: initialTiers }: TierEditorProps) {
 
           <div className="grid grid-cols-2 gap-4">
             <div className="space-y-2">
-              <Label>Display Name</Label>
+              <Label htmlFor={`tier-name-${tier.id}`}>Display Name</Label>
               <Input
+                id={`tier-name-${tier.id}`}
                 value={tier.name}
                 onChange={e => updateTier(tier.id, 'name', e.target.value)}
               />
             </div>
             <div className="space-y-2">
-              <Label>Description</Label>
+              <Label htmlFor={`tier-desc-${tier.id}`}>Description</Label>
               <Input
+                id={`tier-desc-${tier.id}`}
                 value={tier.description ?? ''}
                 onChange={e => updateTier(tier.id, 'description', e.target.value)}
               />
             </div>
             <div className="space-y-2">
-              <Label>Monthly Price ($)</Label>
+              <Label htmlFor={`tier-monthly-${tier.id}`}>Monthly Price ($)</Label>
               <Input
+                id={`tier-monthly-${tier.id}`}
                 type="number"
                 step="0.01"
                 value={tier.price_monthly}
@@ -90,8 +93,9 @@ export function TierEditor({ tiers: initialTiers }: TierEditorProps) {
               />
             </div>
             <div className="space-y-2">
-              <Label>Annual Price ($)</Label>
+              <Label htmlFor={`tier-annual-${tier.id}`}>Annual Price ($)</Label>
               <Input
+                id={`tier-annual-${tier.id}`}
                 type="number"
                 step="0.01"
                 value={tier.price_annual}
@@ -99,8 +103,9 @@ export function TierEditor({ tiers: initialTiers }: TierEditorProps) {
               />
             </div>
             <div className="space-y-2">
-              <Label>Stripe Price ID — Monthly</Label>
+              <Label htmlFor={`tier-stripe-monthly-${tier.id}`}>Stripe Price ID - Monthly</Label>
               <Input
+                id={`tier-stripe-monthly-${tier.id}`}
                 value={tier.stripe_price_id_monthly ?? ''}
                 onChange={e => updateTier(tier.id, 'stripe_price_id_monthly', e.target.value)}
                 placeholder="price_..."
@@ -108,8 +113,9 @@ export function TierEditor({ tiers: initialTiers }: TierEditorProps) {
               />
             </div>
             <div className="space-y-2">
-              <Label>Stripe Price ID — Annual</Label>
+              <Label htmlFor={`tier-stripe-annual-${tier.id}`}>Stripe Price ID - Annual</Label>
               <Input
+                id={`tier-stripe-annual-${tier.id}`}
                 value={tier.stripe_price_id_annual ?? ''}
                 onChange={e => updateTier(tier.id, 'stripe_price_id_annual', e.target.value)}
                 placeholder="price_..."

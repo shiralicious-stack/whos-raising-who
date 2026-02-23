@@ -1,19 +1,22 @@
+export const dynamic = 'force-dynamic'
+
 import Link from 'next/link'
 import { ArrowRight, Users, BookOpen, Heart, Star, CheckCircle2, Instagram, Facebook } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { MarketingNav } from '@/components/marketing-nav'
+import { getPageContent } from '@/lib/site-content'
 
-const testimonials = [
+const defaultTestimonials = [
   {
     name: 'Rachel M.',
     tier: 'Group Coaching Member',
-    text: "Shira helped me see that my daughter's tantrums weren't the problem — my reactions were. The shift that happened in just a few weeks still amazes me. I feel like a different mom.",
+    text: "Shira helped me see that my daughter's tantrums weren't the problem - my reactions were. The shift that happened in just a few weeks still amazes me. I feel like a different mom.",
   },
   {
     name: 'David K.',
     tier: '1:1 Coaching Client',
-    text: "I came in skeptical — I'm a dad, not exactly the target audience. But Shira's approach gets to the root of things fast. I'm more patient, more present, and my kids feel it.",
+    text: "I came in skeptical - I'm a dad, not exactly the target audience. But Shira's approach gets to the root of things fast. I'm more patient, more present, and my kids feel it.",
   },
   {
     name: 'Maya S.',
@@ -31,7 +34,7 @@ const services = [
     description:
       'A warm, judgment-free space for mothers to share honestly, support one another, and grow together. Through weekly virtual gatherings and guided reflection, you\'ll be surrounded by women who truly understand this season of life.',
     features: [
-      'Weekly virtual meetups',
+      'Weekly virtual meetups - curated discussions on self-awareness and parenting',
       'Guided journaling prompts and reflection tools',
       'A safe space to speak openly without judgment',
       'Meaningful connection with like-minded mothers',
@@ -47,12 +50,12 @@ const services = [
     badge: 'Most Popular',
     badgeVariant: 'default' as const,
     description:
-      'Group sessions or private one-on-one work with Shira — this is where real transformation happens. Understand your triggers, break generational patterns, and respond from intention.',
+      'Group sessions or private one-on-one work with Shira - this is where real transformation happens. Understand your triggers, break generational patterns, and respond from intention.',
     features: [
       'Live group coaching sessions with Shira',
       'Private 1:1 sessions (VIP tier)',
       'Deep dive into your triggers & inner patterns',
-      'Practical tools to break cycles — for good',
+      'Practical tools to break cycles - for good',
     ],
     cta: { label: 'Explore Coaching', href: '/pricing' },
     accent: 'border-primary/20 bg-primary/5',
@@ -70,7 +73,7 @@ const services = [
       'Self-paced prerecorded video courses',
       'Live group courses taught by Shira',
       'Topics: big feelings, triggers, transitions & more',
-      'Courses never expire — revisit anytime',
+      'Courses never expire - revisit anytime',
     ],
     cta: { label: 'Browse Courses', href: '/courses' },
     accent: 'border-warm-200 bg-warm-50/50',
@@ -79,7 +82,28 @@ const services = [
   },
 ]
 
-export default function HomePage() {
+export default async function HomePage() {
+  const content = await getPageContent('home')
+
+  const heroHeading    = content.hero_heading     ?? "Who's Raising Who?"
+  const heroTagline    = content.hero_tagline     ?? 'Because parenting begins with you.'
+  const heroBody       = content.hero_body        ?? "To raise emotionally healthy children, we must first understand ourselves. Our children reflect our unhealed parts back to us - and that's the invitation."
+  const anchorLine1    = content.anchor_line1     ?? 'Motherhood was never meant to be done alone.'
+  const anchorLine2    = content.anchor_line2     ?? "Healing doesn't happen in isolation."
+  const aboutHeading   = content.about_heading    ?? 'Parenting begins with you.'
+  const aboutPara1     = content.about_para1      ?? "I'm Shira Finkelstein - a Certified Conscious Parenting & Life Coach trained by Dr. Shefali Tsabary, and a single mom who walks this path every day."
+  const aboutPara2     = content.about_para2      ?? "I created Who's Raising Who because the most powerful parenting work happens when we turn inward. Our children mirror our patterns, fears, and unhealed wounds. When we do the inner work, everything shifts."
+  const freeCallHeading = content.free_call_heading ?? 'Not sure where to begin?'
+  const freeCallBody   = content.free_call_body   ?? 'Book a free 15-minute consult call with Shira.'
+  const ctaHeading     = content.cta_heading      ?? 'Ready to do the real work?'
+  const ctaBody        = content.cta_body         ?? 'Connect, heal, and grow alongside other moms who get it. Start your membership today - cancel anytime.'
+
+  let testimonials = defaultTestimonials
+  try {
+    const parsed = JSON.parse(content.testimonials ?? 'null')
+    if (Array.isArray(parsed) && parsed.length > 0) testimonials = parsed
+  } catch { /* use default */ }
+
   return (
     <div className="flex flex-col min-h-screen">
       <MarketingNav />
@@ -97,15 +121,13 @@ export default function HomePage() {
           <div className="absolute inset-0 bg-black/50" />
           <div className="relative container max-w-3xl text-center">
             <h1 className="font-serif text-5xl font-bold leading-tight tracking-tight md:text-7xl text-white mb-6">
-              Who&apos;s Raising{' '}
-              <span className="text-primary">Who?</span>
+              {heroHeading}
             </h1>
             <p className="text-xl font-medium text-white/90 mb-4">
-              Because parenting begins with you.
+              {heroTagline}
             </p>
-            <p className="text-lg text-white/75 leading-relaxed max-w-2xl mx-auto mb-12">
-              To raise emotionally healthy children, we must first understand ourselves.
-              Our children reflect our unhealed parts back to us — and that&apos;s the invitation.
+            <p className="text-lg text-white/75 leading-relaxed max-w-2xl mx-auto mb-12 whitespace-pre-line">
+              {heroBody}
             </p>
             <Button asChild size="lg" className="text-base px-10">
               <Link href="/pricing">Join the Community</Link>
@@ -126,10 +148,10 @@ export default function HomePage() {
         <section className="py-12 bg-background border-y border-border/50">
           <div className="container max-w-2xl text-center">
             <p className="font-serif text-2xl md:text-3xl font-semibold text-foreground leading-relaxed mb-4">
-              Motherhood was never meant to be done alone.
+              {anchorLine1}
             </p>
             <p className="font-serif text-2xl md:text-3xl text-muted-foreground">
-              Healing doesn&apos;t happen in isolation.
+              {anchorLine2}
             </p>
           </div>
         </section>
@@ -142,7 +164,7 @@ export default function HomePage() {
                 Your Path Forward
               </h2>
               <p className="text-muted-foreground text-lg max-w-xl mx-auto">
-                Whether you&apos;re seeking community, private support, or self-paced learning — there&apos;s a path for you here.
+                Whether you&apos;re seeking community, private support, or self-paced learning - there&apos;s a path for you here.
               </p>
             </div>
 
@@ -199,18 +221,11 @@ export default function HomePage() {
               <div>
                 <p className="text-sm font-medium text-primary uppercase tracking-wider mb-4">About Shira</p>
                 <h2 className="font-serif text-4xl font-bold mb-6 leading-snug">
-                  Parenting begins with you.
+                  {aboutHeading}
                 </h2>
                 <div className="space-y-4 text-muted-foreground leading-relaxed mb-8">
-                  <p>
-                    I&apos;m Shira Finkelstein — a Certified Conscious Parenting &amp; Life Coach
-                    trained by Dr. Shefali Tsabary, and a single mom who walks this path every day.
-                  </p>
-                  <p>
-                    I created Who&apos;s Raising Who because the most powerful parenting work happens
-                    when we turn inward. Our children mirror our patterns, fears, and unhealed wounds.
-                    When we do the inner work, everything shifts.
-                  </p>
+                  <p>{aboutPara1}</p>
+                  <p>{aboutPara2}</p>
                 </div>
                 <Button asChild variant="outline">
                   <Link href="/about">Read My Story</Link>
@@ -224,10 +239,10 @@ export default function HomePage() {
         <section className="py-8 bg-secondary/20 border-y border-border/50">
           <div className="container max-w-xl text-center">
             <h2 className="font-serif text-3xl font-bold mb-4">
-              Not sure where to begin?
+              {freeCallHeading}
             </h2>
             <p className="text-muted-foreground text-lg mb-8">
-              Book a free 15-minute consult call with Shira.
+              {freeCallBody}
             </p>
             <Button asChild size="lg" className="px-10">
               <Link href="/book-call">Schedule Your Free Call</Link>
@@ -243,15 +258,15 @@ export default function HomePage() {
                 What Moms Are Saying
               </h2>
               <p className="text-muted-foreground">
-                Nobody has it all figured out — and we&apos;re not meant to do this alone.
+                Nobody has it all figured out - and we&apos;re not meant to do this alone.
               </p>
             </div>
             <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-              {testimonials.map((t) => (
-                <div key={t.name} className="flex flex-col p-7 rounded-2xl border bg-card">
+              {testimonials.map((t, i) => (
+                <div key={i} className="flex flex-col p-7 rounded-2xl border bg-card">
                   <div className="flex gap-1 mb-5">
-                    {Array.from({ length: 5 }).map((_, i) => (
-                      <Star key={i} className="h-4 w-4 fill-primary text-primary" />
+                    {Array.from({ length: 5 }).map((_, j) => (
+                      <Star key={j} className="h-4 w-4 fill-primary text-primary" />
                     ))}
                   </div>
                   <p className="text-foreground leading-relaxed mb-6 flex-1">&ldquo;{t.text}&rdquo;</p>
@@ -269,11 +284,10 @@ export default function HomePage() {
         <section className="py-16 bg-primary text-primary-foreground">
           <div className="container text-center max-w-2xl">
             <h2 className="font-serif text-4xl font-bold mb-6">
-              Ready to do the real work?
+              {ctaHeading}
             </h2>
             <p className="text-primary-foreground/80 text-lg mb-10">
-              Connect, heal, and grow alongside other moms who get it.
-              Start your membership today — cancel anytime.
+              {ctaBody}
             </p>
             <Button asChild size="lg" variant="secondary" className="text-base px-10">
               <Link href="/pricing">

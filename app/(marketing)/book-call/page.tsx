@@ -5,7 +5,7 @@ import { Clock, Video, Phone } from 'lucide-react'
 import Link from 'next/link'
 
 export const metadata = {
-  title: 'Book a Free Consult Call — Who\'s Raising Who',
+  title: 'Book a Free Consult Call - Who\'s Raising Who',
   description: 'Book a free 15-minute consult call with Shira Finkelstein, Certified Conscious Parenting Coach.',
 }
 

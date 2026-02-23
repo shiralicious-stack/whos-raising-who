@@ -29,7 +29,7 @@ export default async function PricingPage() {
         </h1>
         <p className="text-muted-foreground text-lg max-w-xl mx-auto">
           Every tier includes community access. Go deeper when you&apos;re ready.
-          Cancel or change anytime — no pressure, no games.
+          Cancel or change anytime - no pressure, no games.
         </p>
       </div>
 
@@ -47,7 +47,7 @@ export default async function PricingPage() {
           {[
             {
               q: 'Can I switch tiers?',
-              a: 'Yes — upgrade or downgrade anytime from your account settings. Changes take effect on your next billing date.',
+              a: 'Yes - upgrade or downgrade anytime from your account settings. Changes take effect on your next billing date.',
             },
             {
               q: 'What happens to my courses if I cancel?',
@@ -55,11 +55,11 @@ export default async function PricingPage() {
             },
             {
               q: 'Is there a free trial?',
-              a: "Not currently, but Community tier is just $19/mo — a low-risk way to see if it's a fit before going deeper.",
+              a: "Not currently, but Community tier is just $19/mo - a low-risk way to see if it's a fit before going deeper.",
             },
             {
               q: 'Are 1:1 sessions really with Shira?',
-              a: "Yes — every VIP session is directly with Shira, not an associate. VIP members get one 50-min session per month included.",
+              a: "Yes - every VIP session is directly with Shira, not an associate. VIP members get one 50-min session per month included.",
             },
           ].map(({ q, a }) => (
             <div key={q} className="border rounded-xl p-6">

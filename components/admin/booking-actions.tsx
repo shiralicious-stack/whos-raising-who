@@ -69,7 +69,7 @@ export function BookingActionsPanel({ bookings, showConfirmButton = true }: Book
                 {booking.notes ? (
                   <p className="truncate italic">&ldquo;{booking.notes}&rdquo;</p>
                 ) : (
-                  <span className="opacity-50">—</span>
+                  <span className="opacity-50">-</span>
                 )}
               </td>
               <td className="p-4">

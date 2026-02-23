@@ -4,7 +4,7 @@ import { useState } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import {
-  LayoutDashboard, BookOpen, Calendar, Clock, Users, CreditCard, ArrowLeft, Menu, X, Phone, Heart
+  LayoutDashboard, BookOpen, Calendar, Clock, Users, CreditCard, ArrowLeft, Menu, X, Phone, Heart, FileText
 } from 'lucide-react'
 import { cn } from '@/lib/utils'
 
@@ -17,6 +17,7 @@ const navItems = [
   { href: '/admin/tiers', icon: CreditCard, label: 'Tiers' },
   { href: '/admin/availability', icon: Phone, label: 'Intro Calls' },
   { href: '/admin/coaching', icon: Heart, label: 'Coaching Sessions' },
+  { href: '/admin/content', icon: FileText, label: 'Site Content' },
 ]
 
 export function AdminNav() {

@@ -11,7 +11,7 @@ interface BookingFormProps {
   userId: string
 }
 
-// Available time slots — in a production app these would come from
+// Available time slots - in a production app these would come from
 // an availability table managed by Shira in the admin panel.
 const TIME_SLOTS = [
   '9:00 AM', '10:00 AM', '11:00 AM',

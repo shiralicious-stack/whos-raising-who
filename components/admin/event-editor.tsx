@@ -117,9 +117,9 @@ export function EventEditor({ event: initialEvent }: EventEditorProps) {
               onChange={e => setMinTierLevel(Number(e.target.value) as 1 | 2 | 3)}
               className="w-full rounded-md border border-input bg-background px-3 py-2 text-sm"
             >
-              <option value={1}>Tier 1 — Community</option>
-              <option value={2}>Tier 2 — Growth</option>
-              <option value={3}>Tier 3 — VIP</option>
+              <option value={1}>Tier 1 - Community</option>
+              <option value={2}>Tier 2 - Growth</option>
+              <option value={3}>Tier 3 - VIP</option>
             </select>
           </div>
         </div>

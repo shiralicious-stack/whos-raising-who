@@ -4,7 +4,7 @@ import { Calendar, MapPin, ArrowRight, Users } from 'lucide-react'
 import Link from 'next/link'
 
 export const metadata = {
-  title: 'Events — Who\'s Raising Who',
+  title: 'Events - Who\'s Raising Who',
   description: 'In-person and virtual events, workshops, and retreats with Shira Finkelstein.',
 }
 
@@ -60,7 +60,7 @@ export default function EventsPage() {
             </div>
             <div className="grid sm:grid-cols-3 gap-6">
               {[
-                { icon: Calendar, title: 'Virtual Workshops', description: 'Live online sessions focused on a specific topic — triggers, big feelings, transitions, and more.' },
+                { icon: Calendar, title: 'Virtual Workshops', description: 'Live online sessions focused on a specific topic - triggers, big feelings, transitions, and more.' },
                 { icon: MapPin, title: 'In-Person Retreats', description: 'Full-day or weekend gatherings that blend personal growth work with genuine connection and rest.' },
                 { icon: Users, title: 'Community Events', description: 'Casual virtual hangouts, Q&As with Shira, and special sessions just for community members.' },
               ].map(item => {

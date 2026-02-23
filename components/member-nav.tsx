@@ -44,6 +44,7 @@ export function MemberNav({ profile }: MemberNavProps) {
       <button
         className="fixed top-4 left-4 z-50 lg:hidden p-2 rounded-lg bg-card border shadow-sm"
         onClick={() => setMobileOpen(!mobileOpen)}
+        aria-label={mobileOpen ? 'Close navigation' : 'Open navigation'}
       >
         {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
       </button>
@@ -93,14 +94,8 @@ export function MemberNav({ profile }: MemberNavProps) {
             </Avatar>
             <div className="flex-1 min-w-0">
               <p className="text-sm font-medium truncate">{profile?.full_name ?? 'Member'}</p>
-              <p className="text-xs text-muted-foreground capitalize">{profile?.role}</p>
             </div>
           </div>
-          {profile?.role === 'admin' && (
-            <Button asChild variant="outline" size="sm" className="w-full mb-2">
-              <Link href="/admin">Admin Panel</Link>
-            </Button>
-          )}
           <Button
             variant="ghost"
             size="sm"
