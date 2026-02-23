@@ -1,7 +1,7 @@
 import { IntroBookingForm } from '@/components/intro-booking-form'
 import { MarketingNav } from '@/components/marketing-nav'
 import { Badge } from '@/components/ui/badge'
-import { Clock, Video } from 'lucide-react'
+import { Clock, Video, Phone } from 'lucide-react'
 import Link from 'next/link'
 
 export const metadata = {
@@ -35,7 +35,7 @@ export default function BookCallPage() {
                     <Clock className="h-3.5 w-3.5" /> 15 minutes
                   </span>
                   <span className="flex items-center gap-1.5">
-                    <Video className="h-3.5 w-3.5" /> Video call
+                    <Video className="h-3.5 w-3.5" /><Phone className="h-3 w-3 -ml-1" /> Video or Phone
                   </span>
                   <Badge variant="secondary" className="text-xs">Free</Badge>
                 </div>

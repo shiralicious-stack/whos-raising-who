@@ -3,7 +3,7 @@ import { createAdminClient } from '@/lib/supabase/admin'
 import { getResend } from '@/lib/resend'
 
 export async function POST(request: NextRequest) {
-  const { slotId, name, email, notes } = await request.json()
+  const { slotId, name, email, phone, meetingType, notes } = await request.json()
 
   if (!slotId || !name || !email) {
     return NextResponse.json({ error: 'Missing required fields.' }, { status: 400 })
@@ -32,7 +32,7 @@ export async function POST(request: NextRequest) {
   if (updateError) return NextResponse.json({ error: 'Booking failed. Please try again.' }, { status: 500 })
 
   // Create booking record
-  await supabase.from('intro_bookings').insert({ slot_id: slotId, name, email, notes })
+  await supabase.from('intro_bookings').insert({ slot_id: slotId, name, email, phone: phone ?? null, meeting_type: meetingType ?? 'video', notes })
 
   // Format the date/time for emails
   const date = new Date(slot.scheduled_at)
@@ -53,6 +53,8 @@ export async function POST(request: NextRequest) {
       <h2>New intro call booking</h2>
       <p><strong>Name:</strong> ${name}</p>
       <p><strong>Email:</strong> ${email}</p>
+      ${phone ? `<p><strong>Phone:</strong> ${phone}</p>` : ''}
+      <p><strong>Meeting type:</strong> ${meetingType === 'phone' ? '📞 Phone call' : '🎥 Video call'}</p>
       <p><strong>Time:</strong> ${formatted}</p>
       <p><strong>Duration:</strong> ${slot.duration_minutes} minutes</p>
       ${notes ? `<p><strong>What they'd like to discuss:</strong> ${notes}</p>` : ''}
@@ -68,7 +70,7 @@ export async function POST(request: NextRequest) {
       <p>Hi ${name},</p>
       <p>Your free introductory call with Shira is confirmed!</p>
       <p><strong>${formatted}</strong></p>
-      <p>Shira will send you a video room link before the call. If you need to reschedule, just reply to this email.</p>
+      <p>${meetingType === 'phone' ? `Shira will call you at ${phone} at the scheduled time.` : 'Shira will send you a video room link before the call.'} If you need to reschedule, just reply to this email.</p>
       <p>Looking forward to connecting,<br/>Shira</p>
       <p style="color:#888;font-size:12px;">Who's Raising Who · hello@whosraisingwho.com</p>
     `,

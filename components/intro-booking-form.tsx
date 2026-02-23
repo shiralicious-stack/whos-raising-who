@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import { ChevronLeft, ChevronRight, CheckCircle2, Loader2, Clock } from 'lucide-react'
+import { ChevronLeft, ChevronRight, CheckCircle2, Loader2, Clock, Video, Phone } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
@@ -36,6 +36,8 @@ export function IntroBookingForm() {
   const [selectedSlot, setSelectedSlot] = useState<Slot | null>(null)
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
+  const [phone, setPhone] = useState('')
+  const [meetingType, setMeetingType] = useState<'video' | 'phone'>('video')
   const [notes, setNotes] = useState('')
   const [submitting, setSubmitting] = useState(false)
   const [error, setError] = useState<string | null>(null)
@@ -90,13 +92,17 @@ export function IntroBookingForm() {
       setError('Please fill in your name and email.')
       return
     }
+    if (meetingType === 'phone' && !phone.trim()) {
+      setError('Please enter your phone number for a phone call.')
+      return
+    }
     setSubmitting(true)
     setError(null)
     try {
       const res = await fetch('/api/intro/book', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ slotId: selectedSlot.id, name, email, notes }),
+        body: JSON.stringify({ slotId: selectedSlot.id, name, email, phone, meetingType, notes }),
       })
       const data = await res.json()
       if (!res.ok) throw new Error(data.error ?? 'Booking failed')
@@ -117,7 +123,10 @@ export function IntroBookingForm() {
         </div>
         <h3 className="font-serif text-2xl font-bold mb-2">You&apos;re booked!</h3>
         <p className="text-muted-foreground max-w-xs">
-          A confirmation is on its way to <strong>{email}</strong>. Shira will send a meeting link before your call.
+          A confirmation is on its way to <strong>{email}</strong>.{' '}
+          {meetingType === 'phone'
+            ? 'Shira will call you at the number you provided.'
+            : 'Shira will send a video room link before your call.'}
         </p>
       </div>
     )
@@ -125,7 +134,6 @@ export function IntroBookingForm() {
 
   const grid = buildGrid(viewYear, viewMonth)
   const daySlots = selectedDay ? getSlotsForDay(selectedDay.y, selectedDay.m, selectedDay.d) : []
-  const isCurrentMonthInPast = new Date(viewYear, viewMonth + 1, 0) < new Date(today.getFullYear(), today.getMonth(), today.getDate())
 
   // ── Main calendar layout ──────────────────────────────────
   return (
@@ -262,6 +270,37 @@ export function IntroBookingForm() {
               </button>
             </div>
 
+            {/* Meeting type toggle */}
+            <div className="space-y-1.5">
+              <Label className="text-xs">How would you like to meet?</Label>
+              <div className="grid grid-cols-2 gap-2">
+                <button
+                  type="button"
+                  onClick={() => setMeetingType('video')}
+                  className={cn(
+                    'flex items-center justify-center gap-2 px-3 py-2.5 rounded-xl border text-sm font-medium transition-colors',
+                    meetingType === 'video'
+                      ? 'bg-primary text-primary-foreground border-primary'
+                      : 'bg-background border-border text-muted-foreground hover:border-primary/50 hover:text-foreground'
+                  )}
+                >
+                  <Video className="h-4 w-4" /> Video Call
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setMeetingType('phone')}
+                  className={cn(
+                    'flex items-center justify-center gap-2 px-3 py-2.5 rounded-xl border text-sm font-medium transition-colors',
+                    meetingType === 'phone'
+                      ? 'bg-primary text-primary-foreground border-primary'
+                      : 'bg-background border-border text-muted-foreground hover:border-primary/50 hover:text-foreground'
+                  )}
+                >
+                  <Phone className="h-4 w-4" /> Phone Call
+                </button>
+              </div>
+            </div>
+
             <div className="space-y-1.5">
               <Label htmlFor="name" className="text-xs">Name <span className="text-destructive">*</span></Label>
               <Input id="name" value={name} onChange={e => setName(e.target.value)} placeholder="Your full name" required className="h-9 text-sm" />
@@ -269,6 +308,20 @@ export function IntroBookingForm() {
             <div className="space-y-1.5">
               <Label htmlFor="email" className="text-xs">Email <span className="text-destructive">*</span></Label>
               <Input id="email" type="email" value={email} onChange={e => setEmail(e.target.value)} placeholder="you@example.com" required className="h-9 text-sm" />
+            </div>
+            <div className="space-y-1.5">
+              <Label htmlFor="phone" className="text-xs">
+                Phone Number {meetingType === 'phone' ? <span className="text-destructive">*</span> : <span className="text-muted-foreground">(optional)</span>}
+              </Label>
+              <Input
+                id="phone"
+                type="tel"
+                value={phone}
+                onChange={e => setPhone(e.target.value)}
+                placeholder="(555) 555-5555"
+                required={meetingType === 'phone'}
+                className="h-9 text-sm"
+              />
             </div>
             <div className="space-y-1.5">
               <Label htmlFor="notes" className="text-xs">What would you like to talk about? <span className="text-muted-foreground">(optional)</span></Label>
