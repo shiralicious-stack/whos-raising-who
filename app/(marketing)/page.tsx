@@ -47,18 +47,19 @@ export default function HomePage() {
               To raise emotionally healthy children, we must first understand ourselves.
               Our kids reflect our most unhealed parts back to us — and that&apos;s the invitation.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button asChild size="lg" className="text-base px-8">
-                <Link href="/pricing">
-                  Join the Community
-                </Link>
-              </Button>
-              <Button asChild variant="outline" size="lg" className="text-base px-8">
-                <Link href="/book-call">Book a Free Call</Link>
-              </Button>
-            </div>
+            <Button asChild size="lg" className="text-base px-8">
+              <Link href="/pricing">
+                Join the Community
+              </Link>
+            </Button>
             <p className="mt-6 text-sm text-muted-foreground">
               Motherhood is not meant to be walked alone.
+            </p>
+            <p className="mt-3 text-sm text-muted-foreground">
+              Not ready yet?{' '}
+              <Link href="/book-call" className="text-primary underline underline-offset-4 hover:opacity-80 transition-opacity">
+                Start with a free 15-min call with Shira.
+              </Link>
             </p>
           </div>
         </section>
