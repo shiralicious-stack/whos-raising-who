@@ -221,7 +221,7 @@ export default function HomePage() {
         </section>
 
         {/* 5. Free Call */}
-        <section className="py-14 bg-secondary/20 border-y border-border/50">
+        <section className="py-8 bg-secondary/20 border-y border-border/50">
           <div className="container max-w-xl text-center">
             <h2 className="font-serif text-3xl font-bold mb-4">
               Not sure where to begin?
