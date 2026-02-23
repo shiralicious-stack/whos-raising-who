@@ -32,7 +32,7 @@ export default function BookCallPage() {
                 </div>
                 <div className="hidden sm:flex items-center gap-4 text-xs text-muted-foreground">
                   <span className="flex items-center gap-1.5">
-                    <Clock className="h-3.5 w-3.5" /> 30 minutes
+                    <Clock className="h-3.5 w-3.5" /> 15 minutes
                   </span>
                   <span className="flex items-center gap-1.5">
                     <Video className="h-3.5 w-3.5" /> Video call
