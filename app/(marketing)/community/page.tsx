@@ -107,14 +107,9 @@ export default function CommunityPage() {
             <p className="text-primary-foreground/80 text-lg mb-8">
               Join a community of moms who are doing the real work — together.
             </p>
-            <div className="flex flex-col sm:flex-row gap-3 justify-center">
-              <Button asChild size="lg" variant="secondary" className="px-10">
-                <Link href="/pricing">See Membership Options</Link>
-              </Button>
-              <Button asChild size="lg" variant="outline" className="px-10 border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10">
-                <Link href="/book-call">Talk to Shira First</Link>
-              </Button>
-            </div>
+            <Button asChild size="lg" variant="secondary" className="px-10">
+              <Link href="/pricing">See Membership Options</Link>
+            </Button>
           </div>
         </section>
 
