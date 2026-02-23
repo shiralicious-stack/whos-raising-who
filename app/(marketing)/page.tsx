@@ -87,19 +87,26 @@ export default function HomePage() {
       <main className="flex-1">
 
         {/* 1. Hero */}
-        <section className="relative overflow-hidden bg-gradient-to-br from-warm-50 via-background to-sage-50 pt-32 pb-16 md:pt-44 md:pb-20">
-          <div className="container max-w-3xl text-center">
+        <section className="relative overflow-hidden pt-32 pb-16 md:pt-44 md:pb-20">
+          {/* Background image */}
+          <div
+            className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+            style={{ backgroundImage: "url('/hero.jpg')" }}
+          />
+          {/* Dark overlay so text stays readable */}
+          <div className="absolute inset-0 bg-black/50" />
+          <div className="relative container max-w-3xl text-center">
             <Badge variant="secondary" className="mb-8 px-4 py-1.5 text-sm font-medium">
               Conscious Parenting · Coaching · Community
             </Badge>
-            <h1 className="font-serif text-5xl font-bold leading-tight tracking-tight md:text-7xl text-foreground mb-6">
+            <h1 className="font-serif text-5xl font-bold leading-tight tracking-tight md:text-7xl text-white mb-6">
               Who&apos;s Raising{' '}
               <span className="text-primary">Who?</span>
             </h1>
-            <p className="text-xl font-medium text-foreground/80 mb-4">
+            <p className="text-xl font-medium text-white/90 mb-4">
               Because parenting begins with you.
             </p>
-            <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto mb-12">
+            <p className="text-lg text-white/75 leading-relaxed max-w-2xl mx-auto mb-12">
               To raise emotionally healthy children, we must first understand ourselves.
               Our children reflect our unhealed parts back to us — and that&apos;s the invitation.
             </p>
@@ -109,7 +116,7 @@ export default function HomePage() {
             <p className="mt-5">
               <Link
                 href="/book-call"
-                className="text-sm text-muted-foreground underline underline-offset-4 hover:text-foreground transition-colors"
+                className="text-sm text-white/70 underline underline-offset-4 hover:text-white transition-colors"
               >
                 Book a Free Call
               </Link>
@@ -118,6 +125,7 @@ export default function HomePage() {
         </section>
 
         {/* 2. Emotional Anchor */}
+
         <section className="py-12 bg-background border-y border-border/50">
           <div className="container max-w-2xl text-center">
             <p className="font-serif text-2xl md:text-3xl font-semibold text-foreground leading-relaxed mb-4">
