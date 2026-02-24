@@ -31,12 +31,12 @@ const services = [
     badge: null,
     badgeVariant: 'secondary' as const,
     description:
-      'A warm, judgment-free space for mothers to share honestly, support one another, and grow together. Through weekly virtual gatherings and guided reflection, you\'ll be surrounded by women who truly understand this season of life.',
+      'A warm, judgment-free space for moms to share honestly, support one another, and grow together. Through weekly virtual gatherings and guided reflection, you\'ll be surrounded by women who truly understand this season of life.',
     features: [
       'Weekly virtual meetups - curated discussions on self-awareness and parenting',
       'Guided journaling prompts and reflection tools',
       'A safe space to speak openly without judgment',
-      'Meaningful connection with like-minded mothers',
+      'Meaningful connection with like-minded moms',
     ],
     cta: { label: 'Join the Community', href: '/pricing' },
     accent: 'border-sage-200 bg-sage-50/50',
@@ -49,7 +49,7 @@ const services = [
     badge: 'Most Popular',
     badgeVariant: 'default' as const,
     description:
-      'A private, supportive space for mothers ready to grow with intention. Through personalized sessions and guided reflection, we explore your patterns and triggers — so you can reparent yourself with compassion and break generational cycles.',
+      'A private, supportive space for moms ready to grow with intention. Through personalized sessions and guided reflection, we explore your patterns and triggers — so you can reparent yourself with compassion and break generational cycles.',
     features: [
       'Personalized one-on-one support',
       'Deeper understanding of your patterns and triggers',
@@ -68,7 +68,7 @@ const services = [
     badge: 'Self-Paced & Live',
     badgeVariant: 'outline' as const,
     description:
-      'A flexible space for mothers who want to grow at their own pace or learn alongside others. Through guided teachings and live group experiences, we explore triggers and the patterns that shape how we show up — so we can get out of our own way and create more peaceful, connected relationships with ourselves, our children, and the people around us.',
+      'A flexible space for moms who want to grow at their own pace or learn alongside others. Through guided teachings and live group experiences, we explore triggers and the patterns that shape how we show up — so we can get out of our own way and create more peaceful, connected relationships with ourselves, our children, and the people around us.',
     features: [
       'Self-paced learning you can move through intentionally',
       'Live group courses with guided discussion',
