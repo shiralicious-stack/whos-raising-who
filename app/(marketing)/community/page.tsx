@@ -124,7 +124,7 @@ export default async function CommunityPage() {
         </section>
 
         {/* CTA */}
-        <section className="py-20 bg-primary text-primary-foreground">
+        <section className="py-20 bg-primary/80 text-primary-foreground">
           <div className="container text-center max-w-xl">
             <h2 className="font-serif text-4xl font-bold mb-5">{ctaHeading}</h2>
             <p className="text-primary-foreground/80 text-lg mb-8">

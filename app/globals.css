@@ -15,7 +15,8 @@
     --popover-foreground: 20 30% 12%;
 
     /* Primary: sage green */
-    --primary: 152 36% 48%;
+    /* Primary: sage green */
+    --primary: 152 36% 54%;
     --primary-foreground: 38 40% 97%;
 
     /* Secondary: soft sage tint */
@@ -27,7 +28,7 @@
     --muted-foreground: 152 10% 44%;
 
     /* Accent: deeper sage */
-    --accent: 148 28% 44%;
+    --accent: 148 28% 48%;
     --accent-foreground: 38 40% 97%;
 
     --destructive: 0 84% 60%;
@@ -35,7 +36,7 @@
 
     --border: 140 18% 83%;
     --input: 140 18% 83%;
-    --ring: 152 36% 48%;
+    --ring: 152 36% 54%;
 
     --radius: 0.625rem;
   }

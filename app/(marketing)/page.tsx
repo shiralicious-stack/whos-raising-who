@@ -279,7 +279,7 @@ export default async function HomePage() {
         </section>
 
         {/* 7. Final CTA */}
-        <section className="py-16 bg-primary text-primary-foreground">
+        <section className="py-16 bg-primary/80 text-primary-foreground">
           <div className="container text-center max-w-2xl">
             <h2 className="font-serif text-4xl font-bold mb-6">
               {ctaHeading}
