@@ -15,7 +15,7 @@
     --popover-foreground: 20 30% 12%;
 
     /* Primary: sage green */
-    --primary: 152 36% 40%;
+    --primary: 152 36% 48%;
     --primary-foreground: 38 40% 97%;
 
     /* Secondary: soft sage tint */
@@ -27,7 +27,7 @@
     --muted-foreground: 152 10% 44%;
 
     /* Accent: deeper sage */
-    --accent: 148 28% 36%;
+    --accent: 148 28% 44%;
     --accent-foreground: 38 40% 97%;
 
     --destructive: 0 84% 60%;
@@ -35,7 +35,7 @@
 
     --border: 140 18% 83%;
     --input: 140 18% 83%;
-    --ring: 152 36% 40%;
+    --ring: 152 36% 48%;
 
     --radius: 0.625rem;
   }
@@ -50,7 +50,7 @@
     --popover: 20 18% 11%;
     --popover-foreground: 38 30% 92%;
 
-    --primary: 152 34% 54%;
+    --primary: 152 34% 62%;
     --primary-foreground: 20 20% 8%;
 
     --secondary: 148 18% 18%;
@@ -59,7 +59,7 @@
     --muted: 148 18% 18%;
     --muted-foreground: 140 15% 60%;
 
-    --accent: 148 28% 50%;
+    --accent: 148 28% 58%;
     --accent-foreground: 38 40% 97%;
 
     --destructive: 0 62% 50%;
@@ -67,7 +67,7 @@
 
     --border: 148 15% 22%;
     --input: 148 15% 22%;
-    --ring: 152 34% 54%;
+    --ring: 152 34% 62%;
   }
 }
 
