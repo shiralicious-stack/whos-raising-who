@@ -209,14 +209,12 @@ export default async function HomePage() {
         <section className="py-16 bg-background">
           <div className="container max-w-4xl">
             <div className="grid md:grid-cols-2 gap-16 items-center">
-              <div className="rounded-2xl overflow-hidden aspect-[4/5] bg-gradient-to-br from-warm-100 via-warm-50 to-sage-100 flex items-center justify-center">
-                <div className="text-center">
-                  <div className="w-28 h-28 rounded-full bg-primary/15 border-4 border-primary/20 flex items-center justify-center mx-auto mb-4">
-                    <span className="font-serif text-5xl font-bold text-primary">S</span>
-                  </div>
-                  <p className="text-sm text-muted-foreground font-medium">Shira Finkelstein</p>
-                  <p className="text-xs text-muted-foreground">Certified Conscious Parenting Coach</p>
-                </div>
+              <div className="rounded-2xl overflow-hidden aspect-[4/5]">
+                <img
+                  src="/shira-about.jpg"
+                  alt="Shira Finkelstein"
+                  className="w-full h-full object-cover object-top"
+                />
               </div>
               <div>
                 <p className="text-sm font-medium text-primary uppercase tracking-wider mb-4">About Shira</p>
