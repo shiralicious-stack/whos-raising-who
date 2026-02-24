@@ -121,7 +121,7 @@ export default async function HomePage() {
           <div className="absolute inset-0 bg-black/50" />
           <div className="relative container max-w-3xl text-center">
             <h1 className="font-serif text-4xl font-bold leading-tight tracking-tight md:text-7xl text-white mb-6">
-              {heroHeading}
+              Who&apos;s Raising <span className="text-sage-300">Who?</span>
             </h1>
             <p className="text-xl font-medium text-white/90 mb-4">
               {heroTagline}
