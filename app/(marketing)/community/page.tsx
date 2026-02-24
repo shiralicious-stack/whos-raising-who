@@ -104,7 +104,7 @@ export default async function CommunityPage() {
         </section>
 
         {/* How it works */}
-        <section className="py-16 bg-secondary/20 border-y border-border/50">
+        <section className="py-10 md:py-16 bg-secondary/20 border-y border-border/50">
           <div className="container max-w-3xl">
             <div className="text-center mb-10">
               <h2 className="font-serif text-4xl font-bold mb-4">How it works</h2>
@@ -124,7 +124,7 @@ export default async function CommunityPage() {
         </section>
 
         {/* CTA */}
-        <section className="py-20 bg-primary/80 text-primary-foreground">
+        <section className="py-12 md:py-20 bg-primary/80 text-primary-foreground">
           <div className="container text-center max-w-xl">
             <h2 className="font-serif text-4xl font-bold mb-5">{ctaHeading}</h2>
             <p className="text-primary-foreground/80 text-lg mb-8">

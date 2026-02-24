@@ -13,10 +13,10 @@ export default function EventsPage() {
       <main className="flex-1">
 
         {/* Hero */}
-        <section className="bg-gradient-to-br from-warm-50 via-background to-sage-50 py-24 md:py-32">
+        <section className="bg-gradient-to-br from-warm-50 via-background to-sage-50 py-12 md:py-32">
           <div className="container max-w-3xl text-center">
             <p className="text-sm font-medium text-primary uppercase tracking-wider mb-4">Events</p>
-            <h1 className="font-serif text-5xl md:text-6xl font-bold leading-tight mb-6">
+            <h1 className="font-serif text-3xl md:text-6xl font-bold leading-tight mb-6">
               Come together.
             </h1>
             <p className="text-lg text-muted-foreground leading-relaxed max-w-xl mx-auto">
@@ -27,7 +27,7 @@ export default function EventsPage() {
         </section>
 
         {/* Coming soon */}
-        <section className="py-32 bg-background">
+        <section className="py-12 md:py-32 bg-background">
           <div className="container max-w-xl text-center">
             <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-6">
               <Calendar className="h-7 w-7 text-primary" />
@@ -49,10 +49,10 @@ export default function EventsPage() {
         </section>
 
         {/* What to expect */}
-        <section className="py-24 bg-secondary/20 border-t border-border/50">
+        <section className="py-12 md:py-24 bg-secondary/20 border-t border-border/50">
           <div className="container max-w-3xl">
             <div className="text-center mb-14">
-              <h2 className="font-serif text-3xl font-bold mb-4">What to expect</h2>
+              <h2 className="font-serif text-2xl md:text-3xl font-bold mb-4">What to expect</h2>
               <p className="text-muted-foreground">When events are live, here&apos;s what you&apos;ll find.</p>
             </div>
             <div className="grid sm:grid-cols-3 gap-6">
@@ -63,7 +63,7 @@ export default function EventsPage() {
               ].map(item => {
                 const Icon = item.icon
                 return (
-                  <div key={item.title} className="p-6 rounded-2xl border bg-card text-center">
+                  <div key={item.title} className="p-4 md:p-6 rounded-2xl border bg-card text-center">
                     <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center mx-auto mb-4">
                       <Icon className="h-5 w-5 text-primary" />
                     </div>

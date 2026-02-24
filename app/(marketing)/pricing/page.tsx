@@ -19,9 +19,9 @@ export default async function PricingPage() {
   return (
     <div className="min-h-screen bg-background">
       {/* Header */}
-      <div className="bg-gradient-to-br from-warm-50 via-background to-sage-50 py-20 text-center">
+      <div className="bg-gradient-to-br from-warm-50 via-background to-sage-50 py-12 md:py-20 text-center">
         <Badge variant="secondary" className="mb-4">Simple, Honest Pricing</Badge>
-        <h1 className="font-serif text-5xl font-bold mb-4">
+        <h1 className="font-serif text-3xl md:text-5xl font-bold mb-4">
           Choose Your Path
         </h1>
         <p className="text-muted-foreground text-lg max-w-xl mx-auto">
@@ -36,8 +36,8 @@ export default async function PricingPage() {
       </div>
 
       {/* FAQ */}
-      <div className="container max-w-2xl pb-20">
-        <h2 className="font-serif text-3xl font-bold text-center mb-10">
+      <div className="container max-w-2xl pb-12 md:pb-20">
+        <h2 className="font-serif text-2xl md:text-3xl font-bold text-center mb-10">
           Common Questions
         </h2>
         <div className="space-y-6">

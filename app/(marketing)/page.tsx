@@ -111,7 +111,7 @@ export default async function HomePage() {
       <main className="flex-1">
 
         {/* 1. Hero */}
-        <section className="relative overflow-hidden pt-24 pb-14 md:pt-32 md:pb-20">
+        <section className="relative overflow-hidden pt-16 pb-10 md:pt-32 md:pb-20">
           {/* Background image */}
           <div
             className="absolute inset-0 bg-no-repeat"
@@ -120,7 +120,7 @@ export default async function HomePage() {
           {/* Dark overlay so text stays readable */}
           <div className="absolute inset-0 bg-black/50" />
           <div className="relative container max-w-3xl text-center">
-            <h1 className="font-serif text-5xl font-bold leading-tight tracking-tight md:text-7xl text-white mb-6">
+            <h1 className="font-serif text-4xl font-bold leading-tight tracking-tight md:text-7xl text-white mb-6">
               {heroHeading}
             </h1>
             <p className="text-xl font-medium text-white/90 mb-4">
@@ -172,7 +172,7 @@ export default async function HomePage() {
               {services.map((s) => {
                 const Icon = s.icon
                 return (
-                  <div key={s.title} className={`flex flex-col rounded-2xl border p-8 bg-card ${s.accent}`}>
+                  <div key={s.title} className={`flex flex-col rounded-2xl border p-5 md:p-8 bg-card ${s.accent}`}>
                     <div className={`w-11 h-11 rounded-xl flex items-center justify-center mb-6 ${s.iconBg}`}>
                       <Icon className={`h-5 w-5 ${s.iconColor}`} />
                     </div>
@@ -208,7 +208,7 @@ export default async function HomePage() {
         {/* 4. About Shira */}
         <section className="py-16 bg-background">
           <div className="container max-w-4xl">
-            <div className="grid md:grid-cols-2 gap-16 items-center">
+            <div className="grid md:grid-cols-2 gap-8 md:gap-16 items-center">
               <div className="rounded-2xl overflow-hidden aspect-[4/5]">
                 <img
                   src="/shira-about.jpg"
@@ -261,7 +261,7 @@ export default async function HomePage() {
             </div>
             <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
               {testimonials.map((t, i) => (
-                <div key={i} className="flex flex-col p-7 rounded-2xl border bg-card">
+                <div key={i} className="flex flex-col p-5 md:p-7 rounded-2xl border bg-card">
                   <div className="flex gap-1 mb-5">
                     {Array.from({ length: 5 }).map((_, j) => (
                       <Star key={j} className="h-4 w-4 fill-primary text-primary" />
@@ -279,7 +279,7 @@ export default async function HomePage() {
         </section>
 
         {/* 7. Final CTA */}
-        <section className="py-16 bg-primary/80 text-primary-foreground">
+        <section className="py-10 md:py-16 bg-primary/80 text-primary-foreground">
           <div className="container text-center max-w-2xl">
             <h2 className="font-serif text-4xl font-bold mb-6">
               {ctaHeading}

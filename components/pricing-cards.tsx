@@ -53,7 +53,7 @@ export function PricingCards({ tiers }: PricingCardsProps) {
   return (
     <div>
       {/* Interval toggle */}
-      <div className="flex items-center justify-center gap-4 mb-12">
+      <div className="flex items-center justify-center gap-4 mb-6 md:mb-12">
         <button
           onClick={() => setInterval('monthly')}
           className={cn(
@@ -80,7 +80,7 @@ export function PricingCards({ tiers }: PricingCardsProps) {
       </div>
 
       {/* Cards */}
-      <div className="grid md:grid-cols-3 gap-8 items-start">
+      <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8 items-start">
         {tiers.map((tier) => {
           const isPopular = tier.tier_level === 2
           const price =
@@ -91,7 +91,7 @@ export function PricingCards({ tiers }: PricingCardsProps) {
             <div
               key={tier.id}
               className={cn(
-                'relative rounded-2xl border p-8 flex flex-col',
+                'relative rounded-2xl border p-5 md:p-8 flex flex-col',
                 isPopular
                   ? 'border-2 border-primary shadow-xl bg-card'
                   : 'border-border bg-card'

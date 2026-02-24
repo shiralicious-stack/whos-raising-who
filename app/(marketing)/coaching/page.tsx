@@ -15,10 +15,10 @@ export default function CoachingPage() {
       <main className="flex-1">
 
         {/* Hero */}
-        <section className="bg-gradient-to-br from-warm-50 via-background to-sage-50 py-24 md:py-32">
+        <section className="bg-gradient-to-br from-warm-50 via-background to-sage-50 py-12 md:py-32">
           <div className="container max-w-3xl text-center">
             <p className="text-sm font-medium text-primary uppercase tracking-wider mb-4">Coaching</p>
-            <h1 className="font-serif text-5xl md:text-6xl font-bold leading-tight mb-6">
+            <h1 className="font-serif text-3xl md:text-6xl font-bold leading-tight mb-6">
               The work that changes everything.
             </h1>
             <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto mb-10">
@@ -37,16 +37,16 @@ export default function CoachingPage() {
         </section>
 
         {/* Two offerings */}
-        <section className="py-24 bg-background">
+        <section className="py-12 md:py-24 bg-background">
           <div className="container max-w-4xl">
             <div className="text-center mb-14">
-              <h2 className="font-serif text-4xl font-bold mb-4">Choose your path</h2>
+              <h2 className="font-serif text-3xl md:text-4xl font-bold mb-4">Choose your path</h2>
               <p className="text-muted-foreground text-lg">Two ways to work with Shira directly.</p>
             </div>
             <div className="grid md:grid-cols-2 gap-6">
 
               {/* Group Coaching */}
-              <div className="rounded-2xl border bg-card p-8 flex flex-col">
+              <div className="rounded-2xl border bg-card p-5 md:p-8 flex flex-col">
                 <div className="w-11 h-11 rounded-xl bg-sage-100 flex items-center justify-center mb-5">
                   <Users className="h-5 w-5 text-sage-600" />
                 </div>
@@ -77,7 +77,7 @@ export default function CoachingPage() {
               </div>
 
               {/* 1:1 Coaching */}
-              <div className="rounded-2xl border-2 border-primary/20 bg-primary/5 p-8 flex flex-col">
+              <div className="rounded-2xl border-2 border-primary/20 bg-primary/5 p-5 md:p-8 flex flex-col">
                 <div className="w-11 h-11 rounded-xl bg-primary/10 flex items-center justify-center mb-5">
                   <Heart className="h-5 w-5 text-primary" />
                 </div>
@@ -112,7 +112,7 @@ export default function CoachingPage() {
         </section>
 
         {/* Free consult CTA */}
-        <section className="py-16 bg-secondary/20 border-y border-border/50">
+        <section className="py-10 md:py-16 bg-secondary/20 border-y border-border/50">
           <div className="container max-w-3xl">
             <div className="flex flex-col sm:flex-row items-center justify-between gap-6">
               <div>
@@ -129,10 +129,10 @@ export default function CoachingPage() {
         </section>
 
         {/* Book a session */}
-        <section id="book-session" className="py-24 bg-background">
+        <section id="book-session" className="py-12 md:py-24 bg-background">
           <div className="container max-w-3xl">
             <div className="text-center mb-10">
-              <h2 className="font-serif text-4xl font-bold mb-3">Book a Coaching Session</h2>
+              <h2 className="font-serif text-3xl md:text-4xl font-bold mb-3">Book a Coaching Session</h2>
               <p className="text-muted-foreground">50-minute private session with Shira. Open to everyone.</p>
             </div>
 

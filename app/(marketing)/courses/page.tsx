@@ -56,10 +56,10 @@ export default async function CoursesPage() {
       <main className="flex-1">
 
         {/* Hero */}
-        <section className="bg-gradient-to-br from-warm-50 via-background to-sage-50 py-24 md:py-28">
+        <section className="bg-gradient-to-br from-warm-50 via-background to-sage-50 py-12 md:py-28">
           <div className="container max-w-3xl text-center">
             <p className="text-sm font-medium text-primary uppercase tracking-wider mb-4">Courses</p>
-            <h1 className="font-serif text-5xl md:text-6xl font-bold leading-tight mb-6">
+            <h1 className="font-serif text-3xl md:text-6xl font-bold leading-tight mb-6">
               Learn at your own pace.
             </h1>
             <p className="text-lg text-muted-foreground leading-relaxed max-w-xl mx-auto">
@@ -70,14 +70,14 @@ export default async function CoursesPage() {
         </section>
 
         {/* Group courses - coming soon */}
-        <section className="py-20 bg-secondary/20 border-y border-border/50">
+        <section className="py-10 md:py-20 bg-secondary/20 border-y border-border/50">
           <div className="container max-w-4xl">
             <div className="flex items-center gap-3 mb-8">
               <Calendar className="h-5 w-5 text-primary" />
               <h2 className="font-serif text-3xl font-bold">Live Group Courses</h2>
               <Badge variant="outline">Coming Soon</Badge>
             </div>
-            <div className="rounded-2xl border bg-card p-8 text-center">
+            <div className="rounded-2xl border bg-card p-5 md:p-8 text-center">
               <p className="text-muted-foreground text-lg leading-relaxed max-w-xl mx-auto mb-6">
                 Shira is building live group courses where you&apos;ll learn alongside other moms in real time.
                 When a course is coming up, the date and sign-up will appear here.
@@ -90,7 +90,7 @@ export default async function CoursesPage() {
         </section>
 
         {/* Course library */}
-        <section className="py-24 bg-background">
+        <section className="py-12 md:py-24 bg-background">
           <div className="container max-w-4xl">
             <div className="flex items-center gap-3 mb-10">
               <BookOpen className="h-5 w-5 text-primary" />
@@ -173,8 +173,8 @@ export default async function CoursesPage() {
             )}
 
             {/* Bottom join CTA */}
-            <div className="mt-14 rounded-2xl bg-secondary/40 border p-8 text-center">
-              <h3 className="font-serif text-2xl font-bold mb-3">Unlock the full library</h3>
+            <div className="mt-14 rounded-2xl bg-secondary/40 border p-5 md:p-8 text-center">
+              <h3 className="font-serif text-xl md:text-2xl font-bold mb-3">Unlock the full library</h3>
               <p className="text-muted-foreground mb-6">
                 Community members get access to a growing library of courses and webinars - included with membership.
               </p>

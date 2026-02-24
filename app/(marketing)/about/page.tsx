@@ -32,12 +32,12 @@ export default function AboutPage() {
     <div className="flex flex-col min-h-screen">
       <main className="flex-1">
         {/* Hero */}
-        <section className="bg-gradient-to-br from-warm-50 via-background to-sage-50 py-20">
+        <section className="bg-gradient-to-br from-warm-50 via-background to-sage-50 py-12 md:py-20">
           <div className="container max-w-4xl">
-            <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div className="grid md:grid-cols-2 gap-6 md:gap-12 items-center">
               <div>
                 <Badge variant="outline" className="mb-4">About Shira</Badge>
-                <h1 className="font-serif text-5xl font-bold leading-tight mb-6">
+                <h1 className="font-serif text-3xl md:text-5xl font-bold leading-tight mb-6">
                   Parenting begins with you.
                 </h1>
                 <p className="text-muted-foreground text-lg leading-relaxed mb-6">
@@ -68,7 +68,7 @@ export default function AboutPage() {
         </section>
 
         {/* Story */}
-        <section className="py-20 bg-background">
+        <section className="py-12 md:py-20 bg-background">
           <div className="container max-w-2xl">
             <h2 className="font-serif text-3xl font-bold mb-6">My story</h2>
             <div className="space-y-5 text-muted-foreground leading-relaxed">
@@ -101,7 +101,7 @@ export default function AboutPage() {
         </section>
 
         {/* Credentials */}
-        <section className="py-20 bg-secondary/20">
+        <section className="py-12 md:py-20 bg-secondary/20">
           <div className="container max-w-3xl">
             <h2 className="font-serif text-3xl font-bold mb-8 text-center">Credentials & Training</h2>
             <div className="grid sm:grid-cols-2 gap-4">
@@ -123,7 +123,7 @@ export default function AboutPage() {
         </section>
 
         {/* Values */}
-        <section className="py-20 bg-background">
+        <section className="py-12 md:py-20 bg-background">
           <div className="container max-w-3xl">
             <h2 className="font-serif text-3xl font-bold mb-3 text-center">What I believe</h2>
             <p className="text-muted-foreground text-center mb-10">The principles that guide every session, course, and community conversation.</p>
@@ -139,7 +139,7 @@ export default function AboutPage() {
         </section>
 
         {/* Connect */}
-        <section className="py-20 bg-secondary/20">
+        <section className="py-12 md:py-20 bg-secondary/20">
           <div className="container max-w-xl text-center">
             <h2 className="font-serif text-3xl font-bold mb-4">Let&apos;s connect</h2>
             <p className="text-muted-foreground mb-6">
