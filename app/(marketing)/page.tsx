@@ -92,8 +92,9 @@ export default async function HomePage() {
   const anchorLine1    = content.anchor_line1     ?? 'Motherhood was never meant to be done alone.'
   const anchorLine2    = content.anchor_line2     ?? "Healing doesn't happen in isolation."
   const aboutHeading   = content.about_heading    ?? 'Parenting begins with you.'
-  const aboutPara1     = content.about_para1      ?? "I'm Shira Finkelstein - a Certified Conscious Parenting & Life Coach trained by Dr. Shefali Tsabary, and a single mom who walks this path every day."
-  const aboutPara2     = content.about_para2      ?? "I created Who's Raising Who because the most powerful parenting work happens when we turn inward. Our children mirror our patterns, fears, and unhealed wounds. When we do the inner work, everything shifts."
+  const aboutPara1     = content.about_para1      ?? "I'm Shira Finkelstein — a Certified Conscious Parenting & Life Coach trained & coached by Dr. Shefali Tsabary, and a mom who walks this path every day."
+  const aboutPara2     = content.about_para2      ?? "To me, conscious parenting isn't about fixing our children — or ourselves. It's about understanding our patterns, triggers, and past experiences so we can show up with greater calm, clarity, and intention."
+  const aboutPara3     = content.about_para3      ?? "When we approach our parenting with curiosity and compassion, self-awareness naturally deepens. From that awareness comes greater presence, more peace, and deeper, more connected relationships rooted in love."
   const freeCallHeading = content.free_call_heading ?? 'Not sure where to begin?'
   const freeCallBody   = content.free_call_body   ?? 'Book a free 15-minute consult call with Shira.'
   const ctaHeading     = content.cta_heading      ?? 'Ready to do the real work?'
@@ -225,6 +226,7 @@ export default async function HomePage() {
                 <div className="space-y-4 text-muted-foreground leading-relaxed mb-8">
                   <p>{aboutPara1}</p>
                   <p>{aboutPara2}</p>
+                  <p>{aboutPara3}</p>
                 </div>
                 <Button asChild variant="outline">
                   <Link href="/about">Read My Story</Link>
