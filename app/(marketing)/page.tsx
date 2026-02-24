@@ -73,7 +73,7 @@ const services = [
       'Self-paced learning you can move through intentionally',
       'Live group courses with guided discussion',
       'Understand your triggers and emotional responses',
-      'Experience real, transformational growth through self-awareness',
+      'Transformational growth through self-awareness',
       'Practical tools for more connection at home',
     ],
     cta: { label: 'Browse Courses', href: '/courses' },
