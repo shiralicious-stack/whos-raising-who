@@ -68,12 +68,13 @@ const services = [
     badge: 'Self-Paced & Live',
     badgeVariant: 'outline' as const,
     description:
-      'Learn on your own schedule with prerecorded self-paced courses, or join Shira live in group courses where you learn alongside other moms in real time.',
+      'A flexible space for mothers who want to grow at their own pace or learn alongside others. Through guided teachings and live group experiences, we explore triggers and the patterns that shape how we show up — so we can get out of our own way and create more peaceful, connected relationships with ourselves, our children, and the people around us.',
     features: [
-      'Self-paced prerecorded video courses',
-      'Live group courses taught by Shira',
-      'Topics: big feelings, triggers, transitions & more',
-      'Courses never expire - revisit anytime',
+      'Self-paced learning you can move through intentionally',
+      'Live group courses with guided discussion',
+      'Understand your triggers and emotional responses',
+      'Experience real, transformational growth through self-awareness',
+      'Practical tools for more connection at home',
     ],
     cta: { label: 'Browse Courses', href: '/courses' },
     accent: 'border-sage-200 bg-sage-50/50',
