@@ -76,9 +76,9 @@ const services = [
       'Courses never expire - revisit anytime',
     ],
     cta: { label: 'Browse Courses', href: '/courses' },
-    accent: 'border-warm-200 bg-warm-50/50',
-    iconColor: 'text-warm-700',
-    iconBg: 'bg-warm-100',
+    accent: 'border-sage-200 bg-sage-50/50',
+    iconColor: 'text-sage-600',
+    iconBg: 'bg-sage-100',
   },
 ]
 

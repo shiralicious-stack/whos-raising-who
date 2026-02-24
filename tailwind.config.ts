@@ -51,18 +51,18 @@ const config: Config = {
           DEFAULT: 'hsl(var(--card))',
           foreground: 'hsl(var(--card-foreground))',
         },
-        // Brand palette — earthy, warm, grounded
+        // Brand palette — sage green, calm, grounded
         brand: {
-          50:  '#fdf6f0',
-          100: '#fae8d6',
-          200: '#f4ccac',
-          300: '#ecaa7a',
-          400: '#e2834a',
-          500: '#c96830',   // primary terracotta
-          600: '#a85228',
-          700: '#874020',
-          800: '#633019',
-          900: '#3d1e0e',
+          50:  '#f2f8f5',
+          100: '#dceee5',
+          200: '#b6d9c8',
+          300: '#87bda6',
+          400: '#5a9e84',
+          500: '#3d8266',   // primary sage green
+          600: '#2f6650',
+          700: '#244d3d',
+          800: '#1a362b',
+          900: '#0f2019',
         },
         sage: {
           50:  '#f4f7f2',
