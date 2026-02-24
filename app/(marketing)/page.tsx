@@ -68,7 +68,7 @@ const services = [
     badge: 'Self-Paced & Live',
     badgeVariant: 'outline' as const,
     description:
-      'A flexible space for moms who want to grow at their own pace or learn alongside others. Through guided teachings and live group experiences, we explore triggers and the patterns that shape how we show up — so we can get out of our own way and create more peaceful, connected relationships with ourselves, our children, and the people around us.',
+      'A flexible space for moms to grow at their own pace or learn alongside others. Through guided teachings and live group experiences, we explore triggers and the patterns that shape how we show up — so we can get out of our own way and create more peaceful, connected relationships with ourselves, our children, and the people around us.',
     features: [
       'Self-paced learning you can move through intentionally',
       'Live group courses with guided discussion',
