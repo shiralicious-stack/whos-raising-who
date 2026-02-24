@@ -31,7 +31,7 @@ export default async function CommunityPage() {
   const content = await getPageContent('community')
 
   const heroHeading    = content.hero_heading    ?? "You don't have to do this alone."
-  const heroSubheading = content.hero_subheading ?? 'A warm, judgment-free space for moms who are doing the inner work - together. Real conversations, real growth, real connection.'
+  const heroSubheading = content.hero_subheading ?? 'A warm, judgment-free space for moms doing the real work of self-awareness and conscious parenting — together.'
   const quote          = content.quote           ?? "Healing doesn't happen in isolation. It happens in community."
   const ctaHeading     = content.cta_heading     ?? 'Ready to find your people?'
   const ctaBody        = content.cta_body        ?? 'Join a community of moms who are doing the real work - together.'
@@ -62,7 +62,7 @@ export default async function CommunityPage() {
               {heroSubheading}
             </p>
             <Button asChild size="lg" className="px-10">
-              <Link href="/pricing">Join the Community <ArrowRight className="ml-2 h-4 w-4" /></Link>
+              <Link href="/pricing">Join Us <ArrowRight className="ml-2 h-4 w-4" /></Link>
             </Button>
           </div>
         </section>
