@@ -216,17 +216,16 @@ export default async function HomePage() {
                   className="w-full h-full object-cover object-top"
                 />
               </div>
-              <div>
-                <p className="text-sm font-medium text-primary uppercase tracking-wider mb-4">About Shira</p>
-                <h2 className="font-serif text-4xl font-bold mb-6 leading-snug">
+              <div className="flex flex-col justify-center">
+                <h2 className="font-serif text-3xl font-bold mb-6 leading-snug">
                   {aboutHeading}
                 </h2>
-                <div className="space-y-4 text-muted-foreground leading-relaxed mb-8">
+                <div className="space-y-5 text-muted-foreground leading-relaxed mb-8">
                   <p>{aboutPara1}</p>
                   <p>{aboutPara2}</p>
                   <p>{aboutPara3}</p>
                 </div>
-                <Button asChild variant="outline">
+                <Button asChild variant="outline" className="self-start">
                   <Link href="/about">Read My Story</Link>
                 </Button>
               </div>
