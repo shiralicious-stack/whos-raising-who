@@ -111,11 +111,11 @@ export default async function HomePage() {
       <main className="flex-1">
 
         {/* 1. Hero */}
-        <section className="relative overflow-hidden pt-16 pb-10 md:pt-32 md:pb-20">
+        <section className="relative overflow-hidden min-h-[60vh] flex items-center pt-16 pb-10 md:pt-32 md:pb-20">
           {/* Background image */}
           <div
-            className="absolute inset-0 bg-no-repeat"
-            style={{ backgroundImage: "url('/hero.jpg')", backgroundSize: '120%', backgroundPosition: '65% 30%' }}
+            className="absolute inset-0"
+            style={{ backgroundImage: "url('/hero.jpg')", backgroundSize: 'cover', backgroundPosition: 'center 30%' }}
           />
           {/* Dark overlay so text stays readable */}
           <div className="absolute inset-0 bg-black/50" />
@@ -130,7 +130,7 @@ export default async function HomePage() {
               {heroBody}
             </p>
             <Button asChild size="lg" className="text-base px-10">
-              <Link href="/pricing">Join the Community</Link>
+              <Link href="/pricing">Join Us</Link>
             </Button>
             <p className="mt-5">
               <Link
