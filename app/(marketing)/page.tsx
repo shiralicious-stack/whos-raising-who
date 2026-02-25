@@ -121,7 +121,7 @@ export default async function HomePage() {
           <div className="absolute inset-0 bg-black/50" />
           <div className="relative container max-w-3xl text-center">
             <h1 className="font-serif text-4xl font-bold leading-tight tracking-tight md:text-7xl text-white mb-6">
-              Who&apos;s Raising <span className="text-sage-300">Who?</span>
+              Who&apos;s Raising <span className="text-primary">Who?</span>
             </h1>
             <p className="text-xl font-medium text-white/90 mb-4">
               {heroTagline}
@@ -288,8 +288,8 @@ export default async function HomePage() {
               {ctaBody}
             </p>
             <Button asChild size="lg" variant="secondary" className="text-base px-10">
-              <Link href="/pricing">
-                See Membership Options <ArrowRight className="ml-2 h-4 w-4" />
+              <Link href="/community">
+                Join the Cohort <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </Button>
           </div>
