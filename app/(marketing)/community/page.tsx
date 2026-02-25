@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { JoinButton } from './join-button'
 
 export const metadata = {
-  title: 'Conscious Parenting Cohort - Who\'s Raising Who',
+  title: 'Spring Cohort - Who\'s Raising Who',
   description: 'An intimate 8-week conscious parenting cohort for moms ready to do the real work — together. April 14 – June 2. Limited to 10 women.',
 }
 
@@ -35,7 +35,7 @@ export default function CommunityPage() {
             <div className="space-y-1 text-muted-foreground mb-6">
               <p className="font-medium text-foreground">April 14 – June 2</p>
               <p>Weekly at 8:30pm</p>
-              <p>Limited to 10 women to keep the group intimate</p>
+              <p>Limited to 10 women to keep the space intimate and supportive</p>
               <p className="mt-2 font-medium text-foreground">$297 one-time</p>
             </div>
             <JoinButton size="lg" className="px-10">
