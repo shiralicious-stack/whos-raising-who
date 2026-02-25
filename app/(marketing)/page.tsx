@@ -129,11 +129,9 @@ export default async function HomePage() {
             <p className="text-lg text-white/75 leading-relaxed max-w-2xl mx-auto mb-8 whitespace-pre-line">
               {heroBody}
             </p>
-            <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl px-6 py-3 inline-block mb-6">
-              <p className="text-white/90 text-sm font-medium tracking-wide">
-                Spring Cohort Enrollment Now Open — Starts April 14 | Limited to 10 Women
-              </p>
-            </div>
+            <p className="text-white/80 text-sm font-medium tracking-wide mb-6">
+              Spring Cohort Enrollment Now Open — Starts April 14 | Limited to 10 Women
+            </p>
             <div>
               <Button asChild size="lg" className="text-base px-10">
                 <Link href="/community">Join Spring Cohort</Link>
