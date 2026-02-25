@@ -36,7 +36,7 @@ export default function CommunityPage() {
               <p className="font-medium text-foreground">April 14 – June 2</p>
               <p>Weekly at 8:30pm</p>
               <p>Limited to 10 women to keep the space intimate and supportive</p>
-              <p className="mt-2 font-medium text-foreground">$297 one-time</p>
+              <p className="mt-2 font-medium text-foreground">$297</p>
             </div>
             <JoinButton size="lg" className="px-10">
               Join the Cohort
