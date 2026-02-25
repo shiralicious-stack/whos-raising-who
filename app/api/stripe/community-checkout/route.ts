@@ -4,12 +4,22 @@ import { stripe } from '@/lib/stripe'
 export async function POST() {
   try {
     const appUrl = process.env.NEXT_PUBLIC_APP_URL!
-    const priceId = process.env.COMMUNITY_PRICE_ID!
 
     const session = await stripe.checkout.sessions.create({
-      mode: 'subscription',
+      mode: 'payment',
       payment_method_types: ['card'],
-      line_items: [{ price: priceId, quantity: 1 }],
+      line_items: [
+        {
+          price_data: {
+            currency: 'usd',
+            product_data: {
+              name: 'WRW Spring Cohort 2026',
+            },
+            unit_amount: 29700,
+          },
+          quantity: 1,
+        },
+      ],
       success_url: `${appUrl}/welcome?session_id={CHECKOUT_SESSION_ID}`,
       cancel_url: `${appUrl}/community`,
       allow_promotion_codes: true,
