@@ -125,6 +125,7 @@ export interface Booking {
   duration_minutes: number
   daily_room_name: string | null
   daily_room_url: string | null
+  recording_url: string | null
   notes: string | null
   status: BookingStatus
   admin_notes: string | null

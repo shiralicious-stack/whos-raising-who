@@ -42,6 +42,11 @@ export async function createRoom(options: {
   if (expiryMinutes) {
     body.properties = {
       exp: Math.floor(Date.now() / 1000) + expiryMinutes * 60,
+      enable_recording: 'cloud',
+    }
+  } else {
+    body.properties = {
+      enable_recording: 'cloud',
     }
   }
   return dailyFetch('/rooms', {
