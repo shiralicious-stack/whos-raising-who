@@ -42,7 +42,7 @@ export default function CommunityPage() {
         </section>
 
         {/* Why This Community Is Different */}
-        <section className="py-12 md:py-16 bg-background">
+        <section className="pt-0 pb-12 md:pb-16 bg-background">
           <div className="container max-w-2xl text-center">
             <h2 className="font-serif text-3xl md:text-4xl font-bold mb-6">
               Why This Community Is Different
