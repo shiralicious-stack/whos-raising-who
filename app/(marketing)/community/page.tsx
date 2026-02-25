@@ -14,7 +14,7 @@ const topics = [
   'Reaction vs. response',
   'Reparenting ourselves',
   'Projection and getting out of our own way',
-  'Repair after we mess up',
+  'Repair after we "mess up"',
   'Integration and growth noticing',
 ]
 
