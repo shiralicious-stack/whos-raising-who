@@ -126,12 +126,19 @@ export default async function HomePage() {
             <p className="text-xl font-medium text-white/90 mb-4">
               {heroTagline}
             </p>
-            <p className="text-lg text-white/75 leading-relaxed max-w-2xl mx-auto mb-12 whitespace-pre-line">
+            <p className="text-lg text-white/75 leading-relaxed max-w-2xl mx-auto mb-8 whitespace-pre-line">
               {heroBody}
             </p>
-            <Button asChild size="lg" className="text-base px-10">
-              <Link href="/pricing">Join Us</Link>
-            </Button>
+            <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl px-6 py-3 inline-block mb-6">
+              <p className="text-white/90 text-sm font-medium tracking-wide">
+                Spring Cohort Enrollment Now Open — Starts April 14 | Limited to 10 Women
+              </p>
+            </div>
+            <div>
+              <Button asChild size="lg" className="text-base px-10">
+                <Link href="/community">Join Spring Cohort</Link>
+              </Button>
+            </div>
             <p className="mt-5">
               <Link
                 href="/book-call"
