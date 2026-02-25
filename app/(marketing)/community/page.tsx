@@ -23,28 +23,28 @@ export default function CommunityPage() {
       <main className="flex-1">
 
         {/* Hero */}
-        <section className="bg-gradient-to-br from-sage-50 via-background to-warm-50 py-16 md:py-24">
+        <section className="bg-gradient-to-br from-sage-50 via-background to-warm-50 py-12 md:py-16">
           <div className="container max-w-3xl text-center">
-            <h1 className="font-serif text-4xl md:text-5xl font-semibold leading-snug mb-5 text-foreground">
+            <h1 className="font-serif text-4xl md:text-5xl font-semibold leading-snug mb-4 text-foreground">
               You don&apos;t have to do this alone.
             </h1>
-            <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto mb-8">
+            <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto mb-6">
               A warm, judgment-free space for moms doing the inner work — together.
               Real conversations, real growth, real connection.
             </p>
             <JoinButton size="lg" className="px-10">
               Join the Community
             </JoinButton>
-            <p className="text-sm text-muted-foreground mt-4">
+            <p className="text-sm text-muted-foreground mt-3">
               Spots are intentionally limited to keep the group intimate.
             </p>
           </div>
         </section>
 
         {/* Why This Community Is Different */}
-        <section className="pt-0 pb-12 md:pb-16 bg-background">
+        <section className="pb-8 md:pb-10 bg-background">
           <div className="container max-w-2xl text-center">
-            <h2 className="font-serif text-3xl md:text-4xl font-bold mb-6">
+            <h2 className="font-serif text-3xl md:text-4xl font-bold mb-4">
               Why This Community Is Different
             </h2>
             <p className="text-lg text-muted-foreground leading-relaxed">
@@ -56,17 +56,17 @@ export default function CommunityPage() {
         </section>
 
         {/* What's Included */}
-        <section className="py-12 md:py-16 bg-secondary/20 border-y border-border/50">
+        <section className="py-8 md:py-10 bg-secondary/20 border-y border-border/50">
           <div className="container max-w-2xl">
-            <h2 className="font-serif text-3xl md:text-4xl font-bold text-center mb-10">
+            <h2 className="font-serif text-3xl md:text-4xl font-bold text-center mb-6">
               What&apos;s Included
             </h2>
-            <div className="space-y-3">
+            <div className="space-y-2">
               {included.map((item, i) => {
                 const Icon = item.icon
                 return (
-                  <div key={i} className="flex items-center gap-4 px-4 py-3.5 rounded-xl border bg-card">
-                    <div className="w-9 h-9 rounded-lg bg-sage-100 flex items-center justify-center flex-shrink-0">
+                  <div key={i} className="flex items-center gap-3 px-3 py-2.5 rounded-xl border bg-card">
+                    <div className="w-8 h-8 rounded-lg bg-sage-100 flex items-center justify-center flex-shrink-0">
                       <Icon className="h-4 w-4 text-sage-600" />
                     </div>
                     <p className="text-foreground">{item.text}</p>
@@ -78,15 +78,15 @@ export default function CommunityPage() {
         </section>
 
         {/* Membership */}
-        <section className="py-14 md:py-20 bg-background">
+        <section className="py-10 md:py-12 bg-background">
           <div className="container text-center max-w-xl">
-            <h2 className="font-serif text-2xl md:text-3xl font-bold mb-6 text-foreground">
+            <h2 className="font-serif text-2xl md:text-3xl font-bold mb-4 text-foreground">
               Membership
             </h2>
             <p className="font-serif text-4xl md:text-5xl font-bold text-foreground mb-1">$47</p>
-            <p className="text-muted-foreground text-lg mb-2">per month</p>
-            <p className="text-sm text-muted-foreground mb-8">Cancel anytime.</p>
-            <p className="text-sm text-muted-foreground mb-8">
+            <p className="text-muted-foreground text-lg mb-1">per month</p>
+            <p className="text-sm text-muted-foreground mb-6">Cancel anytime.</p>
+            <p className="text-sm text-muted-foreground mb-6">
               Spots are intentionally limited to keep the group intimate.
             </p>
             <JoinButton size="lg" className="px-10">
@@ -97,7 +97,7 @@ export default function CommunityPage() {
 
       </main>
 
-      <footer className="border-t py-8 bg-background">
+      <footer className="border-t py-6 bg-background">
         <div className="container text-center text-sm text-muted-foreground">
           <Link href="/" className="hover:text-foreground transition-colors">&larr; Back to Home</Link>
           <span className="mx-4">&middot;</span>
