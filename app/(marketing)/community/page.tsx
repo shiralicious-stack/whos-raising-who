@@ -1,6 +1,6 @@
 export const dynamic = 'force-dynamic'
 
-import { Users, Heart, MessageCircle, BookOpen, Sparkles, ArrowRight, MessagesSquare } from 'lucide-react'
+import { Users, Sparkles, Heart, MessageCircle, Link2 } from 'lucide-react'
 import Link from 'next/link'
 import { JoinButton } from './join-button'
 
@@ -11,11 +11,10 @@ export const metadata = {
 
 const included = [
   { icon: Users, text: 'One live weekly virtual gathering' },
-  { icon: BookOpen, text: 'Curated topics around triggers, patterns, and conscious parenting' },
   { icon: Sparkles, text: 'Guided reflection prompts' },
-  { icon: Heart, text: 'A private, judgment-free space for honest conversation' },
-  { icon: MessageCircle, text: 'Direct access to Shira in an intimate group setting' },
-  { icon: MessagesSquare, text: 'A community forum to share, ask questions, and stay connected between sessions' },
+  { icon: Heart, text: 'A private, judgment-free space' },
+  { icon: MessageCircle, text: 'Direct access to Shira' },
+  { icon: Link2, text: 'Ongoing connection between sessions' },
 ]
 
 export default function CommunityPage() {
@@ -34,7 +33,7 @@ export default function CommunityPage() {
               Real conversations, real growth, real connection.
             </p>
             <JoinButton size="lg" className="px-10">
-              Join the Community <ArrowRight className="ml-2 h-4 w-4" />
+              Join the Community
             </JoinButton>
             <p className="text-sm text-muted-foreground mt-4">
               Spots are intentionally limited to keep the group intimate.
@@ -42,30 +41,8 @@ export default function CommunityPage() {
           </div>
         </section>
 
-        {/* What's Included */}
-        <section className="py-12 md:py-16 bg-secondary/20 border-y border-border/50">
-          <div className="container max-w-3xl">
-            <h2 className="font-serif text-3xl md:text-4xl font-bold text-center mb-10">
-              What&apos;s Included
-            </h2>
-            <div className="space-y-4">
-              {included.map((item, i) => {
-                const Icon = item.icon
-                return (
-                  <div key={i} className="flex items-center gap-4 p-5 rounded-2xl border bg-card">
-                    <div className="w-10 h-10 rounded-xl bg-sage-100 flex items-center justify-center flex-shrink-0">
-                      <Icon className="h-5 w-5 text-sage-600" />
-                    </div>
-                    <p className="text-foreground leading-relaxed">{item.text}</p>
-                  </div>
-                )
-              })}
-            </div>
-          </div>
-        </section>
-
         {/* Why This Community Is Different */}
-        <section className="py-14 md:py-20 bg-background">
+        <section className="py-20 md:py-28 bg-background">
           <div className="container max-w-2xl text-center">
             <h2 className="font-serif text-3xl md:text-4xl font-bold mb-6">
               Why This Community Is Different
@@ -78,12 +55,41 @@ export default function CommunityPage() {
           </div>
         </section>
 
-        {/* Pricing */}
-        <section className="py-14 md:py-20 bg-primary/80 text-primary-foreground">
+        {/* What's Included */}
+        <section className="py-16 md:py-24 bg-secondary/20 border-y border-border/50">
+          <div className="container max-w-2xl">
+            <h2 className="font-serif text-3xl md:text-4xl font-bold text-center mb-12">
+              What&apos;s Included
+            </h2>
+            <div className="space-y-3">
+              {included.map((item, i) => {
+                const Icon = item.icon
+                return (
+                  <div key={i} className="flex items-center gap-4 px-4 py-3.5 rounded-xl border bg-card">
+                    <div className="w-9 h-9 rounded-lg bg-sage-100 flex items-center justify-center flex-shrink-0">
+                      <Icon className="h-4 w-4 text-sage-600" />
+                    </div>
+                    <p className="text-foreground">{item.text}</p>
+                  </div>
+                )
+              })}
+            </div>
+          </div>
+        </section>
+
+        {/* Membership */}
+        <section className="py-20 md:py-28 bg-background">
           <div className="container text-center max-w-xl">
-            <p className="font-serif text-5xl md:text-6xl font-bold mb-2">$47</p>
-            <p className="text-primary-foreground/80 text-lg mb-8">per month · cancel anytime</p>
-            <JoinButton size="lg" variant="secondary" className="px-10">
+            <h2 className="font-serif text-2xl md:text-3xl font-bold mb-6 text-foreground">
+              Membership
+            </h2>
+            <p className="font-serif text-4xl md:text-5xl font-bold text-foreground mb-1">$47</p>
+            <p className="text-muted-foreground text-lg mb-2">per month</p>
+            <p className="text-sm text-muted-foreground mb-10">Cancel anytime.</p>
+            <p className="text-sm text-muted-foreground mb-8">
+              Spots are intentionally limited to keep the group intimate.
+            </p>
+            <JoinButton size="lg" className="px-10">
               Join the Community
             </JoinButton>
           </div>
