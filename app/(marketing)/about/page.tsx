@@ -41,16 +41,14 @@ export default function AboutPage() {
                   Parenting begins with you.
                 </h1>
                 <p className="text-muted-foreground text-lg leading-relaxed mb-6">
-                  I&apos;m Shira Finkelstein - a Certified Conscious Parenting &amp; Life Coach,
-                  single mom, and someone who&apos;s done (and continues to do) the hard inner work
-                  this path requires.
+                  Hey mama — I&apos;m so glad you&apos;re here.
                 </p>
                 <div className="flex gap-3">
                   <Button asChild>
                     <Link href="/book-call">Book a Free Call <ArrowRight className="ml-2 h-4 w-4" /></Link>
                   </Button>
                   <Button asChild variant="outline">
-                    <Link href="/pricing">See Memberships</Link>
+                    <Link href="/community">Join Spring Cohort</Link>
                   </Button>
                 </div>
               </div>
@@ -73,28 +71,69 @@ export default function AboutPage() {
             <h2 className="font-serif text-3xl font-bold mb-6">My story</h2>
             <div className="space-y-5 text-muted-foreground leading-relaxed">
               <p>
-                I didn&apos;t set out to become a parenting coach. I set out to become a better parent -
-                and that path led me somewhere I never expected: inward.
+                I&apos;m Shira — a Certified Conscious Parenting &amp; Life Coach trained and coached
+                by Dr. Shefali Tsabary, and a mom who walks this path every single day.
               </p>
               <p>
-                Like so many moms, I started noticing that my reactions to my kids didn&apos;t always make
-                sense. The intensity of my frustration when things went sideways, the guilt after I snapped,
-                the feeling that I was somehow repeating patterns I swore I&apos;d break. Sound familiar?
+                I love the beach, travel, deep conversations, and laughing until I can&apos;t breathe —
+                and I take my parenting and personal growth just as seriously as I take my joy. I don&apos;t
+                believe in perfection. I believe in awareness.
               </p>
               <p>
-                When I discovered the work of Dr. Shefali Tsabary and the framework of conscious parenting,
-                something clicked. It wasn&apos;t about managing my kids better - it was about understanding
-                myself better. Our children don&apos;t need us to be perfect. They need us to be present,
-                honest, and willing to grow.
-              </p>
-              <p>
-                I trained and was personally coached by Dr. Shefali, became certified as a Conscious
-                Parenting &amp; Life Coach, and built Who&apos;s Raising Who as the community I wish had
-                existed when I was just starting this journey.
+                Conscious parenting, to me, isn&apos;t about fixing our children — or ourselves. It&apos;s
+                about understanding our patterns, triggers, and past conditioning so we can show up with
+                more clarity, calm, and intention.
               </p>
               <p className="font-medium text-foreground">
-                Motherhood is not meant to be walked alone. And the real work - the inner work - is
-                the most important work you&apos;ll ever do.
+                Our children don&apos;t need perfect parents.<br />
+                They need present, self-aware ones.
+              </p>
+              <p>
+                Because the truth is, our healing doesn&apos;t just impact us — it shapes our children&apos;s
+                emotional health and the way they experience the world.
+              </p>
+              <p>
+                When we&apos;re unaware of our inner world, we react from it. We project from it. We repeat
+                patterns from it. But when we turn inward — with curiosity and compassion — something shifts.
+                We gain perspective. We gain freedom. We gain the ability to respond instead of react.
+              </p>
+              <p className="font-medium text-foreground">
+                And that changes everything.
+              </p>
+              <p>
+                It changes how we handle conflict.<br />
+                It changes how we repair after we misstep.<br />
+                It changes the emotional tone of our homes.
+              </p>
+              <p>
+                Our children learn how to regulate by watching us regulate.<br />
+                They learn how to speak to themselves by hearing how we speak to ourselves.<br />
+                They learn what love feels like by how we show up in hard moments.
+              </p>
+              <p className="font-medium text-foreground">
+                Breaking cycles with our children doesn&apos;t begin with them.<br />
+                It begins with us.
+              </p>
+              <p>
+                I created Who&apos;s Raising Who because motherhood is beautiful — and it can also be deeply
+                triggering. Our children mirror back the parts of ourselves that still need love and understanding.
+                Not to shame us, but to invite us into growth.
+              </p>
+              <p>
+                When we do our inner work, we don&apos;t just change our parenting.<br />
+                We change our homes.<br />
+                Our relationships.<br />
+                The emotional blueprint our children will carry into their own lives.
+              </p>
+              <p>
+                And along the way, we create more peace, more connection, and more joy for ourselves, too.
+              </p>
+              <p>
+                I&apos;m honored to walk alongside you in this work.
+              </p>
+              <p className="font-medium text-foreground">
+                With love,<br />
+                Shira
               </p>
             </div>
           </div>
