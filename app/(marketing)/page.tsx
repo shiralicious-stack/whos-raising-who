@@ -325,8 +325,6 @@ export default async function HomePage() {
               <div className="space-y-2">
                 <p className="font-semibold text-xs uppercase tracking-wider text-muted-foreground mb-3">Explore</p>
                 <Link href="/about" className="block text-muted-foreground hover:text-foreground transition-colors">About Shira</Link>
-                <Link href="/pricing" className="block text-muted-foreground hover:text-foreground transition-colors">Membership</Link>
-                <Link href="/courses" className="block text-muted-foreground hover:text-foreground transition-colors">Courses</Link>
                 <Link href="/book-call" className="block text-muted-foreground hover:text-foreground transition-colors">Free Consult Call</Link>
               </div>
               <div className="space-y-2">
