@@ -1,6 +1,5 @@
-import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
-import { CheckCircle2, ArrowRight, Instagram, Facebook } from 'lucide-react'
+import { CheckCircle2, Instagram, Facebook } from 'lucide-react'
 import Link from 'next/link'
 
 export const metadata = {
@@ -31,44 +30,10 @@ export default function AboutPage() {
   return (
     <div className="flex flex-col min-h-screen">
       <main className="flex-1">
-        {/* Hero */}
-        <section className="bg-gradient-to-br from-warm-50 via-background to-sage-50 py-12 md:py-20">
-          <div className="container max-w-4xl">
-            <div className="grid md:grid-cols-2 gap-6 md:gap-12 items-center">
-              <div>
-                <Badge variant="outline" className="mb-4">About Shira</Badge>
-                <h1 className="font-serif text-3xl md:text-5xl font-bold leading-tight mb-6">
-                  Parenting begins with you.
-                </h1>
-                <p className="text-muted-foreground text-lg leading-relaxed mb-6">
-                  Hey mama — I&apos;m so glad you&apos;re here.
-                </p>
-                <div className="flex gap-3">
-                  <Button asChild>
-                    <Link href="/book-call">Book a Free Call <ArrowRight className="ml-2 h-4 w-4" /></Link>
-                  </Button>
-                  <Button asChild variant="outline">
-                    <Link href="/community">Join Spring Cohort</Link>
-                  </Button>
-                </div>
-              </div>
-              <div className="rounded-2xl overflow-hidden aspect-[4/5] bg-gradient-to-br from-warm-100 via-warm-50 to-sage-100 flex items-center justify-center">
-                <div className="text-center">
-                  <div className="w-28 h-28 rounded-full bg-primary/15 border-4 border-primary/20 flex items-center justify-center mx-auto mb-4">
-                    <span className="font-serif text-5xl font-bold text-primary">S</span>
-                  </div>
-                  <p className="text-sm text-muted-foreground font-medium">Shira Finkelstein</p>
-                  <p className="text-xs text-muted-foreground">Certified Conscious Parenting Coach</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
         {/* Story */}
         <section className="py-12 md:py-20 bg-background">
           <div className="container max-w-2xl">
-            <h2 className="font-serif text-3xl font-bold mb-6">My story</h2>
+            <h2 className="font-serif text-3xl font-bold mb-6">Hey Mama</h2>
             <div className="space-y-5 text-muted-foreground leading-relaxed">
               <p>
                 I&apos;m Shira — a Certified Conscious Parenting &amp; Life Coach trained and coached
