@@ -30,9 +30,9 @@ export default function AboutPage() {
         {/* Story */}
         <section className="py-14 md:py-24 bg-background">
           <div className="container max-w-2xl">
-            <div className="flex items-end justify-between mb-8">
+            <div className="flex items-end gap-4 mb-8">
               <h2 className="font-serif text-3xl font-bold">Hey Mama,</h2>
-              <div className="w-20 h-20 md:w-24 md:h-24 rounded-full overflow-hidden border-3 border-sage-100 shadow-sm flex-shrink-0">
+              <div className="w-24 h-24 md:w-28 md:h-28 rounded-full overflow-hidden border-3 border-sage-100 shadow-sm flex-shrink-0">
                 <img
                   src="/shira-about.jpg"
                   alt="Shira Finkelstein"
