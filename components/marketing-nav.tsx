@@ -10,8 +10,6 @@ const navLinks = [
   { href: '/', label: 'Home' },
   { href: '/community', label: 'Spring Cohort' },
   { href: '/coaching', label: 'Coaching' },
-  { href: '/courses', label: 'Courses' },
-  { href: '/events', label: 'Events' },
   { href: '/about', label: 'About' },
   { href: '/pricing', label: 'Membership' },
 ]
