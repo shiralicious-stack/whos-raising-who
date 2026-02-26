@@ -83,8 +83,8 @@ export default function AboutPage() {
                 It begins with us.
               </p>
               <p>
-                I created Who&apos;s Raising Who because motherhood is beautiful — and it can also be deeply
-                triggering. Our children mirror back the parts of ourselves that still need love and understanding.
+                I created Who&apos;s Raising Who because while we are raising our children, they are
+                raising us too. Our children mirror back the parts of ourselves that still need love and understanding.
                 Not to shame us, but to invite us into growth.
               </p>
               <p>
