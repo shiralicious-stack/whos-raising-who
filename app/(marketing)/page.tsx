@@ -129,12 +129,6 @@ export default async function HomePage() {
             <p className="text-lg text-white/75 leading-relaxed max-w-2xl mx-auto mb-8 whitespace-pre-line">
               {heroBody}
             </p>
-            <p className="text-white text-lg md:text-xl font-semibold tracking-wide">
-              Enrollment for Spring Cohort Now Open
-            </p>
-            <p className="text-white/65 text-sm mt-1 mb-4">
-              Begins April 14 | Limited to 10 Women
-            </p>
             <Button asChild size="default" className="text-sm px-8">
               <Link href="/community">Join Spring Cohort</Link>
             </Button>
@@ -148,6 +142,18 @@ export default async function HomePage() {
             </p>
           </div>
         </section>
+
+        {/* Cohort enrollment strip */}
+        <div className="bg-sage-50 border-b border-border/50 py-3">
+          <div className="container text-center">
+            <p className="text-foreground font-semibold text-base md:text-lg">
+              Enrollment for Spring Cohort Now Open
+            </p>
+            <p className="text-muted-foreground text-sm mt-0.5">
+              Begins April 14 | Limited to 10 Women
+            </p>
+          </div>
+        </div>
 
         {/* 2. Emotional Anchor */}
 
