@@ -39,9 +39,9 @@ const services = [
       'Limited to 10 women to keep the space intimate and supportive',
     ],
     cta: { label: 'Join the Cohort', href: '/community' },
-    accent: 'border-sage-200 bg-sage-50/50',
-    iconColor: 'text-sage-600',
-    iconBg: 'bg-sage-100',
+    accent: 'border-primary/20 bg-primary/5',
+    iconColor: 'text-primary',
+    iconBg: 'bg-primary/10',
   },
   {
     icon: Heart,
@@ -58,9 +58,9 @@ const services = [
       'Practical tools for real-life integration',
     ],
     cta: { label: 'Explore Coaching', href: '/pricing' },
-    accent: 'border-primary/20 bg-primary/5',
-    iconColor: 'text-primary',
-    iconBg: 'bg-primary/10',
+    accent: 'border-sage-200 bg-sage-50/50',
+    iconColor: 'text-sage-600',
+    iconBg: 'bg-sage-100',
   },
 ]
 
