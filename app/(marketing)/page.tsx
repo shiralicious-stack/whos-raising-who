@@ -111,7 +111,7 @@ export default async function HomePage() {
       <main className="flex-1">
 
         {/* 1. Hero */}
-        <section className="relative overflow-hidden min-h-[60vh] flex items-center pt-16 pb-32 md:pt-32 md:pb-36">
+        <section className="relative overflow-hidden min-h-[60vh] flex items-center pt-16 pb-10 md:pt-32 md:pb-20">
           {/* Background image */}
           <div
             className="absolute inset-0"
@@ -130,26 +130,24 @@ export default async function HomePage() {
               {heroBody}
             </p>
           </div>
-          {/* Cohort CTA band */}
-          <div className="absolute bottom-0 left-0 right-0 bg-black/30 backdrop-blur-sm border-t border-white/10">
-            <div className="container max-w-3xl text-center py-5">
-              <p className="text-white text-lg md:text-xl font-semibold tracking-wide">
-                Enrollment for Spring Cohort Now Open
-              </p>
-              <p className="text-white/65 text-sm mt-1 mb-4">
-                Begins April 14 | Limited to 10 Women
-              </p>
-              <div className="flex items-center justify-center gap-4">
-                <Button asChild size="default" className="text-sm px-8">
-                  <Link href="/community">Join Spring Cohort</Link>
-                </Button>
-                <Link
-                  href="/book-call"
-                  className="text-sm text-white/60 underline underline-offset-4 hover:text-white transition-colors"
-                >
-                  Book a Free Call
-                </Link>
-              </div>
+          {/* Cohort CTA */}
+          <div className="relative container max-w-3xl text-center mt-8">
+            <p className="text-white text-lg md:text-xl font-semibold tracking-wide">
+              Enrollment for Spring Cohort Now Open
+            </p>
+            <p className="text-white/65 text-sm mt-1 mb-4">
+              Begins April 14 | Limited to 10 Women
+            </p>
+            <div className="flex items-center justify-center gap-4">
+              <Button asChild size="default" className="text-sm px-8">
+                <Link href="/community">Join Spring Cohort</Link>
+              </Button>
+              <Link
+                href="/book-call"
+                className="text-sm text-white/60 underline underline-offset-4 hover:text-white transition-colors"
+              >
+                Book a Free Call
+              </Link>
             </div>
           </div>
         </section>
