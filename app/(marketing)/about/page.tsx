@@ -30,8 +30,7 @@ export default function AboutPage() {
         {/* Story */}
         <section className="py-14 md:py-24 bg-background">
           <div className="container max-w-2xl">
-            <div className="flex items-end gap-4 mb-8">
-              <h2 className="font-serif text-3xl font-bold">Hey Mama,</h2>
+            <div className="flex items-center gap-6 mb-8">
               <div className="w-24 h-24 md:w-28 md:h-28 rounded-full overflow-hidden border-3 border-sage-100 shadow-sm flex-shrink-0">
                 <img
                   src="/shira-about.jpg"
@@ -39,12 +38,13 @@ export default function AboutPage() {
                   className="w-full h-full object-cover object-top"
                 />
               </div>
+              <div>
+                <h2 className="font-serif text-3xl font-bold mb-1">Hey Mama,</h2>
+                <p className="text-muted-foreground text-lg leading-relaxed">I&apos;m so glad you&apos;re here!</p>
+              </div>
             </div>
             <div>
                 <div className="space-y-5 text-muted-foreground leading-relaxed">
-                  <p>
-                    I&apos;m so glad you&apos;re here!
-                  </p>
                   <p>
                     I&apos;m Shira — a Certified Conscious Parenting &amp; Life Coach trained and coached
                     by Dr. Shefali Tsabary, and a mom who walks this path every single day.
