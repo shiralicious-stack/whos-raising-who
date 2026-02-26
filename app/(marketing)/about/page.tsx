@@ -33,8 +33,11 @@ export default function AboutPage() {
         {/* Story */}
         <section className="py-12 md:py-20 bg-background">
           <div className="container max-w-2xl">
-            <h2 className="font-serif text-3xl font-bold mb-6">Hey Mama</h2>
+            <h2 className="font-serif text-3xl font-bold mb-6">Hey Mama,</h2>
             <div className="space-y-5 text-muted-foreground leading-relaxed">
+              <p>
+                I&apos;m so glad you&apos;re here!
+              </p>
               <p>
                 I&apos;m Shira — a Certified Conscious Parenting &amp; Life Coach trained and coached
                 by Dr. Shefali Tsabary, and a mom who walks this path every single day.
