@@ -133,8 +133,11 @@ export default async function HomePage() {
           {/* Cohort CTA band */}
           <div className="absolute bottom-0 left-0 right-0 bg-black/30 backdrop-blur-sm border-t border-white/10">
             <div className="container max-w-3xl text-center py-5">
-              <p className="text-white/85 text-base md:text-lg font-medium tracking-wide mb-3">
-                Spring Cohort Enrollment Now Open — Starts April 14 | Limited to 10 Women
+              <p className="text-white text-lg md:text-xl font-semibold tracking-wide">
+                Enrollment for Spring Cohort Now Open
+              </p>
+              <p className="text-white/65 text-sm mt-1 mb-4">
+                Begins April 14 | Limited to 10 Women
               </p>
               <div className="flex items-center justify-center gap-4">
                 <Button asChild size="default" className="text-sm px-8">
