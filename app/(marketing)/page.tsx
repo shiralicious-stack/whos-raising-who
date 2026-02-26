@@ -149,15 +149,43 @@ export default async function HomePage() {
           </div>
         </section>
 
-        {/* 3. How We Work Together */}
+        {/* 3. About Shira */}
+        <section className="py-16 bg-background">
+          <div className="container max-w-4xl">
+            <div className="grid md:grid-cols-2 gap-8 md:gap-16 items-center">
+              <div className="rounded-2xl overflow-hidden aspect-[4/5]">
+                <img
+                  src="/shira-about.jpg"
+                  alt="Shira Finkelstein"
+                  className="w-full h-full object-cover object-top"
+                />
+              </div>
+              <div className="flex flex-col justify-center">
+                <h2 className="font-serif text-3xl font-bold mb-6 leading-snug">
+                  {aboutHeading}
+                </h2>
+                <div className="space-y-5 text-muted-foreground leading-relaxed mb-8">
+                  <p>{aboutPara1}</p>
+                  <p>{aboutPara2}</p>
+                  <p>{aboutPara3}</p>
+                </div>
+                <Button asChild variant="outline" className="self-start">
+                  <Link href="/about">Read My Story</Link>
+                </Button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* 4. Ways to Work Together */}
         <section className="pt-12 pb-16 bg-secondary/20">
           <div className="container">
             <div className="text-center mb-16">
               <h2 className="font-serif text-4xl md:text-5xl font-bold mb-5">
-                Your Path Forward
+                Ways to Work Together
               </h2>
               <p className="text-muted-foreground text-lg max-w-xl mx-auto">
-                Whether you&apos;re seeking community, private support, or self-paced learning - there&apos;s a path for you here.
+                Join the Spring Cohort for shared growth, or work with me privately for deeper, personalized support.
               </p>
             </div>
 
@@ -194,34 +222,6 @@ export default async function HomePage() {
                   </div>
                 )
               })}
-            </div>
-          </div>
-        </section>
-
-        {/* 4. About Shira */}
-        <section className="py-16 bg-background">
-          <div className="container max-w-4xl">
-            <div className="grid md:grid-cols-2 gap-8 md:gap-16 items-center">
-              <div className="rounded-2xl overflow-hidden aspect-[4/5]">
-                <img
-                  src="/shira-about.jpg"
-                  alt="Shira Finkelstein"
-                  className="w-full h-full object-cover object-top"
-                />
-              </div>
-              <div className="flex flex-col justify-center">
-                <h2 className="font-serif text-3xl font-bold mb-6 leading-snug">
-                  {aboutHeading}
-                </h2>
-                <div className="space-y-5 text-muted-foreground leading-relaxed mb-8">
-                  <p>{aboutPara1}</p>
-                  <p>{aboutPara2}</p>
-                  <p>{aboutPara3}</p>
-                </div>
-                <Button asChild variant="outline" className="self-start">
-                  <Link href="/about">Read My Story</Link>
-                </Button>
-              </div>
             </div>
           </div>
         </section>
