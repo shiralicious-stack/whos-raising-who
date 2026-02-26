@@ -29,21 +29,18 @@ export default function AboutPage() {
 
         {/* Story */}
         <section className="py-14 md:py-24 bg-background">
-          <div className="container max-w-4xl">
-            <div className="grid md:grid-cols-[280px_1fr] gap-10 md:gap-14 items-start">
-              {/* Image */}
-              <div className="flex justify-center md:justify-start">
-                <div className="w-56 h-56 md:w-64 md:h-64 rounded-full overflow-hidden border-4 border-sage-100 shadow-sm">
-                  <img
-                    src="/shira-about.jpg"
-                    alt="Shira Finkelstein"
-                    className="w-full h-full object-cover object-top"
-                  />
-                </div>
+          <div className="container max-w-2xl">
+            <div className="flex items-center gap-5 mb-8">
+              <div className="w-20 h-20 md:w-24 md:h-24 rounded-full overflow-hidden border-3 border-sage-100 shadow-sm flex-shrink-0">
+                <img
+                  src="/shira-about.jpg"
+                  alt="Shira Finkelstein"
+                  className="w-full h-full object-cover object-top"
+                />
               </div>
-              {/* Text */}
-              <div>
-                <h2 className="font-serif text-3xl font-bold mb-6">Hey Mama,</h2>
+              <h2 className="font-serif text-3xl font-bold">Hey Mama,</h2>
+            </div>
+            <div>
                 <div className="space-y-5 text-muted-foreground leading-relaxed">
                   <p>
                     I&apos;m so glad you&apos;re here!
@@ -114,7 +111,6 @@ export default function AboutPage() {
                     Shira
                   </p>
                 </div>
-              </div>
             </div>
           </div>
         </section>
