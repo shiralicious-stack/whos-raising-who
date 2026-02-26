@@ -50,7 +50,7 @@ export default function AboutPage() {
                     by Dr. Shefali Tsabary, and a mom who walks this path every single day.
                   </p>
                   <p>
-                    When my son was born, he awakened a soul in me I didn&apos;t know I had. I began to truly
+                    When my son was born, he awakened the soul in me I didn&apos;t know I had. I began to truly
                     understand how deeply the way I care for his emotional needs matters — and in that process,
                     I started to see my own unmet needs that I had never fully acknowledged. That realization set
                     me on a deep personal growth journey through therapy, parenting and personal development work,
