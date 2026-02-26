@@ -135,17 +135,17 @@ export default async function HomePage() {
             <p className="text-white/65 text-sm mt-1 mb-4">
               Begins April 14 | Limited to 10 Women
             </p>
-            <div className="flex items-center justify-center gap-4">
-              <Button asChild size="default" className="text-sm px-8">
-                <Link href="/community">Join Spring Cohort</Link>
-              </Button>
+            <Button asChild size="default" className="text-sm px-8">
+              <Link href="/community">Join Spring Cohort</Link>
+            </Button>
+            <p className="mt-4">
               <Link
                 href="/book-call"
                 className="text-sm text-white/60 underline underline-offset-4 hover:text-white transition-colors"
               >
                 Book a Free Call
               </Link>
-            </div>
+            </p>
           </div>
         </section>
 
