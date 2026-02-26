@@ -57,9 +57,9 @@ export default function AboutPage() {
                     and ultimately to Dr. Shefali&apos;s Conscious Parenting training.
                   </p>
                   <p>
-                    Conscious parenting, to me, isn&apos;t about fixing our children — or ourselves. It&apos;s
+                    Conscious parenting isn&apos;t about fixing our children — or ourselves. It&apos;s
                     about understanding our patterns, triggers, and past conditioning so we can show up with
-                    more clarity, calm, and intention.
+                    more clarity, calm, and intention. I don&apos;t believe in perfection. I believe in awareness.
                   </p>
                   <p className="font-medium text-foreground">
                     Our children don&apos;t need perfect parents.<br />
