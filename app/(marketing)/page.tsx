@@ -126,12 +126,9 @@ export default async function HomePage() {
             <p className="text-xl font-medium text-white/90 mb-4">
               {heroTagline}
             </p>
-            <p className="text-lg text-white/75 leading-relaxed max-w-2xl mx-auto whitespace-pre-line">
+            <p className="text-lg text-white/75 leading-relaxed max-w-2xl mx-auto mb-8 whitespace-pre-line">
               {heroBody}
             </p>
-          </div>
-          {/* Cohort CTA */}
-          <div className="relative container max-w-3xl text-center mt-8">
             <p className="text-white text-lg md:text-xl font-semibold tracking-wide">
               Enrollment for Spring Cohort Now Open
             </p>
