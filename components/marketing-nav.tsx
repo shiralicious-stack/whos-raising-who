@@ -4,14 +4,14 @@ import { useState } from 'react'
 import Link from 'next/link'
 import { Menu, X } from 'lucide-react'
 import { Button } from '@/components/ui/button'
-import { cn } from '@/lib/utils'
+
 
 const navLinks = [
   { href: '/', label: 'Home' },
   { href: '/community', label: 'Spring Cohort' },
   { href: '/coaching', label: 'Coaching' },
   { href: '/about', label: 'About' },
-  { href: '/pricing', label: 'Membership' },
+  { href: '/login', label: 'Member Login' },
 ]
 
 export function MarketingNav() {
@@ -40,11 +40,8 @@ export function MarketingNav() {
         </nav>
 
         <div className="flex items-center gap-2">
-          <Link href="/login" className="hidden lg:block text-sm text-muted-foreground hover:text-foreground transition-colors">
-            Sign In
-          </Link>
           <Button asChild size="sm" className="hidden sm:inline-flex">
-            <Link href="/pricing">Join Now</Link>
+            <Link href="/community">Join Now</Link>
           </Button>
           {/* Mobile hamburger */}
           <button
@@ -70,12 +67,9 @@ export function MarketingNav() {
               {link.label}
             </Link>
           ))}
-          <div className="pt-2 space-y-2">
-            <Button asChild variant="outline" size="sm" className="w-full">
-              <Link href="/login" onClick={() => setOpen(false)}>Sign In</Link>
-            </Button>
+          <div className="pt-2">
             <Button asChild size="sm" className="w-full">
-              <Link href="/pricing" onClick={() => setOpen(false)}>Join Now</Link>
+              <Link href="/community" onClick={() => setOpen(false)}>Join Now</Link>
             </Button>
           </div>
         </div>

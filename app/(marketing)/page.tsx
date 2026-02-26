@@ -57,7 +57,7 @@ const services = [
       'Support in breaking generational cycles',
       'Practical tools for real-life integration',
     ],
-    cta: { label: 'Explore Coaching', href: '/pricing' },
+    cta: { label: 'Explore Coaching', href: '/coaching' },
     accent: 'border-sage-200 bg-sage-50/50',
     iconColor: 'text-sage-600',
     iconBg: 'bg-sage-100',
