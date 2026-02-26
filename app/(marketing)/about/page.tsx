@@ -31,16 +31,16 @@ export default function AboutPage() {
         <section className="py-14 md:py-24 bg-background">
           <div className="container max-w-2xl">
             <div className="flex items-center gap-6 mb-8">
+              <div>
+                <h2 className="font-serif text-3xl font-bold mb-1">Hey Mama,</h2>
+                <p className="text-muted-foreground text-lg leading-relaxed">I&apos;m so glad you&apos;re here!</p>
+              </div>
               <div className="w-24 h-24 md:w-28 md:h-28 rounded-full overflow-hidden border-3 border-sage-100 shadow-sm flex-shrink-0">
                 <img
                   src="/shira-about.jpg"
                   alt="Shira Finkelstein"
                   className="w-full h-full object-cover object-top"
                 />
-              </div>
-              <div>
-                <h2 className="font-serif text-3xl font-bold mb-1">Hey Mama,</h2>
-                <p className="text-muted-foreground text-lg leading-relaxed">I&apos;m so glad you&apos;re here!</p>
               </div>
             </div>
             <div>
@@ -50,9 +50,11 @@ export default function AboutPage() {
                     by Dr. Shefali Tsabary, and a mom who walks this path every single day.
                   </p>
                   <p>
-                    I love the beach, travel, deep conversations, and laughing until I can&apos;t breathe —
-                    and I take my parenting and personal growth just as seriously as I take my joy. I don&apos;t
-                    believe in perfection. I believe in awareness.
+                    When my son was born, he awakened a soul in me I didn&apos;t know I had. I began to truly
+                    understand how deeply the way I care for his emotional needs matters — and in that process,
+                    I started to see my own unmet needs that I had never fully acknowledged. That realization set
+                    me on a deep personal growth journey through therapy, parenting and personal development work,
+                    and ultimately to Dr. Shefali&apos;s Conscious Parenting training.
                   </p>
                   <p>
                     Conscious parenting, to me, isn&apos;t about fixing our children — or ourselves. It&apos;s
@@ -61,7 +63,7 @@ export default function AboutPage() {
                   </p>
                   <p className="font-medium text-foreground">
                     Our children don&apos;t need perfect parents.<br />
-                    They need present, self-aware ones.
+                    They need curious, compassionate, and growing ones.
                   </p>
                   <p>
                     Because the truth is, our healing doesn&apos;t just impact us — it shapes our children&apos;s
