@@ -30,7 +30,8 @@ export default function AboutPage() {
         {/* Story */}
         <section className="py-14 md:py-24 bg-background">
           <div className="container max-w-2xl">
-            <div className="flex items-center gap-5 mb-8">
+            <div className="flex items-end justify-between mb-8">
+              <h2 className="font-serif text-3xl font-bold">Hey Mama,</h2>
               <div className="w-20 h-20 md:w-24 md:h-24 rounded-full overflow-hidden border-3 border-sage-100 shadow-sm flex-shrink-0">
                 <img
                   src="/shira-about.jpg"
@@ -38,7 +39,6 @@ export default function AboutPage() {
                   className="w-full h-full object-cover object-top"
                 />
               </div>
-              <h2 className="font-serif text-3xl font-bold">Hey Mama,</h2>
             </div>
             <div>
                 <div className="space-y-5 text-muted-foreground leading-relaxed">
