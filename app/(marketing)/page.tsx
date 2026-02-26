@@ -326,12 +326,12 @@ export default async function HomePage() {
                 <p className="font-semibold text-xs uppercase tracking-wider text-muted-foreground mb-3">Explore</p>
                 <Link href="/about" className="block text-muted-foreground hover:text-foreground transition-colors">About Shira</Link>
                 <Link href="/book-call" className="block text-muted-foreground hover:text-foreground transition-colors">Free Consult Call</Link>
+                <a href="mailto:hello@whosraisingwho.com" className="block text-muted-foreground hover:text-foreground transition-colors">Contact</a>
               </div>
               <div className="space-y-2">
                 <p className="font-semibold text-xs uppercase tracking-wider text-muted-foreground mb-3">Account</p>
                 <Link href="/login" className="block text-muted-foreground hover:text-foreground transition-colors">Sign In</Link>
                 <Link href="/signup" className="block text-muted-foreground hover:text-foreground transition-colors">Join Now</Link>
-                <a href="mailto:hello@whosraisingwho.com" className="block text-muted-foreground hover:text-foreground transition-colors">Contact</a>
               </div>
             </div>
           </div>
