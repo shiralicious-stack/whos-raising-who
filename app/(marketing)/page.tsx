@@ -1,7 +1,7 @@
 export const dynamic = 'force-dynamic'
 
 import Link from 'next/link'
-import { ArrowRight, Users, BookOpen, Heart, Star, CheckCircle2, Instagram, Facebook } from 'lucide-react'
+import { ArrowRight, Users, Heart, Star, CheckCircle2, Instagram, Facebook } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { getPageContent } from '@/lib/site-content'
@@ -27,18 +27,18 @@ const defaultTestimonials = [
 const services = [
   {
     icon: Users,
-    title: 'Community',
-    badge: null,
+    title: 'Spring Cohort',
+    badge: 'Starts April 14',
     badgeVariant: 'secondary' as const,
     description:
-      'A warm, judgment-free space for moms to share honestly, support one another, and grow together. Through weekly virtual gatherings and guided reflection, you\'ll be surrounded by women who truly understand this season of life.',
+      'An intimate 8-week conscious parenting cohort for moms ready to do the real work — together. Each week blends guided teaching, real conversation, and practical integration so the work doesn\'t stay theoretical. It becomes lived.',
     features: [
-      'Weekly virtual meetups - curated discussions on self-awareness and parenting',
-      'Guided journaling prompts and reflection tools',
-      'A safe space to speak openly without judgment',
-      'Meaningful connection with like-minded moms',
+      '8 weekly group sessions — April 14 to June 2',
+      'Triggers, patterns, and conscious responses',
+      'Reparenting ourselves and repairing with our children',
+      'Limited to 10 women to keep the space intimate and supportive',
     ],
-    cta: { label: 'Join the Community', href: '/pricing' },
+    cta: { label: 'Join the Cohort', href: '/community' },
     accent: 'border-sage-200 bg-sage-50/50',
     iconColor: 'text-sage-600',
     iconBg: 'bg-sage-100',
@@ -61,25 +61,6 @@ const services = [
     accent: 'border-primary/20 bg-primary/5',
     iconColor: 'text-primary',
     iconBg: 'bg-primary/10',
-  },
-  {
-    icon: BookOpen,
-    title: 'Courses',
-    badge: 'Self-Paced & Live',
-    badgeVariant: 'outline' as const,
-    description:
-      'A flexible space for moms to grow through self-paced courses or learn alongside others in live group experiences. Together, we explore triggers and the patterns shaping how we show up — creating more peaceful, connected relationships with ourselves, our children, and others.',
-    features: [
-      'Self-paced learning you can move through intentionally',
-      'Live group courses with guided discussion',
-      'Understand your triggers and emotional responses',
-      'Transformational growth through self-awareness',
-      'Practical tools for more connection at home',
-    ],
-    cta: { label: 'Browse Courses', href: '/courses' },
-    accent: 'border-sage-200 bg-sage-50/50',
-    iconColor: 'text-sage-600',
-    iconBg: 'bg-sage-100',
   },
 ]
 
