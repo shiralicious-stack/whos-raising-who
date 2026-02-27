@@ -118,7 +118,7 @@ export default function AboutPage() {
         </section>
 
         {/* My Philosophy */}
-        <section className="py-14 md:py-20 bg-background">
+        <section className="py-14 md:py-20 bg-primary/5 border-y border-primary/10">
           <div className="container max-w-3xl">
             <h2 className="font-serif text-3xl font-bold mb-3 text-center">My Philosophy</h2>
             <p className="text-muted-foreground text-center mb-12">
