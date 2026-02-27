@@ -117,25 +117,7 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* Training & Background */}
-        <section className="py-14 md:py-20 bg-sage-50/50">
-          <div className="container max-w-2xl text-center">
-            <h2 className="font-serif text-2xl md:text-3xl font-bold mb-6">Training &amp; Background</h2>
-            <div className="space-y-2 text-muted-foreground leading-relaxed">
-              <p className="text-lg font-medium text-foreground">
-                Certified Conscious Parenting &amp; Life Coach
-              </p>
-              <p className="text-lg">
-                Trained and coached by Dr. Shefali Tsabary
-              </p>
-            </div>
-            <p className="text-muted-foreground mt-6 max-w-lg mx-auto">
-              Years of applied work guiding mothers through triggers, reparenting, and emotional regulation.
-            </p>
-          </div>
-        </section>
-
-        {/* What I Believe */}
+        {/* My Philosophy */}
         <section className="py-14 md:py-20 bg-background">
           <div className="container max-w-3xl">
             <h2 className="font-serif text-3xl font-bold mb-3 text-center">My Philosophy</h2>
