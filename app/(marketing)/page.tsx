@@ -155,7 +155,7 @@ export default async function HomePage() {
             <div className="grid md:grid-cols-2 gap-8 md:gap-16 items-center">
               <div className="rounded-2xl overflow-hidden aspect-[4/5]">
                 <img
-                  src="/shira-facebook.jpg"
+                  src="/shira-about.jpg"
                   alt="Shira Finkelstein"
                   className="w-full h-full object-cover object-top"
                 />
