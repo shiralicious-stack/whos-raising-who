@@ -10,15 +10,15 @@ export const metadata = {
 const values = [
   {
     title: 'Conscious Parenting',
-    description: 'Parenting from a place of awareness and intention, not reaction. Understanding why you do what you do — and choosing differently when it no longer serves you.',
+    description: 'Conscious parenting isn\'t about controlling our children — it\'s about becoming more aware of ourselves. When we parent from awareness instead of reaction, we\'re able to truly see our children for who they are — not through the lens of our projections, fears, or past experiences. The work begins with the parent.',
   },
   {
-    title: 'REparenting',
-    description: 'The work isn\'t just about your kids — it\'s about healing the parts of yourself that never got what they needed. As you heal, your parenting transforms.',
+    title: 'Reparenting',
+    description: 'The work isn\'t just about how we raise our children. It\'s about tending to the parts of ourselves that never felt fully seen, heard, or supported. As we learn to meet ourselves with curiosity and compassion, we stop asking our children to carry what isn\'t theirs.',
   },
   {
     title: 'Breaking Cycles',
-    description: 'The patterns we carry — anxiety, control, disconnection — often come from our own upbringing. The cycle ends when we decide to do the inner work.',
+    description: 'The patterns we carry — anxiety, control, disconnection, people-pleasing — often come from generations before us. Breaking cycles doesn\'t happen through blame. It happens through awareness. When we choose to do our inner work, we shift the emotional legacy our children inherit.',
   },
 ]
 
@@ -138,7 +138,7 @@ export default function AboutPage() {
         {/* What I Believe */}
         <section className="py-14 md:py-20 bg-background">
           <div className="container max-w-3xl">
-            <h2 className="font-serif text-3xl font-bold mb-3 text-center">What I believe</h2>
+            <h2 className="font-serif text-3xl font-bold mb-3 text-center">My Philosophy</h2>
             <p className="text-muted-foreground text-center mb-12">
               The principles that guide every session and conversation.
             </p>
