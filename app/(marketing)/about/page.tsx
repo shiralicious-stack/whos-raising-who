@@ -37,9 +37,9 @@ export default function AboutPage() {
               </div>
               <div className="w-24 h-24 md:w-28 md:h-28 rounded-full overflow-hidden border-3 border-sage-100 shadow-sm flex-shrink-0">
                 <img
-                  src="/shira-about.jpg"
+                  src="/shira-facebook.jpg"
                   alt="Shira Finkelstein"
-                  className="w-full h-full object-cover object-top"
+                  className="w-full h-full object-cover object-center"
                 />
               </div>
             </div>
