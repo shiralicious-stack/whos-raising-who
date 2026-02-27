@@ -59,7 +59,7 @@ export default function AboutPage() {
                   <p>
                     Conscious parenting isn&apos;t about fixing our children — or ourselves. It&apos;s
                     about understanding our patterns, triggers, and past conditioning so we can show up with
-                    more clarity, calm, and intention. I don&apos;t believe in perfection. I believe in awareness.
+                    more clarity, calm, and intention. It&apos;s not about perfection — it&apos;s about awareness.
                   </p>
                   <p className="font-medium text-foreground">
                     Our children don&apos;t need perfect parents.<br />
