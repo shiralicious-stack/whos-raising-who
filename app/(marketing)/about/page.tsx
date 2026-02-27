@@ -28,7 +28,7 @@ export default function AboutPage() {
       <main className="flex-1">
 
         {/* Story */}
-        <section className="py-14 md:py-24 bg-background">
+        <section className="pt-14 pb-10 md:pt-24 md:pb-14 bg-background">
           <div className="container max-w-2xl">
             <div className="flex items-center gap-6 mb-8">
               <div>
@@ -118,7 +118,7 @@ export default function AboutPage() {
         </section>
 
         {/* My Philosophy */}
-        <section className="py-14 md:py-20 bg-primary/5 border-y border-primary/10">
+        <section className="py-10 md:py-14 bg-primary/5 border-y border-primary/10">
           <div className="container max-w-3xl">
             <h2 className="font-serif text-3xl font-bold mb-3 text-center">My Philosophy</h2>
             <p className="text-muted-foreground text-center mb-12">
