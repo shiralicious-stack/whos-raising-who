@@ -26,17 +26,17 @@ export default function AboutPage() {
       <main className="flex-1">
 
         {/* Hero */}
-        <section className="py-24 md:py-32 bg-[#FAF8F5]">
+        <section className="py-14 md:py-18 bg-[#FAF8F5]">
           <div className="container max-w-2xl text-center">
-            <h1 className="font-serif text-4xl md:text-5xl font-bold mb-6">
-              About Shira
+            <h1 className="font-serif text-4xl md:text-5xl font-bold mb-3">
+              Shira Finkelstein
             </h1>
-            <p className="font-serif text-xl md:text-2xl text-foreground/80 leading-relaxed mb-5">
+            <p className="text-muted-foreground text-base md:text-lg max-w-xl mx-auto mb-5">
+              A Certified Conscious Parenting &amp; Life Coach guiding mothers toward greater awareness, peace, and connection.
+            </p>
+            <p className="font-serif text-xl md:text-2xl text-foreground/80 leading-relaxed">
               Parenting begins with us.<br />
               And our children grow as we do.
-            </p>
-            <p className="text-muted-foreground text-base md:text-lg max-w-xl mx-auto">
-              A Certified Conscious Parenting &amp; Life Coach guiding mothers toward greater awareness, peace, and connection.
             </p>
           </div>
         </section>
@@ -65,22 +65,11 @@ export default function AboutPage() {
         {/* My Story */}
         <section className="py-14 md:py-20 bg-background">
           <div className="container max-w-4xl">
-            <h2 className="font-serif text-3xl font-bold mb-10 text-center">My Story</h2>
-            <div className="flex flex-col md:flex-row gap-10 md:gap-14 items-start">
-              {/* Portrait */}
-              <div className="flex-shrink-0 mx-auto md:mx-0">
-                <div className="w-52 h-64 md:w-56 md:h-72 rounded-2xl overflow-hidden border-2 border-primary/10 shadow-sm">
-                  <img
-                    src="/shira-facebook.jpg"
-                    alt="Shira Finkelstein"
-                    className="w-full h-full object-cover object-center"
-                  />
-                </div>
-              </div>
-
+            <div className="flex flex-col md:flex-row gap-8 md:gap-10 items-start">
               {/* Letter */}
-              <div className="space-y-6 text-muted-foreground leading-relaxed">
-                <p className="text-lg font-serif text-foreground">Hey Mama, I&apos;m so glad you&apos;re here!</p>
+              <div className="space-y-6 text-muted-foreground leading-relaxed order-2 md:order-1">
+                <h2 className="font-serif text-2xl md:text-3xl font-bold text-foreground">Hey Mama,</h2>
+                <p>I&apos;m so glad you&apos;re here!</p>
                 <p>
                   I&apos;m Shira — a Certified Conscious Parenting &amp; Life Coach trained and coached
                   by Dr. Shefali Tsabary, and a mom who walks this path every single day.
@@ -148,6 +137,17 @@ export default function AboutPage() {
                   With love,<br />
                   Shira
                 </p>
+              </div>
+
+              {/* Portrait */}
+              <div className="flex-shrink-0 mx-auto md:mx-0 order-1 md:order-2">
+                <div className="w-44 h-56 md:w-48 md:h-60 rounded-2xl overflow-hidden border-2 border-primary/10 shadow-sm">
+                  <img
+                    src="/shira-facebook.jpg"
+                    alt="Shira Finkelstein"
+                    className="w-full h-full object-cover object-center"
+                  />
+                </div>
               </div>
             </div>
           </div>
