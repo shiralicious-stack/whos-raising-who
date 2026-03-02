@@ -67,21 +67,22 @@ export default function AboutPage() {
           <div className="container max-w-4xl">
             <div>
               {/* Letter */}
-              <div className="space-y-6 text-muted-foreground leading-relaxed">
-                {/* Portrait floated right */}
-                <div className="float-right ml-6 mb-4">
-                  <div className="w-28 h-28 md:w-32 md:h-32 rounded-full overflow-hidden border-2 border-primary/10 shadow-sm">
-                    <img
-                      src="/shira-facebook.jpg"
-                      alt="Shira Finkelstein"
-                      className="w-full h-full object-cover object-center"
-                    />
-                  </div>
+              {/* Greeting + Portrait */}
+              <div className="flex items-start gap-5 mb-8">
+                <div>
+                  <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground mb-3">Hey Mama,</h2>
+                  <p className="text-muted-foreground leading-relaxed">I&apos;m so glad you&apos;re here!</p>
                 </div>
-                <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground">Hey Mama,</h2>
-                <p>
-                  I&apos;m so glad you&apos;re here!
-                </p>
+                <div className="flex-shrink-0 w-28 h-28 md:w-32 md:h-32 rounded-full overflow-hidden border-2 border-primary/10 shadow-sm mt-1">
+                  <img
+                    src="/shira-facebook.jpg"
+                    alt="Shira Finkelstein"
+                    className="w-full h-full object-cover object-center"
+                  />
+                </div>
+              </div>
+
+              <div className="space-y-6 text-muted-foreground leading-relaxed">
                 <p>
                   I&apos;m Shira — a Certified Conscious Parenting &amp; Life Coach trained and coached
                   by Dr. Shefali Tsabary, and a mom who walks this path every single day.
