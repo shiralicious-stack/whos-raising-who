@@ -66,22 +66,19 @@ export default function AboutPage() {
         <section className="py-14 md:py-20 bg-background">
           <div className="container max-w-4xl">
             <div>
-              {/* Greeting + Portrait */}
-              <div className="flex items-center gap-5 mb-8">
-                <div>
-                  <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground">Hey Mama,</h2>
-                </div>
-                <div className="flex-shrink-0 w-28 h-28 md:w-32 md:h-32 rounded-full overflow-hidden border-2 border-primary/10 shadow-sm">
-                  <img
-                    src="/shira-facebook.jpg"
-                    alt="Shira Finkelstein"
-                    className="w-full h-full object-cover object-center"
-                  />
-                </div>
-              </div>
-
               {/* Letter */}
               <div className="space-y-6 text-muted-foreground leading-relaxed">
+                {/* Portrait floated right */}
+                <div className="float-right ml-6 mb-4">
+                  <div className="w-28 h-28 md:w-32 md:h-32 rounded-full overflow-hidden border-2 border-primary/10 shadow-sm">
+                    <img
+                      src="/shira-facebook.jpg"
+                      alt="Shira Finkelstein"
+                      className="w-full h-full object-cover object-center"
+                    />
+                  </div>
+                </div>
+                <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground">Hey Mama,</h2>
                 <p>
                   I&apos;m so glad you&apos;re here!
                 </p>
