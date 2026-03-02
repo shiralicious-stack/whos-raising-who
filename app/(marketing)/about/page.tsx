@@ -69,8 +69,7 @@ export default function AboutPage() {
               {/* Greeting + Portrait */}
               <div className="flex items-center gap-5 mb-8">
                 <div>
-                  <h2 className="font-serif text-2xl md:text-3xl font-bold text-foreground">Hey Mama,</h2>
-                  <p className="text-muted-foreground leading-relaxed mt-4">I&apos;m so glad you&apos;re here!</p>
+                  <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground">Hey Mama,</h2>
                 </div>
                 <div className="flex-shrink-0 w-28 h-28 md:w-32 md:h-32 rounded-full overflow-hidden border-2 border-primary/10 shadow-sm">
                   <img
@@ -83,6 +82,9 @@ export default function AboutPage() {
 
               {/* Letter */}
               <div className="space-y-6 text-muted-foreground leading-relaxed">
+                <p>
+                  I&apos;m so glad you&apos;re here!
+                </p>
                 <p>
                   I&apos;m Shira — a Certified Conscious Parenting &amp; Life Coach trained and coached
                   by Dr. Shefali Tsabary, and a mom who walks this path every single day.
