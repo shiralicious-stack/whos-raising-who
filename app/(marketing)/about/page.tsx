@@ -72,7 +72,7 @@ export default function AboutPage() {
                   <h2 className="font-serif text-2xl md:text-3xl font-bold text-foreground">Hey Mama,</h2>
                   <p className="text-muted-foreground leading-relaxed mt-1">I&apos;m so glad you&apos;re here!</p>
                 </div>
-                <div className="flex-shrink-0 w-20 h-20 md:w-24 md:h-24 rounded-full overflow-hidden border-2 border-primary/10 shadow-sm">
+                <div className="flex-shrink-0 w-28 h-28 md:w-32 md:h-32 rounded-full overflow-hidden border-2 border-primary/10 shadow-sm">
                   <img
                     src="/shira-facebook.jpg"
                     alt="Shira Finkelstein"
