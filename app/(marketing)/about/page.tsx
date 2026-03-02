@@ -65,11 +65,24 @@ export default function AboutPage() {
         {/* My Story */}
         <section className="py-14 md:py-20 bg-background">
           <div className="container max-w-4xl">
-            <div className="flex flex-col md:flex-row gap-8 md:gap-10 items-start">
+            <div>
+              {/* Greeting + Portrait */}
+              <div className="flex items-center gap-5 mb-8">
+                <div>
+                  <h2 className="font-serif text-2xl md:text-3xl font-bold text-foreground">Hey Mama,</h2>
+                  <p className="text-muted-foreground leading-relaxed mt-1">I&apos;m so glad you&apos;re here!</p>
+                </div>
+                <div className="flex-shrink-0 w-20 h-20 md:w-24 md:h-24 rounded-full overflow-hidden border-2 border-primary/10 shadow-sm">
+                  <img
+                    src="/shira-facebook.jpg"
+                    alt="Shira Finkelstein"
+                    className="w-full h-full object-cover object-center"
+                  />
+                </div>
+              </div>
+
               {/* Letter */}
-              <div className="space-y-6 text-muted-foreground leading-relaxed order-2 md:order-1">
-                <h2 className="font-serif text-2xl md:text-3xl font-bold text-foreground">Hey Mama,</h2>
-                <p>I&apos;m so glad you&apos;re here!</p>
+              <div className="space-y-6 text-muted-foreground leading-relaxed">
                 <p>
                   I&apos;m Shira — a Certified Conscious Parenting &amp; Life Coach trained and coached
                   by Dr. Shefali Tsabary, and a mom who walks this path every single day.
@@ -137,17 +150,6 @@ export default function AboutPage() {
                   With love,<br />
                   Shira
                 </p>
-              </div>
-
-              {/* Portrait */}
-              <div className="flex-shrink-0 mx-auto md:mx-0 order-1 md:order-2">
-                <div className="w-44 h-56 md:w-48 md:h-60 rounded-2xl overflow-hidden border-2 border-primary/10 shadow-sm">
-                  <img
-                    src="/shira-facebook.jpg"
-                    alt="Shira Finkelstein"
-                    className="w-full h-full object-cover object-center"
-                  />
-                </div>
               </div>
             </div>
           </div>
